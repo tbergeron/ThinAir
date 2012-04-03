@@ -9,7 +9,6 @@ moduleLoader.load({
   callback:     init
 })
 
-
 function init(err) {
   if (err) {
     return console.log("error happened", err)
