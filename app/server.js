@@ -2,9 +2,9 @@ var http = require("http")
 
 module.exports = {
   init: function init() {
-    var server = http.createServer().listen(3000)
+    var server = http.createServer().listen(process.env.PORT)
     this.app.start(server)
     
-    console.log("Express server listening on port 3000")
+    console.log("Express server listening on port " + process.env.PORT)
   }
 }
