@@ -5,7 +5,7 @@ module.exports = {
     var app = express()
     this.configure.start(app)
     
-    this.routes.registerRoutes(app, this.home)
+    this.routes.registerRoutes(app)
     
     server.on("request", app)
   }

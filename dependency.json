@@ -3,9 +3,11 @@
     "app": "./app.js"
   },
   "./app.js": {
-      "configure":    "./configure.js",
-      "routes":       "./routes.js",
-      "home":  "./controllers/home.js",
-      "repositories": "./repositories/"
+    "configure":    "./configure.js",
+    "routes":       "./routes.js",
+    "repositories": ["./repositories/"]
+  },
+  "./routes.js": {
+    "controllers":  ["./controllers/"]
   }
 }

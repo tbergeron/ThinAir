@@ -1,7 +1,8 @@
 module.exports = {
-  registerRoutes: function(app, controllers) {
+  registerRoutes: function(app) {
+    console.log(this.controllers);
     // home
-    app.get('/', controllers.index);
+    app.get('/', this.controllers.home.index);
   
     // users
     //app.post(app, '/users/login', controllers.users.login);
