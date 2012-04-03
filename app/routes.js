@@ -1,6 +1,5 @@
 module.exports = {
   registerRoutes: function(app) {
-    console.log(this.controllers);
     // home
     app.get('/', this.controllers.home.index);
   

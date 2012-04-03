@@ -4,10 +4,12 @@
   },
   "./app.js": {
     "configure":    "./configure.js",
-    "routes":       "./routes.js",
-    "repositories": ["./repositories/"]
+    "routes":       "./routes.js"
   },
   "./routes.js": {
     "controllers":  ["./controllers/"]
+  },
+  "./controllers/": {
+    "repositories": ["./repositories/"]
   }
 }
