@@ -1,14 +1,15 @@
-var Core =  Object.create(require("./node_modules/ncore/lib/core")).constructor(),
-            moduleLoader = Core.use("moduleLoader", 
-            require("./node_modules/ncore/modules/moduleLoader")),
-            path = require("path");
+var Core          = Object.create(require("ncore")).constructor(),
+    moduleLoader  = Core.use("moduleLoader", require("ncore/modules/moduleLoader")),
+    path          = require("path")
 
 moduleLoader.load({
   uri:          path.join(__dirname, "./app"),
   core:         Core,
-  dependencies: require("./app/dependency.json"),
+  dependencies: require("./dependency.json"),
   callback:     init
 })
+
+module.exports = Core
 
 function init(err) {
   if (err) {
