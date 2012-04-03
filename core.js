@@ -9,7 +9,6 @@ moduleLoader.load({
   callback:     init
 })
 
-module.exports = Core
 
 function init(err) {
   if (err) {
