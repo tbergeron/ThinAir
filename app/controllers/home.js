@@ -1,5 +1,5 @@
 module.exports = {
-  index: function (app) {
+  index: function (req, res) {
     res.render('index', { title: 'Express' })
   }
 }

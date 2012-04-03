@@ -5,7 +5,7 @@
   "./app.js": {
       "configure":    "./configure.js",
       "routes":       "./routes.js",
-      "controllers":  "./controllers/",
+      "home":  "./controllers/home.js",
       "repositories": "./repositories/"
   }
 }
