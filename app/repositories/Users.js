@@ -1,28 +1,20 @@
-var Users = new function(){
-  var instance = null
-  
-  function ValueObject(){
-      var collection  = require("mongo-col"),
-          Users       = collection("users", "thinair")
-      
-    this.byUsernameAndPassword = function (username, password, callback) {
-      Users.find({ username: username, password: password }, function(err, user) {
-        if(!err || user) {
-          callback(user)
-        } else {
-          callback(false)
-        }
-      })
-    }
-  }
-  
-  this.getInstance = function(){
-    if(!instance) {
-      instance = new ValueObject()
-    }
-    
-    return instance
-  }
-}
+var collection  = require("mongo-col"),
+    pd 			    = require("pd")
 
-module.exports = Users.getInstance()
+var Users = pd.extend(Object.create(collection("users", "thinair")), {
+  
+  byUsernameAndPassword: function (username, password, callback) {
+    this.findOne({ username: username, password: password }, function(err, user) {
+      if (err) {
+        return callback(err)
+      }
+      if(user) {
+        return callback(null, user)
+      }
+      callback(null, false)
+    })
+  }
+  
+})
+
+module.exports = Users

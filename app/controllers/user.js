@@ -1,12 +1,20 @@
-var Users = this.repositories.Users;
-
-module.exports = {
+var UserController = {
+  // properties
+  Users: null,
+  
+  // constructor
+  initialize: function() {
+    this.Users = this.repositories.Users
+  },
+  
   // POST: /users/login
   login: function(req, res) {
+    this.initialize()
+    
     var username = req.body.username
     var password = req.body.password
   
-    Users.byUsernameAndPassword(username, password, function(user) {
+    this.Users.byUsernameAndPassword(username, password, function(err, user) {
       if(err || !user) {
         req.flash('error', '<strong>Oh no! Something went wrong.</strong> We are unable to find this user. Maybe your password is wrong? Please try again.')
       } else {
@@ -25,4 +33,7 @@ module.exports = {
     
     res.redirect('/')
   }
+  
 }
+
+module.exports = UserController

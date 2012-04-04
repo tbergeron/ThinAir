@@ -1,5 +1,5 @@
 module.exports = {
   index: function (req, res) {
-    res.render('index', { title: 'ThinAir', breadcrumbs: null })
+    res.render('index', { title: 'ThinAir' })
   }
 }
