@@ -2,6 +2,8 @@ var Core          = Object.create(require("ncore")).constructor(),
     moduleLoader  = Core.use("moduleLoader", require("ncore/modules/moduleLoader")),
     path          = require("path")
 
+process.env["MONGODB_HOST"] = "linux.brainpad.org"    
+
 moduleLoader.load({
   uri:          path.join(__dirname, "./app"),
   core:         Core,
