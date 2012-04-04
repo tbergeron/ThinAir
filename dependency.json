@@ -8,8 +8,5 @@
   },
   "./routes.js": {
     "controllers":  ["./controllers/"]
-  },
-  "./controllers/": {
-    "repositories": ["./repositories/"]
   }
 }

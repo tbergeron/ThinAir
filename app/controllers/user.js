@@ -13,8 +13,8 @@ module.exports = {
     //    req.flash('success', 'Welcome back ' + username + '!')
     //  }
       res.redirect('/')
-    })
-  }
+    //})
+  },
 
   // GET: /users/logout
   logout: function(req, res) {
