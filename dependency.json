@@ -3,8 +3,8 @@
     "app": "./app.js"
   },
   "./app.js": {
-    "configure":    "./configure.js",
-    "routes":       "./routes.js"
+    "configure":  "./configure.js",
+    "routes":     "./routes.js"
   },
   "./routes.js": {
     "controllers":  ["./controllers/"]

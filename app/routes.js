@@ -1,11 +1,11 @@
 module.exports = {
   registerRoutes: function(app) {
     // home
-    app.get('/', this.controllers.home.index);
+    app.get('/', this.controllers.home.index)
   
     // users
-    //app.post(app, '/users/login', controllers.users.login);
-    //app.get(app, '/users/logout', controllers.users.logout);
+    app.post('/users/login', this.controllers.user.login)
+    app.get('/users/logout', this.controllers.user.logout)
   
     // projects
     //g(app, '/projects',                        projectController.list);
