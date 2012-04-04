@@ -1,0 +1,15 @@
+<form action="/projects/edit", method="post">
+  <input type="hidden" name="project[_id]" value="<%- (project) ? project._id : null %>" />
+  <input type="hidden" name="project[code]" value="<%- (project) ? project.code : null %>" />
+
+  <label for="project[name]">Name</label>
+  <input type="text" name="project[name]" value="<%- (project) ? project.name : null %>" />
+
+  <br />
+
+  <button class="btn btn-primary">Save</button>
+</form>
+
+<% if (project) { %>
+<%- partial('milestones/list', { milestones: project.milestones, project_code: project.code }) %>
+<% } %>

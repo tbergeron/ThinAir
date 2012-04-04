@@ -1,0 +1,19 @@
+<% if (session.is_logged != 1) { %>
+  <p>Please enter your connection informations before proceeding.</p>
+
+  <form action="/users/login" method="post">
+
+  	<input id="username" class="input-medium" placeholder="Username" type="text" name="username">
+
+		<br />
+
+		<input id="password" class="input-medium" placeholder="Password" type="password" name="password">
+
+		<br />
+
+    <button class="btn btn-primary">Login</button>
+
+  </form>
+<% } else { %>
+  Welcome back!
+<% } %>
