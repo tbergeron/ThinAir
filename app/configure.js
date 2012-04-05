@@ -4,8 +4,9 @@ var express = require("express"),
 module.exports = {
   start: function (app) {
     app.locals.use(function(req, res) {
-      res.locals.session = req.session
-    });
+      res.locals.session = req.session,
+      res.locals.helpers = helpers
+    })
 
     app.configure(function(){
       app.engine('html', cons.handlebars);

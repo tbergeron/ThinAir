@@ -6,6 +6,9 @@
     "configure":  "./configure.js",
     "routes":     "./routes.js"
   },
+  "./configure.js": {
+    "helpers":  "./helpers.js"
+  },
   "./routes.js": {
     "controllers":  ["./controllers/"]
   },

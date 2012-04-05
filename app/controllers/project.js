@@ -4,7 +4,7 @@ var ProjectController = {
   
   // constructor
   initialize: function(req, res) {
-    //check_if_authorized(req, res);
+    check_if_authorized(req, res)
     
     this.Projects = this.repositories.Projects
     
