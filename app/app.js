@@ -1,5 +1,5 @@
 var express = require("express"),
-    hbs = require('handlebars')
+    hbs     = require('handlebars')
 
 
 module.exports = {
@@ -15,4 +15,3 @@ module.exports = {
     server.on("request", app)
   }
 }
-

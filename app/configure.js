@@ -3,8 +3,11 @@ var express = require("express"),
 
 module.exports = {
   start: function (app) {
+    var helpers = this.helpers
+    
     app.locals.use(function(req, res) {
       res.locals.session = req.session
+      res.locals.messages = helpers.get_flash(req)
     })
 
     app.configure(function(){

@@ -1,0 +1,23 @@
+<ul class="breadcrumb">
+  <li>
+    <a href="/">Home</a> <% if (breadcrumbs) { %><span class="divider">/</span><% } %>
+  </li>
+
+<% if (breadcrumbs) { %>
+    <% for (i = 0; i < breadcrumbs.length; i++) { %>
+      <% var parts = breadcrumbs[i].split('|') %>
+      <% var isLastItem = false;
+      if (i == breadcrumbs.length -1) {
+        isLastItem = true;
+      } %>
+
+    <li <% if (isLastItem) { %>class="active"<% } %>>
+      <% if (!isLastItem) { %><a href="<%- parts[1] %>"><% } %>
+
+      <%- parts[0] %>
+
+      <% if (!isLastItem) { %></a> <span class="divider">/</span><% } %>
+    </li>
+    <% } %>
+<% } %>
+</ul>
