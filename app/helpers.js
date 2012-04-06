@@ -1,5 +1,4 @@
 var Helpers = {
-  // todo: flashes, anyone?
   check_if_authorized: function(req, res) {
     if (req.session.is_logged) {
       return true
@@ -31,6 +30,19 @@ var Helpers = {
     str = str.replace(/[^a-z0-9 -]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-')
   
     return str
+  },
+  
+  flash: function(req, type, message) {
+    if (req.session.messages == undefined) {
+      req.session.messages = []
+    }
+    
+    if ((type != undefined) && (message != undefined)) {
+      var message = { type: type, message: message }
+      req.session.messages.push(message)
+    }
+    
+    return req.session.messages
   }
   
 }
