@@ -1,5 +1,3 @@
-var pd = require('pd')
-
 var Helpers = {
   check_if_authorized: function(req, res) {
     if (req.session.is_logged) {
@@ -35,7 +33,6 @@ var Helpers = {
   },
   
   flash: function(req, type, message) {
-    console.log('flash')
     if (req.session.messages == undefined) {
       req.session.messages = []
     }
@@ -49,7 +46,6 @@ var Helpers = {
   },
   
   get_flash: function(req) {
-    console.log('get_flash')
     if (req.session.messages != undefined) {
 
       var messages = req.session.messages
