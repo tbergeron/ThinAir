@@ -4,7 +4,7 @@ var ProjectController = {
 
   // constructor
   initialize: function(req, res) {
-    check_if_authorized(req, res);
+    this.helpers.check_if_authorized(req, res);
 
     this.Projects = this.repositories.Projects;
 
@@ -32,11 +32,11 @@ var ProjectController = {
 
   //projectRepository.allByDate(function(projects) {
   //  if (projects) {
-  //    res.render('projects/list', {
-  //      title: 'List of projects',
-  //      projects: projects,
-  //      breadcrumbs: breadcrumbs
-  //    })
+     res.render('projects/list', {
+       title: 'List of projects',
+       projects: null,
+       breadcrumbs: breadcrumbs
+     });
   //  } else {
   //    req.flash('error', 'No projects found.')
   //    res.redirect('/')

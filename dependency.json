@@ -5,7 +5,8 @@
   "./app.js": {
     "configure":  "./configure.js",
     "routes":     "./routes.js",
-    "partials":   "./partials.js"
+    "partials":   "./partials.js",
+    "helpers":  "./helpers.js"
   },
   "./configure.js": {
     "helpers":  "./helpers.js"

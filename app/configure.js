@@ -1,4 +1,4 @@
-var express = require("express"),
+var express = require('express'),
     cons    = require('consolidate');
 
 module.exports = {
@@ -14,17 +14,17 @@ module.exports = {
       app.engine('html', cons.handlebars);
       app.set('view engine', 'html');
       app.set('views', __dirname + '/views');
-      
+
       app.use(express.favicon());
       app.use(express.logger('dev'));
       app.use(express.static(__dirname + '/../public'));
       app.use(express.bodyParser());
       app.use(express.methodOverride());
-      app.use(express.cookieParser("secret"));
+      app.use(express.cookieParser('secret'));
       app.use(express.session({ secret: 'keyboard cat' }));
       app.use(app.router);
     });
-  
+
     app.configure('development', function(){
       app.use(express.errorHandler());
     });

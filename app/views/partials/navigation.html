@@ -1,20 +1,19 @@
-<ul class="nav">
-  <li <% if (route.path == "/") { %>class="active"<% } %>><a href="/">Home</a></li>
-  <% if (session.is_logged == 1) { %>
-  <li <% if (route.path.search('projects') > 0) { %>class="active"<% } %>>
-    <a href="/projects">Projects</a>
-  </li>
-  <% } %>
-</ul>
-
-
 {{#with session}}
-<p class="navbar-text pull-right">
-  {{#if is_logged}}
-    Logged in as <a href="#">{{username}}</a>.
-    <a href="/users/logout">Logout</a>
-  {{else}}
-    Not logged yet, <a href="/">login now</a>.
-  {{/if}}
-</p>
+  <ul class="nav">
+    <li class="home"><a href="/">Home</a></li>
+    {{#if is_logged}}
+      <li class="projects">
+        <a href="/projects">Projects</a>
+      </li>
+    {{/if}}
+  </ul>
+
+  <p class="navbar-text pull-right">
+    {{#if is_logged}}
+      Logged in as <a href="#">{{username}}</a>.
+      <a href="/users/logout">Logout</a>
+    {{else}}
+      Not logged yet, <a href="/">login now</a>.
+    {{/if}}
+  </p>
 {{/with}}

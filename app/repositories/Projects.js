@@ -1,7 +1,7 @@
-var collection  = require("mongo-col"),
-    pd   		    = require("pd");
+var collection  = require('mongo-col'),
+    pd   		    = require('pd');
 
-var Projects = pd.extend(Object.create(collection("projects", "thinair")), {
+var Projects = pd.extend(Object.create(collection('projects', 'thinair')), {
 
   // gets a list of all projects sorting by date_created ascending.
   allByDate: function(callback) {
