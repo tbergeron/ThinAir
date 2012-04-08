@@ -1,62 +1,62 @@
 var Helpers = {
   check_if_authorized: function(req, res) {
     if (req.session.is_logged) {
-      return true
+      return true;
     } else {
       //req.flash('error', 'You need to be logged in to access this page.')
-      res.redirect('/')
+      res.redirect('/');
     }
   },
   
   is_get: function(req) {
-    return (req.route.method == 'get') ? true : false
+    return (req.route.method == 'get') ? true : false;
   },
   
   is_post: function(req) {
-    return (req.route.method == 'post') ? true : false
+    return (req.route.method == 'post') ? true : false;
   },
 
   slugify: function(str) {
-    str = str.replace(/^\s+|\s+$/g, '')
-    str = str.toLowerCase()
+    str = str.replace(/^\s+|\s+$/g, '');
+    str = str.toLowerCase();
   
-    var from = "àáäâèéëêìíïîòóöôùúüûñç·/_,:;"
-    var to   = "aaaaeeeeiiiioooouuuunc------"
+    var from = "àáäâèéëêìíïîòóöôùúüûñç·/_,:;";
+    var to   = "aaaaeeeeiiiioooouuuunc------";
     
     for (var i=0, l=from.length ; i<l ; i++) {
-      str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i))
+      str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
     }
   
-    str = str.replace(/[^a-z0-9 -]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-')
+    str = str.replace(/[^a-z0-9 -]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-');
   
-    return str
+    return str;
   },
   
   flash: function(req, type, message) {
-    if (req.session.messages == undefined) {
-      req.session.messages = []
+    if (req.session.messages === undefined) {
+      req.session.messages = [];
     }
     
-    if ((type != undefined) && (message != undefined)) {
-      var message = { type: type, message: message }
-      req.session.messages.push(message)
+    if ((type !== undefined) && (message !== undefined)) {
+      var messageObject = { type: type, message: message };
+      req.session.messages.push(messageObject);
     }
     
-    return req.session.messages
+    return req.session.messages;
   },
   
   get_flash: function(req) {
-    if (req.session.messages != undefined) {
+    if (req.session.messages !== undefined) {
 
-      var messages = req.session.messages
+      var messages = req.session.messages;
       
       // cleaning messages
-      req.session.messages = []
+      req.session.messages = [];
       
-      return messages
+      return messages;
     }
   }
   
-}
+};
 
-module.exports = Helpers
+module.exports = Helpers;
