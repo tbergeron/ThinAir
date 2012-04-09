@@ -4,7 +4,7 @@ var collection  = require('mongo-col'),
 var Users = pd.extend(Object.create(collection('users', 'thinair')), {
 
   byUsernameAndPassword: function (username, password, callback) {
-    this.findOne({ username: username, password: password }, function(err, user) {
+    this.findOne({ username: username, password: password }).toArray(function(err, user) {
       if (err) {
         return callback(err);
       }

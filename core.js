@@ -1,6 +1,7 @@
 var Core          = Object.create(require('ncore')).constructor(),
     moduleLoader  = Core.use('moduleLoader', require('ncore/modules/moduleLoader')),
-    path          = require('path');
+    path          = require('path'),
+    consoletrace = require('console-trace');
 
 process.env['MONGODB_HOST'] = 'linux.brainpad.org';
 

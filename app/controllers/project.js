@@ -30,18 +30,21 @@ var ProjectController = {
   list: function(req, res) {
     var breadcrumbs = this.initialize(req, res);
 
-  //projectRepository.allByDate(function(projects) {
-  //  if (projects) {
-     res.render('projects/list', {
-       title: 'List of projects',
-       projects: null,
-       breadcrumbs: breadcrumbs
-     });
-  //  } else {
-  //    req.flash('error', 'No projects found.')
-  //    res.redirect('/')
-  //  }
-  //})
+    this.Projects.allByDate(function(projects) {
+      if (projects) {
+        res.render('projects/list', {
+          title: 'List of projects',
+          projects: projects,
+          breadcrumbs: breadcrumbs
+        });
+      } else {
+        // todo: find a way to avoid this which is fucking ugly
+        var helpers = require('../helpers');
+
+        helpers.flash(req, 'error', 'No projects found.');
+        res.redirect('/');
+      }
+    });
   },
 
   new: function(req, res) {

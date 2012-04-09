@@ -1,17 +1,18 @@
 var collection  = require('mongo-col'),
-    pd   		    = require('pd');
+    pd          = require('pd');
 
 var Projects = pd.extend(Object.create(collection('projects', 'thinair')), {
 
   // gets a list of all projects sorting by date_created ascending.
   allByDate: function(callback) {
-    //db.projects.find().sort({date_created:1}, function(err, projects) {
-    //  if(!err || projects) {
-    //    callback(projects)
-    //  } else {
-    //    console.t.log('Unable to fetch objects: ' + err)
-    //  }
-    //})
+    this.find().sort({date_created:1}).toArray(function(err, projects) {
+       if(!err || projects) {
+         callback(projects);
+       } else {
+         console.t.log('Unable to fetch projects: ' + err);
+         callback(null);
+       }
+    });
   },
 
   // gets a project by its code
