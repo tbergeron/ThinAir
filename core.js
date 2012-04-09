@@ -14,7 +14,7 @@ moduleLoader.load({
 
 function init(err) {
   if (err) {
-    return console.log('error happened', err);
+    return console.t.log('error happened', err);
   }
 
   Core.init();

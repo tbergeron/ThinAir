@@ -9,6 +9,6 @@ module.exports = {
     var server = http.createServer().listen(process.env.PORT);
     this.app.start(server);
 
-    console.log('Express server listening on port ' + process.env.PORT);
+    console.t.log('Express server listening on port ' + process.env.PORT);
   }
 };
