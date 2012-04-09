@@ -1,5 +1,7 @@
 module.exports = {
-  index: function (req, res) {
-    res.render('index', { title: 'ThinAir' });
-  }
+	index: function(req, res) {
+		res.render('index', {
+			title: 'ThinAir'
+		});
+	}
 };
