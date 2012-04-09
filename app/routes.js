@@ -9,9 +9,9 @@ module.exports = {
 
     // projects
     app.get('/projects', this.controllers.project.list);
-    //g(app, '/projects/new',                    projectController.new);
-    //g(app, '/projects/edit/:project_code',     projectController.edit);
-    //p(app, '/projects/edit',                   projectController.edit);
+    app.get('/projects/new', this.controllers.project.new);
+    app.get('/projects/edit/:project_code', this.controllers.project.edit);
+    app.post('/projects/edit', this.controllers.project.edit);
     //g(app, '/projects/delete/:project_code',   projectController.delete);
 
     // projects' milestones

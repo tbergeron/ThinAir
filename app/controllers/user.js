@@ -14,12 +14,12 @@ var UserController = {
     var username = req.body.username;
     var password = req.body.password;
 
-    this.Users.byUsernameAndPassword(username, password, function(err, user) {
+    this.Users.byUsernameAndPassword(username, password, function(user) {
       // todo: find a way to avoid this which is fucking ugly
       var helpers = require('../helpers');
 
-      if(err || !user) {
-       helpers.flash(req, 'error', '<strong>Oh no! Something went wrong.</strong> We are unable to find this user. Maybe your password is wrong? Please try again.');
+      if(!user) {
+        helpers.flash(req, 'error', 'We are unable to find this user or maybe your password is wrong? Please try again.');
       } else {
         req.session.is_logged = true;
         req.session.username = username;

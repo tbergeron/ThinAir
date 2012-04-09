@@ -6,10 +6,9 @@ var Projects = pd.extend(Object.create(collection('projects', 'thinair')), {
   // gets a list of all projects sorting by date_created ascending.
   allByDate: function(callback) {
     this.find().sort({date_created:1}).toArray(function(err, projects) {
-       if(!err || projects) {
+       if (!err || projects) {
          callback(projects);
        } else {
-         console.t.log('Unable to fetch projects: ' + err);
          callback(null);
        }
     });
@@ -17,13 +16,13 @@ var Projects = pd.extend(Object.create(collection('projects', 'thinair')), {
 
   // gets a project by its code
   byCode: function(code, callback) {
-    //db.projects.findOne({ code: code }, function(err, project) {
-    //  if(!err || project) {
-    //    callback(project)
-    //  } else {
-    //    console.t.log('Unable to fetch object: ' + err)
-    //  }
-    //})
+    this.findOne({ code: code }, function(err, project) {
+     if(!err || project) {
+       callback(project);
+     } else {
+       callback(null);
+     }
+    });
   },
 
   // saves a project

@@ -1,19 +1,17 @@
 var collection  = require('mongo-col'),
-    pd 			    = require('pd');
+    pd          = require('pd');
 
 var Users = pd.extend(Object.create(collection('users', 'thinair')), {
 
   byUsernameAndPassword: function (username, password, callback) {
-    this.findOne({ username: username, password: password }).toArray(function(err, user) {
-      if (err) {
-        return callback(err);
+    this.findOne({ username: username, password: password }, function(err, user) {
+    if(!err || user) {
+        callback(user);
+      } else {
+        callback(null);
       }
-      if(user) {
-        return callback(null, user);
-      }
-      callback(null, false);
-    });
-  }
+      });
+    }
 
 });
 

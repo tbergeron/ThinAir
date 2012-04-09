@@ -7,55 +7,40 @@ var ProjectController = {
     this.helpers.check_if_authorized(req, res);
 
     this.Projects = this.repositories.Projects;
-
-    var breadcrumbs = [];
-      breadcrumbs[0] = 'Projects|/projects';
-    // todo: this is kinda weird, you know?
-
-    return breadcrumbs;
-  },
-
-  render_form: function(req, res, project, breadcrumbs) {
-    // breadcrumbs
-    breadcrumbs[1] = ((project) ? project.name : 'Create a new project') + '|/projects';
-
-    res.render('projects/edit', {
-      title: (project) ? 'Editing project: ' + project.name : 'Create a new project',
-      project: project,
-      breadcrumbs: breadcrumbs
-    });
   },
 
   // GET: /projects
   list: function(req, res) {
-    var breadcrumbs = this.initialize(req, res);
+    this.initialize(req, res);
 
     this.Projects.allByDate(function(projects) {
       if (projects) {
         res.render('projects/list', {
           title: 'List of projects',
-          projects: projects,
-          breadcrumbs: breadcrumbs
+          projects: projects
         });
       } else {
         // todo: find a way to avoid this which is fucking ugly
-        var helpers = require('../helpers');
-
-        helpers.flash(req, 'error', 'No projects found.');
+        require('../helpers').flash(req, 'error', 'No projects found.');
         res.redirect('/');
       }
     });
   },
 
+  // GET: /projects/new
   new: function(req, res) {
     this.initialize(req, res);
-    render_form(req, res);
+
+    res.render('projects/edit', {
+      title: 'Create a new project'
+    });
   },
 
   // GET&POST: /projects/edit/:project_code
   edit: function(req, res) {
-    var breadcrumbs = this.initialize(req, res);
-    if (is_post(req)) {
+    this.initialize(req, res);
+
+    if (this.helpers.is_post(req)) {
       // if this is POST, validates and saves the object.
       //projectRepository.save(req.body.project, function(project, errors) {
       //  if (errors) {
@@ -63,18 +48,23 @@ var ProjectController = {
       //  } else {
       //    req.flash('success', 'Saved with success.')
       //  }
-        render_form(req, res, project, breadcrumbs);
+        this.render_form(req, res, project, breadcrumbs);
       //})
     } else {
       // if this is no POST, then it's an edit form
-      //projectRepository.byCode(req.params.project_code, function(project) {
-      //  if (project) {
-      //    render_form(req, res, project, breadcrumbs)
-      //  } else {
-      //    req.flash('error', 'Unable to find project.')
-      //    res.redirect('/projects')
-      //  }
-      //})
+      this.Projects.byCode(req.params.project_code, function(project) {
+        if (project) {
+
+          res.render('projects/edit', {
+            title: 'Editing project: ' + project.name,
+            project: project
+          });
+
+        } else {
+          this.helpers.flash(req, 'error', 'Unable to find project.');
+          res.redirect('/projects');
+        }
+      });
     }
   },
 
