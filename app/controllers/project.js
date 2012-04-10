@@ -5,7 +5,6 @@ var ProjectController = {
 	// constructor
 	initialize: function(req, res) {
 		this.helpers.check_if_authorized(req, res);
-
 		this.Projects = this.repositories.Projects;
 	},
 
@@ -46,7 +45,7 @@ var ProjectController = {
 				if (errors) {
 					flashErrors(req, errors);
 				} else {
-					req.flash('success', 'Saved with success.');ª
+					require('../helpers').flash(req, 'success', 'Saved with success.');
 				}
 
 				res.render('projects/edit', {
