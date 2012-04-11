@@ -1,14 +1,14 @@
 var collection = require('mongo-col'),
-	pd = require('pd');
+		pd 				 = require('pd');
 
 var Projects = pd.extend(Object.create(collection('projects', 'thinair')), {
 
 	// gets a list of all projects sorting by date_created ascending.
 	allByDate: function(callback) {
-		this.find().sort({
-			date_created: 1
-		}).toArray(function(err, projects) {
-			if (!err || projects) {
+		this.find().sort({ date_created: 1 }).toArray(function(err, projects) {
+			if (err) console.t.log(err);
+
+			if (projects) {
 				callback(projects);
 			} else {
 				callback(null);
@@ -18,10 +18,10 @@ var Projects = pd.extend(Object.create(collection('projects', 'thinair')), {
 
 	// gets a project by its code
 	byCode: function(code, callback) {
-		this.findOne({
-			code: code
-		}, function(err, project) {
-			if (!err || project) {
+		this.findOne({ code: code }, function(err, project) {
+			if (err) console.t.log(err);
+
+			if (project) {
 				callback(project);
 			} else {
 				callback(null);
@@ -38,30 +38,18 @@ var Projects = pd.extend(Object.create(collection('projects', 'thinair')), {
 		// if (!errors) {
 		if (isNew(project)) {
 			//if it's a new project, save it
-			this.save({
-				code: project_code,
-				name: project.name
-			});
+			this.save({ code: project_code,	name: project.name });
 			//fetch the saved project
-			this.findOne({
-				code: project_code
-			}, function(err, new_project) {
+			this.findOne({ code: project_code }, function(err, new_project) {
 				return callback(new_project);
 			});
 		} else {
 			//if it's not a new project, update the existing one
-			this.update({
-				_id: db.ObjectId(project._id)
-			}, {
-				$set: {
-					code: project_code,
-					name: project.name
-				}
+			this.update({ _id: db.ObjectId(project._id) }, {
+				$set: {	code: project_code,	name: project.name }
 			});
 			//fetch the created project
-			this.findOne({
-				_id: db.ObjectId(project._id)
-			}, function(err, updated_project) {
+			this.findOne({ _id: db.ObjectId(project._id) }, function(err, updated_project) {
 				return callback(updated_project);
 			});
 		}
@@ -88,10 +76,8 @@ var Projects = pd.extend(Object.create(collection('projects', 'thinair')), {
 
 	// deletes an object
 	delete: function(code, callback) {
-		this.remove({
-			code: code
-		}, function(err) {
-			callback(err);
+		this.remove({ code: code }, function(err) {
+			if (err) callback(err);
 		});
 	}
 

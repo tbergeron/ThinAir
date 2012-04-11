@@ -10,7 +10,6 @@ var Partials = {
 
 		function loadPartial(file) {
 			var partialName = file.replace('.html', '');
-
 			hbs.registerPartial(partialName, fs.readFileSync(__dirname + '/views/partials/' + file, 'UTF-8'));
 		}
 	}

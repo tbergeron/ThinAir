@@ -1,10 +1,12 @@
+var helpers = require('../helpers');
+
 var ProjectController = {
 	// properties
 	Projects: null,
 
 	// constructor
 	initialize: function(req, res) {
-		this.helpers.check_if_authorized(req, res);
+		helpers.check_if_authorized(req, res);
 		this.Projects = this.repositories.Projects;
 	},
 
@@ -19,8 +21,7 @@ var ProjectController = {
 					projects: projects
 				});
 			} else {
-				// todo: find a way to avoid this which is fucking ugly
-				require('../helpers').flash(req, 'error', 'No projects found.');
+				helpers.flash(req, 'error', 'No projects found.');
 				res.redirect('/');
 			}
 		});
@@ -39,13 +40,13 @@ var ProjectController = {
 	edit: function(req, res) {
 		this.initialize(req, res);
 
-		if (this.helpers.is_post(req)) {
+		if (helpers.is_post(req)) {
 			// if this is POST, validates and saves the object.
 			this.Projects.save(req.body.project, function(project, errors) {
 				if (errors) {
 					flashErrors(req, errors);
 				} else {
-					require('../helpers').flash(req, 'success', 'Saved with success.');
+					helpers.flash(req, 'success', 'Saved with success.');
 				}
 
 				res.render('projects/edit', {
@@ -63,7 +64,7 @@ var ProjectController = {
 						project: project
 					});
 				} else {
-					require('../helpers').flash(req, 'error', 'Unable to find project.');
+					helpers.flash(req, 'error', 'Unable to find project.');
 					res.redirect('/projects');
 				}
 			});
@@ -75,7 +76,7 @@ var ProjectController = {
 		this.initialize(req, res);
 		this.Projects.delete(req.params.project_code, function(err) {
 			if (!err) {
-				require('../helpers').flash(req, 'success', 'Project with code "' + req.params.project_code + '" has been deleted with success.');
+				helpers.flash(req, 'success', 'Project with code "' + req.params.project_code + '" has been deleted with success.');
 			}
 			res.redirect('/projects');
 		});

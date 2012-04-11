@@ -1,3 +1,5 @@
+var helpers = require('../helpers');
+
 var UserController = {
 	// properties
 	Users: null,
@@ -15,9 +17,6 @@ var UserController = {
 		var password = req.body.password;
 
 		this.Users.byUsernameAndPassword(username, password, function(user) {
-			// todo: find a way to avoid this which is fucking ugly
-			var helpers = require('../helpers');
-
 			if (!user) {
 				helpers.flash(req, 'error', 'We are unable to find this user or maybe your password is wrong? Please try again.');
 			} else {

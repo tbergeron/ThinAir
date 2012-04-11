@@ -1,5 +1,5 @@
 var express = require('express'),
-	hbs = require('handlebars');
+		hbs 		= require('handlebars');
 
 module.exports = {
 	start: function start(server) {

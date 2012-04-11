@@ -1,10 +1,9 @@
 var express = require('express'),
-	cons = require('consolidate');
+		cons 		= require('consolidate'),
+		helpers	=	require('helpers');
 
 module.exports = {
 	start: function(app) {
-		var helpers = this.helpers;
-
 		app.locals.use(function(req, res) {
 			res.locals.session = req.session;
 			res.locals.messages = helpers.get_flash(req);
@@ -21,9 +20,7 @@ module.exports = {
 			app.use(express.bodyParser());
 			app.use(express.methodOverride());
 			app.use(express.cookieParser('secret'));
-			app.use(express.session({
-				secret: 'keyboard cat'
-			}));
+			app.use(express.session({ secret: 'keyboard cat' }));
 			app.use(app.router);
 		});
 

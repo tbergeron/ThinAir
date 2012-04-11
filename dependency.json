@@ -6,16 +6,11 @@
     "configure":  "./configure.js",
     "routes":     "./routes.js",
     "partials":   "./partials.js",
-    "helpers":  "./helpers.js"
-  },
-  "./configure.js": {
-    "helpers":  "./helpers.js"
   },
   "./routes.js": {
     "controllers":  ["./controllers/"]
   },
   "./controllers/": {
-    "helpers":  "./helpers.js",
     "repositories": ["./repositories/"]
   }
 }
