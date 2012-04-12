@@ -1,11 +1,11 @@
 {
-  "./server.js": {
-    "app": "./app.js"
+  "./libs/server.js": {
+    "app": "./libs/app.js"
   },
-  "./app.js": {
-    "configure": "./configure.js",
+  "./libs/app.js": {
+    "configure": "./libs/configure.js",
     "routes": "./routes.js",
-    "partials": "./partials.js"
+    "partials": "./libs/partials.js"
   },
   "./routes.js": {
     "controllers": ["./controllers/"]

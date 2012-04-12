@@ -5,7 +5,7 @@ var Users = pd.extend(Object.create(collection('users', 'thinair')), {
 
 	byUsernameAndPassword: function(username, password, callback) {
 		this.findOne({ username: username, password: password }, function(err, user) {
-			if (err) console.t.log(err);
+			if (err) console.log(err);
 
 			if (user) {
 				callback(user);

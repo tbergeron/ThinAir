@@ -14,7 +14,6 @@
     "mongojs": "*",
     "pd": "*",
     "mongo-col": "*",
-    "console-trace": "*",
     "path": "*",
     "consolidate": "*"
     },

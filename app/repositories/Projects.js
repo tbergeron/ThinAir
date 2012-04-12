@@ -1,12 +1,12 @@
-var collection = require('mongo-col'),
-		pd 				 = require('pd');
+var collection	= require('mongo-col'),
+		pd					= require('pd');
 
 var Projects = pd.extend(Object.create(collection('projects', 'thinair')), {
 
 	// gets a list of all projects sorting by date_created ascending.
 	allByDate: function(callback) {
 		this.find().sort({ date_created: 1 }).toArray(function(err, projects) {
-			if (err) console.t.log(err);
+			if (err) console.log(err);
 
 			if (projects) {
 				callback(projects);
@@ -19,7 +19,7 @@ var Projects = pd.extend(Object.create(collection('projects', 'thinair')), {
 	// gets a project by its code
 	byCode: function(code, callback) {
 		this.findOne({ code: code }, function(err, project) {
-			if (err) console.t.log(err);
+			if (err) console.log(err);
 
 			if (project) {
 				callback(project);
