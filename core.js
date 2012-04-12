@@ -1,5 +1,5 @@
 var core          = Object.create(require('ncore')).constructor(),
-    moduleLoader  = Core.use('moduleLoader', require('ncore/modules/moduleLoader')),
+    moduleLoader  = core.use('moduleLoader', require('ncore/modules/moduleLoader')),
     path          = require('path'),
     consoletrace  = require('console-trace');
 

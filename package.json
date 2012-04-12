@@ -1,0 +1,29 @@
+{
+  "author": "Tommy Bergeron <t.bergeron@gmail.com>",
+  "name": "ThinAir",
+  "description": "Web Development Framework based on Node.js and Express.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/tbergeron/ThinAir",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tbergeron/ThinAir.git"
+  },
+  "dependencies": {
+    "ncore": "*",
+    "handlebars": "*",
+    "mongojs": "*",
+    "pd": "*",
+    "mongo-col": "*",
+    "console-trace": "*",
+    "path": "*",
+    "consolidate": "*"
+    },
+  "devDependencies": {
+    "mocha": "*",
+    "express": "git://github.com/visionmedia/express.git"
+    },
+  "optionalDependencies": {},
+  "engines": {
+    "node": "0.6.x"
+  }
+}

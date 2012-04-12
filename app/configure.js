@@ -1,6 +1,6 @@
 var express = require('express'),
-		cons 		= require('consolidate'),
-		helpers	=	require('helpers');
+		cons		= require('consolidate'),
+		helpers	=	require('./helpers');
 
 module.exports = {
 	start: function(app) {

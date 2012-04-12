@@ -1,5 +1,5 @@
-var collection = require('mongo-col'),
-		pd 				 = require('pd');
+var collection	= require('mongo-col'),
+		pd					= require('pd');
 
 var Users = pd.extend(Object.create(collection('users', 'thinair')), {
 

@@ -3,12 +3,12 @@
     "app": "./app.js"
   },
   "./app.js": {
-    "configure":  "./configure.js",
-    "routes":     "./routes.js",
-    "partials":   "./partials.js",
+    "configure": "./configure.js",
+    "routes": "./routes.js",
+    "partials": "./partials.js"
   },
   "./routes.js": {
-    "controllers":  ["./controllers/"]
+    "controllers": ["./controllers/"]
   },
   "./controllers/": {
     "repositories": ["./repositories/"]

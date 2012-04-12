@@ -1,5 +1,6 @@
 var express = require('express'),
-		hbs 		= require('handlebars');
+		hbs			= require('handlebars'),
+		helpers	= require('./helpers');
 
 module.exports = {
 	start: function start(server) {
@@ -11,7 +12,7 @@ module.exports = {
 
 		this.partials.registerPartials(hbs);
 
-		this.helpers.registerHandlebarsHelpers(hbs);
+		helpers.registerHandlebarsHelpers(hbs);
 
 		server.on('request', app);
 	}
