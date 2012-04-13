@@ -50,13 +50,10 @@ var Helpers = {
 
 	getFlash: function(req) {
 		if (req.session.messages !== undefined) {
-
-			var messages = req.session.messages;
-
 			// cleaning messages
 			req.session.messages = [];
 
-			return messages;
+			return req.session.messages;
 		}
 	},
 

@@ -11,8 +11,6 @@ var UserController = {
 
 	// POST: /users/login
 	login: function(req, res) {
-		this.initialize();
-
 		var username = req.body.username;
 		var password = req.body.password;
 

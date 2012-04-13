@@ -12,8 +12,6 @@ var ProjectController = {
 
 	// GET: /projects
 	list: function(req, res) {
-		this.initialize(req, res);
-
 		this.Projects.allByDate(function(projects) {
 			if (projects) {
 				res.render('projects/list', {
@@ -29,8 +27,6 @@ var ProjectController = {
 
 	// GET: /projects/new
 	new: function(req, res) {
-		this.initialize(req, res);
-
 		res.render('projects/edit', {
 			title: 'Create a new project'
 		});
@@ -38,8 +34,6 @@ var ProjectController = {
 
 	// GET&POST: /projects/edit/:project_code
 	edit: function(req, res) {
-		this.initialize(req, res);
-
 		if (helpers.isPost(req)) {
 			// if this is POST, validates and saves the object.
 			this.Projects.save(req.body.project, function(project, errors) {
@@ -73,7 +67,6 @@ var ProjectController = {
 
 	// GET: /projects/delete
 	delete: function(req, res) {
-		this.initialize(req, res);
 		this.Projects.delete(req.params.project_code, function(err) {
 			if (!err) {
 				helpers.flash(req, 'success', 'Project with code "' + req.params.project_code + '" has been deleted with success.');
