@@ -8,17 +8,17 @@ module.exports = {
         project = this.controllers.project;
 
     // home
-    app.get('/', function (req, res) { getAction(req, res, home.index); });
+    app.get('/', home.index);
 
     // users
-    app.post('/users/login', function (req, res) { getAction(req, res, user.login); });
-    app.get('/users/logout', function (req, res) { getAction(req, res, user.logout); });
+    app.post('/users/login', user.login);
+    app.get('/users/logout', user.logout);
 
     // projects
-    app.get('/projects', function (req, res) { getAction(req, res, project.list); });
-    app.get('/projects/new', function (req, res) { getAction(req, res, project.new); });
-    app.get('/projects/edit/:project_code', function (req, res) { getAction(req, res, project.edit); });
-    app.post('/projects/edit', function (req, res) { getAction(req, res, project.edit); });
+    app.get('/projects', project.list);
+    app.get('/projects/new', project.new);
+    app.get('/projects/edit/:project_code', project.edit);
+    app.post('/projects/edit', project.edit);
     //app.get('/projects/delete/:project_code',   projectController.delete);
 
     // projects' milestones

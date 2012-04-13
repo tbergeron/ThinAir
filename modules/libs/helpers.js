@@ -62,14 +62,6 @@ var Helpers = {
 		// hbs.registerHelper('fullName', function(person) {
 		//   return person.firstName + " " + person.lastName;
 		// });
-	},
-
-	getAction: function(req, res, action) {
-		if (typeof action.initialize === 'function') {
-			action.initialize();
-		}
-
-		return action(req, res);
 	}
 
 };

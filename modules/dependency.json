@@ -5,7 +5,8 @@
   "./libs/app.js": {
     "configure": "./libs/configure.js",
     "routes": "./app/routes.js",
-    "partials": "./libs/partials.js"
+    "partials": "./libs/partials.js",
+    "controllers": ["./app/controllers"]
   },
   "./app/routes.js": {
     "controllers": ["./app/controllers/"]
