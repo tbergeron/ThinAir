@@ -9,7 +9,7 @@
     "url": "git://github.com/tbergeron/ThinAir.git"
   },
   "dependencies": {
-    "ncore": "*",
+    "ncore": "1.3.10",
     "handlebars": "*",
     "mongojs": "*",
     "pd": "*",
