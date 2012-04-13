@@ -6,7 +6,7 @@ var ProjectController = {
 
 	// constructor
 	initialize: function(req, res) {
-		helpers.check_if_authorized(req, res);
+		helpers.checkIfAuthorized(req, res);
 		this.Projects = this.repositories.Projects;
 	},
 
@@ -40,7 +40,7 @@ var ProjectController = {
 	edit: function(req, res) {
 		this.initialize(req, res);
 
-		if (helpers.is_post(req)) {
+		if (helpers.isPost(req)) {
 			// if this is POST, validates and saves the object.
 			this.Projects.save(req.body.project, function(project, errors) {
 				if (errors) {

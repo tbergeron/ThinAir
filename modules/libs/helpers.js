@@ -1,5 +1,5 @@
 var Helpers = {
-	check_if_authorized: function(req, res) {
+	checkIfAuthorized: function(req, res) {
 		if (req.session.is_logged) {
 			return true;
 		} else {
@@ -8,11 +8,11 @@ var Helpers = {
 		}
 	},
 
-	is_get: function(req) {
+	isGet: function(req) {
 		return (req.route.method == 'get') ? true : false;
 	},
 
-	is_post: function(req) {
+	isPost: function(req) {
 		return (req.route.method == 'post') ? true : false;
 	},
 
@@ -48,7 +48,7 @@ var Helpers = {
 		return req.session.messages;
 	},
 
-	get_flash: function(req) {
+	getFlash: function(req) {
 		if (req.session.messages !== undefined) {
 
 			var messages = req.session.messages;
@@ -65,6 +65,14 @@ var Helpers = {
 		// hbs.registerHelper('fullName', function(person) {
 		//   return person.firstName + " " + person.lastName;
 		// });
+	},
+
+	getAction: function(req, res, action) {
+		if (typeof action.initialize === 'function') {
+			action.initialize();
+		}
+
+		return action(req, res);
 	}
 
 };

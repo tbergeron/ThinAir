@@ -2,6 +2,7 @@ var fs = require('fs');
 
 var Partials = {
 	registerPartials: function(hbs) {
+		console.log(__dirname);
 		fs.readdir(__dirname + '/../app/views/partials', readPartials);
 
 		function readPartials(err, files) {
