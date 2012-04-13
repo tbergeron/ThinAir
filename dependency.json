@@ -4,13 +4,13 @@
   },
   "./libs/app.js": {
     "configure": "./libs/configure.js",
-    "routes": "./routes.js",
+    "routes": "./app/routes.js",
     "partials": "./libs/partials.js"
   },
-  "./routes.js": {
-    "controllers": ["./controllers/"]
+  "./app/routes.js": {
+    "controllers": ["./app/controllers/"]
   },
-  "./controllers/": {
-    "repositories": ["./repositories/"]
+  "./app/controllers/": {
+    "repositories": ["./app/repositories/"]
   }
 }

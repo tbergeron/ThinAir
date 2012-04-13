@@ -1,4 +1,4 @@
-var helpers = require('../libs/helpers');
+var helpers = require('../../libs/helpers');
 
 var ProjectController = {
 	// properties
