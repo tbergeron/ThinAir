@@ -2,7 +2,6 @@
 ## PITA-less Web Development Framework based on Express.js and Node.js.
 ### Currently developed by Tommy Bergeron / 2012.
 Built with Node.js, Express.js, MongoDB.
-*Entirely developed on **Cloud9 IDE** http://c9.io*
 
 ---
 
