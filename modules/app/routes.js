@@ -1,4 +1,4 @@
-var bindAll = require("pd").bindAll;
+var getAction = require('../libs/helpers').getAction;
 
 module.exports = {
   registerRoutes: function(app) {
@@ -8,18 +8,18 @@ module.exports = {
         project = this.controllers.project;
 
     // home
-    app.get('/', handle(home.index, this));
+    app.get('/', getAction(home, 'index'));
 
     // users
-    app.post('/users/login', handle(user.login, this));
-    app.get('/users/logout', handle(user.logout, this));
+    app.post('/users/login', getAction(user, 'login'));
+    app.get('/users/logout', getAction(user, 'logout'));
 
     // projects
-    app.get('/projects', handle(project.list, this));
-    app.get('/projects/new', handle(project.new, this));
-    app.get('/projects/edit/:project_code', handle(project.edit, this));
-    app.post('/projects/edit', handle(project.edit, this));
-    app.get('/projects/delete/:project_code', handle(project.delete, this));
+    app.get('/projects', getAction(project, 'list'));
+    app.get('/projects/new', getAction(project, 'new'));
+    app.get('/projects/edit/:project_code', getAction(project, 'edit'));
+    app.post('/projects/edit', getAction(project, 'edit'));
+    app.get('/projects/delete/:project_code', getAction(project, 'delete'));
 
     // projects' milestones
     //app.get('/projects/:project_code/milestones/new', this.controllers.milestone.new);
@@ -28,12 +28,3 @@ module.exports = {
     //app.get('/projects/:project_code/milestones/delete/:milestone_code', this.controllers.milestone.delete);
   }
 };
-
-function handle(action, self) {
-    return function(req, res) {
-        bindAll({}, self, action, {
-            req: req,
-            res: res
-        }).initialize();
-    };
-}
