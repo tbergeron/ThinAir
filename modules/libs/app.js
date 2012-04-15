@@ -14,14 +14,6 @@ module.exports = {
 
 		helpers.registerHandlebarsHelpers(hbs);
 
-		Object.keys(this.controllers).forEach(function (name) {
-			var controller = this.controllers[name];
-
-			if (typeof controller.initialize === 'function') {
-				controller.initialize();
-			}
-		}, this);
-
 		server.on('request', app);
 	}
 };

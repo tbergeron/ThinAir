@@ -1,4 +1,4 @@
-var moduleLoader	= require("ncore/modules/moduleLoader");
+var moduleLoader  = require("ncore/modules/moduleLoader");
 
 // todo: put this somewhere else
 process.env['MONGODB_HOST'] = 'linux.brainpad.org';

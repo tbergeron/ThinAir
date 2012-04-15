@@ -10,21 +10,12 @@
   },
   "dependencies": {
     "ncore": "1.3.10",
-<<<<<<< HEAD
     "handlebars": "1.0.5beta",
     "mongojs": "0.3.2",
     "pd": "0.6.3",
     "mongo-col": "0.1.7",
     "path": "0.4.9",
     "consolidate": "0.2.0"
-=======
-    "handlebars": "*",
-    "mongojs": "*",
-    "pd": "*",
-    "mongo-col": "*",
-    "path": "*",
-    "consolidate": "*"
->>>>>>> 565c6a6443e5b65b30c905b6d55248a270876cc5
     },
   "devDependencies": {
     "mocha": "1.0.1",

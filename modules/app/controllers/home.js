@@ -1,5 +1,5 @@
 module.exports = {
-		initialize: function(req, res) {
+	initialize: function(req, res) {
 			console.log('Testing initializers');
 	},
 
