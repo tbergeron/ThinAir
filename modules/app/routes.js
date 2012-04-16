@@ -1,7 +1,7 @@
-var getAction = require('../libs/helpers').getAction;
-
 module.exports = {
   registerRoutes: function(app) {
+    var getAction = this.router.getAction;
+
     // trying to get this as short as possible
     var home    = this.controllers.home,
         user    = this.controllers.user,
@@ -17,8 +17,8 @@ module.exports = {
     // projects
     app.get('/projects', getAction(project, 'list'));
     app.get('/projects/new', getAction(project, 'new'));
-    app.get('/projects/edit/:project_code', getAction(project, 'edit'));
-    app.post('/projects/edit', getAction(project, 'edit'));
+    app.get('/projects/edit/:project_code', getAction(project, 'editGet'));
+    app.post('/projects/edit', getAction(project, 'editPost'));
     app.get('/projects/delete/:project_code', getAction(project, 'delete'));
 
     // projects' milestones

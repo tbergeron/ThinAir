@@ -1,10 +1,8 @@
 var helpers = require('../../libs/helpers');
 
 var ProjectController = {
-  // properties
   Projects: null,
 
-  // constructor
   initialize: function(req, res) {
     helpers.checkIfAuthorized(req, res);
     this.Projects = this.repositories.Projects;
@@ -32,37 +30,35 @@ var ProjectController = {
     });
   },
 
-  // GET&POST: /projects/edit/:project_code
-  edit: function(req, res) {
-    if (helpers.isPost(req)) {
-      // if this is POST, validates and saves the object.
-      this.Projects.save(req.body.project, function(project, errors) {
-        if (errors) {
-          flashErrors(req, errors);
-        } else {
-          helpers.flash(req, 'success', 'Saved with success.');
-        }
-
+  // GET: /projects/edit/:project_code
+  editGet: function(req, res) {
+    this.Projects.byCode(req.params.project_code, function(project) {
+      if (project) {
         res.render('projects/edit', {
           title: 'Editing project: ' + project.name,
           project: project
         });
+      } else {
+        helpers.flash(req, 'error', 'Unable to find project.');
+        res.redirect('/projects');
+      }
+    });
+  },
 
+  // POST: /projects/edit/:project_code
+  editPost: function(req, res) {
+    this.Projects.save(req.body.project, function(project, errors) {
+      if (errors) {
+        flashErrors(req, errors);
+      } else {
+        helpers.flash(req, 'success', 'Saved with success.');
+      }
+
+      res.render('projects/edit', {
+        title: 'Editing project: ' + project.name,
+        project: project
       });
-    } else {
-      // if this is no POST, then it's an edit form
-      this.Projects.byCode(req.params.project_code, function(project) {
-        if (project) {
-          res.render('projects/edit', {
-            title: 'Editing project: ' + project.name,
-            project: project
-          });
-        } else {
-          helpers.flash(req, 'error', 'Unable to find project.');
-          res.redirect('/projects');
-        }
-      });
-    }
+    });
   },
 
   // GET: /projects/delete

@@ -8,6 +8,7 @@
     "partials": "./libs/partials.js"
   },
   "./app/routes.js": {
+    "router": "./libs/router.js",
     "controllers": ["./app/controllers/"]
   },
   "./app/controllers/": {

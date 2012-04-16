@@ -1,10 +1,8 @@
 var helpers = require('../../libs/helpers');
 
 var UserController = {
-  // properties
   Users: null,
 
-  // constructor
   initialize: function(req, res) {
     this.Users = this.repositories.Users;
   },

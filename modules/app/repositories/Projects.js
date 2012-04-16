@@ -1,8 +1,6 @@
-var collection = require('mongo-col'),
-  pd = require('pd');
+var createRepository = require('../../libs/repository').createRepository;
 
-var Projects = pd.extend(Object.create(collection('projects', 'thinair')), {
-
+var Projects = createRepository('projects', {
   // gets a list of all projects sorting by date_created ascending.
   allByDate: function(callback) {
     this.find().sort({ date_created: 1 }).toArray(function(err, projects) {
@@ -31,12 +29,12 @@ var Projects = pd.extend(Object.create(collection('projects', 'thinair')), {
 
   // saves a project
   save: function(project, callback) {
-    var project_code = slugify(project.name);
+    var project_code = this.helpers.slugify(project.name);
 
     //todo: CHECK FOR DUPLICATES
     // validates('project', project, function(errors) {
     // if (!errors) {
-    if (isNew(project)) {
+    if (this.helpers.isNew(project)) {
       //if it's a new project, save it
       this.save({ code: project_code, name: project.name });
       //fetch the saved project

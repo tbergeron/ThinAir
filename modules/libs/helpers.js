@@ -1,3 +1,6 @@
+var collection  = require('mongo-col'),
+    pd          = require('pd');
+
 var Helpers = {
   checkIfAuthorized: function(req, res) {
     if (req.session.is_logged) {
@@ -59,16 +62,6 @@ var Helpers = {
     // hbs.registerHelper('fullName', function(person) {
     //   return person.firstName + " " + person.lastName;
     // });
-  },
-
-  getAction: function(controller, action) {
-    return function(req, res) {
-      if (typeof controller.initialize === 'function') {
-        controller.initialize(req, res);
-      }
-
-      controller[action](req, res);
-    };
   }
 
 };

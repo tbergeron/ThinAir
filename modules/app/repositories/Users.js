@@ -1,7 +1,6 @@
-var collection = require('mongo-col'),
-  pd = require('pd');
+var createRepository = require('../../libs/repository').createRepository;
 
-var Users = pd.extend(Object.create(collection('users', 'thinair')), {
+var Users = createRepository('users', {
 
   byUsernameAndPassword: function(username, password, callback) {
     this.findOne({ username: username, password: password }, function(err, user) {
