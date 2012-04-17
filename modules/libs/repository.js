@@ -3,7 +3,9 @@ var collection  = require('mongo-col'),
 
 var Repository = {
   createRepository: function(name, content) {
-    return pd.extend(Object.create(collection(name, process.env["MONGODB_DATABASE"])), content);
+    return pd.extend(Object.create(collection(name, process.env["MONGODB_DATABASE"])), content, {
+        ObjectId: require('mongodb').ObjectID
+    });
   }
 };
 
