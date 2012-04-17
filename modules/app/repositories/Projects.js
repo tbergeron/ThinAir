@@ -29,25 +29,27 @@ var Projects = createRepository('projects', {
 
   // saves a project
   save: function(project, callback) {
-    var project_code = this.helpers.slugify(project.name);
+    var project_code = this.helpers.slugify(project.name),
+        that = this;
 
     //todo: CHECK FOR DUPLICATES
     this.validator.validate('project', project, function(errors) {
+      console.log(errors);
       if (!errors) {
-        if (this.helpers.isNew(project)) {
+        if (that.helpers.isNew(project)) {
           //if it's a new project, save it
-          this.save({ code: project_code, name: project.name });
+          that.save({ code: project_code, name: project.name });
           //fetch the saved project
-          this.findOne({ code: project_code }, function(err, new_project) {
+          that.findOne({ code: project_code }, function(err, new_project) {
             return callback(new_project);
           });
         } else {
           //if it's not a new project, update the existing one
-          this.update({ _id: db.ObjectId(project._id) }, {
+          that.update({ _id: project._id }, {
             $set: { code: project_code, name: project.name }
           });
           //fetch the created project
-          this.findOne({ _id: db.ObjectId(project._id) }, function(err, updated_project) {
+          that.findOne({ _id: project._id }, function(err, updated_project) {
             return callback(updated_project);
           });
         }
@@ -55,15 +57,19 @@ var Projects = createRepository('projects', {
         // todo: remove this when validations are done
         var errors = null;
         //if there's validation errors
-        if (this.helpers.isNew(project)) {
+        if (that.helpers.isNew(project)) {
           //if it's a new project, send it as it is
           return callback(project, errors);
         } else {
           //if it's an existing one, fetch it and put and replace the values with the on from the form
-          this.findOne({ _id: db.ObjectId(project._id) }, function(err, fetched_project) {
-            fetched_project.code = project_code;
-            fetched_project.name = project.name;
-            return callback(fetched_project, errors);
+          that.findOne({ _id: project._id }, function(err, fetched_project) {
+            if (fetched_project) {
+              fetched_project.code = project_code;
+              fetched_project.name = project.name;
+              return callback(fetched_project, errors);
+            } else {
+              return callback(null, errors);
+            }
           });
         }
       }

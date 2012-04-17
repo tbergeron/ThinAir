@@ -11,6 +11,9 @@
   "./libs/configure.js": {
     "helpers": "./libs/helpers.js"
   },
+  "./libs/validator.js": {
+    "helpers": "./libs/helpers.js"
+  },
   "./app/routes.js": {
     "router": "./libs/router.js",
     "controllers": ["./app/controllers/"]

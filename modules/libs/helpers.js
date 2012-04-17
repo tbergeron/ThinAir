@@ -58,6 +58,10 @@ var Helpers = {
     }
   },
 
+  isNew: function(object) {
+    return (object._id.length > 0) ? false : true;
+  },
+
   // todo: it would be cool to eventually do something with this
   registerHandlebarsHelpers: function(hbs) {
     // hbs.registerHelper('fullName', function(person) {
