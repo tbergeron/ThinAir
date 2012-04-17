@@ -1,12 +1,13 @@
 var express = require('express'),
-    cons    = require('consolidate'),
-    helpers = require('./helpers');
+    cons    = require('consolidate');
 
 module.exports = {
   start: function(app) {
+    var that = this;
+
     app.locals.use(function(req, res) {
       res.locals.session = req.session;
-      res.locals.messages = helpers.getFlash(req);
+      res.locals.messages = that.helpers.getFlash(req);
     });
 
     app.configure(function() {

@@ -15,7 +15,8 @@
     "pd": "0.6.3",
     "mongo-col": "0.1.7",
     "path": "0.4.9",
-    "consolidate": "0.2.0"
+    "consolidate": "0.2.0",
+    "validator": "0.4.5"
     },
   "devDependencies": {
     "mocha": "1.0.1",
