@@ -6,25 +6,28 @@
     "configure": "./libs/configure.js",
     "routes": "./app/routes.js",
     "partials": "./libs/partials.js",
-    "helpers": "./libs/helpers.js"
+    "messages": "./libs/messages.js"
   },
   "./libs/configure.js": {
-    "helpers": "./libs/helpers.js"
+    "messages": "./libs/messages.js"
   },
   "./libs/validator.js": {
-    "helpers": "./libs/helpers.js"
+    "messages": "./libs/messages.js"
   },
   "./app/routes.js": {
     "router": "./libs/router.js",
     "controllers": ["./app/controllers/"]
   },
   "./app/controllers/": {
-    "helpers": "./libs/helpers.js",
+    "messages": "./libs/messages.js",
     "validator": "./libs/validator.js",
     "repositories": ["./app/repositories/"]
   },
   "./app/repositories": {
-    "helpers": "./libs/helpers.js",
+    "messages": "./libs/messages.js",
     "validator": "./libs/validator.js"
+  },
+  "./libs/helpers.js": {
+    "messages": "./libs/messages.js"
   }
 }

@@ -1,4 +1,5 @@
-var createRepository = require('../../libs/repository').createRepository;
+var helpers          = require('../../libs/helpers');
+    createRepository = require('../../libs/repository').createRepository;
 
 var Projects = createRepository('projects', {
   // gets a list of all projects sorting by date_created ascending.
@@ -29,13 +30,13 @@ var Projects = createRepository('projects', {
 
   // saves a project
   save: function(project, callback) {
-    var project_code = this.helpers.slugify(project.name),
+    var project_code = helpers.slugify(project.name),
         that = this;
 
     //todo: CHECK FOR DUPLICATES
     this.validator.validate('project', project, function(errors) {
       if (!errors) {
-        if (that.helpers.isNew(project)) {
+        if (helpers.isNew(project)) {
           //if it's a new project, save it
           that.save({ code: project_code, name: project.name });
           //fetch the saved project
@@ -54,7 +55,7 @@ var Projects = createRepository('projects', {
         }
       } else {
         //if there's validation errors
-        if (that.helpers.isNew(project)) {
+        if (helpers.isNew(project)) {
           //if it's a new project, send it as it is
           return callback(project, errors);
         } else {

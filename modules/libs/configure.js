@@ -7,7 +7,7 @@ module.exports = {
 
     app.locals.use(function(req, res) {
       res.locals.session = req.session;
-      res.locals.messages = that.helpers.getFlash(req);
+      res.locals.messages = that.messages.getMessages(req);
     });
 
     app.configure(function() {

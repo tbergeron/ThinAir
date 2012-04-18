@@ -6,7 +6,7 @@ var Helpers = {
     if (req.session.is_logged) {
       return true;
     } else {
-      this.flash(req, 'error', 'You need to be logged in to access this page.');
+      this.messages.addMessage(req, 'error', 'You need to be logged in to access this page.');
       res.redirect('/');
     }
   },
@@ -33,29 +33,6 @@ var Helpers = {
     str = str.replace(/[^a-z0-9 -]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-');
 
     return str;
-  },
-
-  flash: function(req, type, message) {
-    if (req.session.messages === undefined) {
-      req.session.messages = [];
-    }
-
-    if ((type !== undefined) && (message !== undefined)) {
-      var messageObject = { type: type, message: message };
-      req.session.messages.push(messageObject);
-    }
-
-    return req.session.messages;
-  },
-
-  getFlash: function(req) {
-    if (req.session.messages !== undefined) {
-      var messages = req.session.messages;
-      // cleaning messages
-      req.session.messages = [];
-
-      return messages;
-    }
   },
 
   isNew: function(object) {

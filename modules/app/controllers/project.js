@@ -10,6 +10,7 @@ var ProjectController = {
 
   // GET: /projects
   list: function(req, res) {
+    var that = this;
     this.Projects.allByDate(function(projects) {
       if (projects) {
         res.render('projects/list', {
@@ -17,7 +18,7 @@ var ProjectController = {
           projects: projects
         });
       } else {
-        helpers.flash(req, 'error', 'No projects found.');
+        that.messages.addMessage(req, 'error', 'No projects found.');
         res.redirect('/');
       }
     });
@@ -32,6 +33,7 @@ var ProjectController = {
 
   // GET: /projects/edit/:project_code
   editGet: function(req, res) {
+    var that = this;
     this.Projects.byCode(req.params.project_code, function(project) {
       if (project) {
         res.render('projects/edit', {
@@ -39,7 +41,7 @@ var ProjectController = {
           project: project
         });
       } else {
-        helpers.flash(req, 'error', 'Unable to find project.');
+        that.messages.addMessage(req, 'error', 'Unable to find project.');
         res.redirect('/projects');
       }
     });
@@ -53,7 +55,7 @@ var ProjectController = {
       if (errors) {
         that.validator.flashErrors(req, errors);
       } else {
-        helpers.flash(req, 'success', 'Saved with success.');
+        that.messages.addMessage(req, 'success', 'Saved with success.');
       }
 
       res.render('projects/edit', {
@@ -65,9 +67,10 @@ var ProjectController = {
 
   // GET: /projects/delete
   delete: function(req, res) {
+    var that = this;
     this.Projects.delete(req.params.project_code, function(err) {
       if (!err) {
-        helpers.flash(req, 'success', 'Project with code "' + req.params.project_code + '" has been deleted with success.');
+        that.messages.addMessage(req, 'success', 'Project with code "' + req.params.project_code + '" has been deleted with success.');
       }
       res.redirect('/projects');
     });

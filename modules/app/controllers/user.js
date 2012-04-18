@@ -9,16 +9,17 @@ var UserController = {
 
   // POST: /users/login
   login: function(req, res) {
-    var username = req.body.username;
-    var password = req.body.password;
+    var username = req.body.username,
+        password = req.body.password,
+        that     = this;
 
     this.Users.byUsernameAndPassword(username, password, function(user) {
       if (!user) {
-        helpers.flash(req, 'error', 'We are unable to find this user or maybe your password is wrong? Please try again.');
+        that.messages.addMessage(req, 'error', 'We are unable to find this user or maybe your password is wrong? Please try again.');
       } else {
         req.session.is_logged = true;
         req.session.username = username;
-        helpers.flash(req, 'success', 'Welcome back ' + username + '!');
+        that.messages.addMessage(req, 'success', 'Welcome back ' + username + '!');
       }
       res.redirect('/');
     });
