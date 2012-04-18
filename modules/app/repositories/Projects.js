@@ -34,8 +34,6 @@ var Projects = createRepository('projects', {
 
     //todo: CHECK FOR DUPLICATES
     this.validator.validate('project', project, function(errors) {
-      console.log(errors);
-      console.log(that);
       if (!errors) {
         if (that.helpers.isNew(project)) {
           //if it's a new project, save it
@@ -55,8 +53,6 @@ var Projects = createRepository('projects', {
           });
         }
       } else {
-        // todo: remove this when validations are done
-        var errors = null;
         //if there's validation errors
         if (that.helpers.isNew(project)) {
           //if it's a new project, send it as it is

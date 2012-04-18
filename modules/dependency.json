@@ -20,6 +20,7 @@
   },
   "./app/controllers/": {
     "helpers": "./libs/helpers.js",
+    "validator": "./libs/validator.js",
     "repositories": ["./app/repositories/"]
   },
   "./app/repositories": {

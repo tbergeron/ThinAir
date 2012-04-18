@@ -36,7 +36,7 @@ var Validator = {
 
   flashErrors: function flashErrors(req, errors) {
     for (var errorIndex in errors) {
-      flash(req, 'error', errors[errorIndex] + '<br />');
+      flash(req, 'error', errors[errorIndex]);
     }
   },
 

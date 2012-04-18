@@ -47,9 +47,11 @@ var ProjectController = {
 
   // POST: /projects/edit/:project_code
   editPost: function(req, res) {
+    var that = this;
+
     this.Projects.save(req.body.project, function(project, errors) {
       if (errors) {
-        flashErrors(req, errors);
+        that.validator.flashErrors(req, errors);
       } else {
         helpers.flash(req, 'success', 'Saved with success.');
       }
