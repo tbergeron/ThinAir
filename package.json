@@ -19,7 +19,10 @@
     "validator": "0.4.5",
     "mongodb": "0.9.9-8"
     },
-  "devDependencies": {
+    "scripts": {
+      "test": "make test"
+    },
+    "devDependencies": {
     "mocha": "1.0.1",
     "express": "git://github.com/visionmedia/express.git"
     },
