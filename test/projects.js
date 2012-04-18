@@ -1,13 +1,19 @@
-var Projects = require('../modules/app/repositories/Projects')
+process.env['MONGODB_HOST'] = 'linux.brainpad.org';
+process.env['MONGODB_DATABASE'] = 'thinair';
 
-describe('Projects', function(){
-  describe('#save()', function(){
-    it('should save without error', function(done){
-      var project = { name: "TEST_PROJECT" };
-      Projects.save(project, function(project, errors) {
-        if (errors) return done(errors);
+var Projects = require('../modules/app/repositories/Projects')
+var newProject = { name: "TEST_PROJECT" };
+
+describe('Projects', function() {
+  describe('#save()', function() {
+    it('should save without error', function(done) {
+
+      Projects.save(newProject, function(project, errors) {
+        if (errors) throw errors;
         done();
       });
+
     });
   });
+
 });

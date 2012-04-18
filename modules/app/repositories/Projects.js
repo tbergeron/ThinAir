@@ -1,4 +1,5 @@
-var helpers          = require('../../libs/helpers');
+var helpers          = require('../../libs/helpers'),
+    validator        = require('../../libs/validator'),
     createRepository = require('../../libs/repository').createRepository;
 
 var Projects = createRepository('projects', {
@@ -33,15 +34,21 @@ var Projects = createRepository('projects', {
     var project_code = helpers.slugify(project.name),
         that = this;
 
+    console.log('why is this being executed a fuck load of times by tests, wtf?');
+
     //todo: CHECK FOR DUPLICATES
-    this.validator.validate('project', project, function(errors) {
+    validator.validate('project', project, function(errors) {
       if (!errors) {
         if (helpers.isNew(project)) {
           //if it's a new project, save it
           that.save({ code: project_code, name: project.name });
           //fetch the saved project
           that.findOne({ code: project_code }, function(err, new_project) {
-            return callback(new_project);
+            if (err) console.log(err);
+
+            if (helpers.isDefined(callback) && helpers.isDefined(new_project)) {
+              return callback(new_project);
+            }
           });
         } else {
           //if it's not a new project, update the existing one

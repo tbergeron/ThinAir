@@ -1,6 +1,5 @@
 var check = require('validator').check,
-    fs    = require('fs'),
-    flash = require('./helpers').flash;
+    fs    = require('fs');
 
 var Validator = {
   validationErrors: [],
@@ -36,7 +35,7 @@ var Validator = {
 
   flashErrors: function flashErrors(req, errors) {
     for (var errorIndex in errors) {
-      flash(req, 'error', errors[errorIndex]);
+      this.messages.addMessage(req, 'error', errors[errorIndex]);
     }
   },
 

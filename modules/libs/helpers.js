@@ -36,7 +36,11 @@ var Helpers = {
   },
 
   isNew: function(object) {
-    return (object._id.length > 0) ? false : true;
+    return (object._id == undefined) ? true : false;
+  },
+
+  isDefined: function(object) {
+    return (object == undefined) ? false : true;
   },
 
   // todo: it would be cool to eventually do something with this
