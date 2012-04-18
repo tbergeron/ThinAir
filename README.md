@@ -1,7 +1,7 @@
 # ThinAir
 ## PITA-less Web Development Framework based on Express.js and Node.js.
 ### Currently developed by Tommy Bergeron / 2012.
-Built with Node.js, Express.js, MongoDB.
+Built with Node.js, Express.js, MongoDB. [![Build Status](https://secure.travis-ci.org/tbergeron/ThinAir.png?branch=master)](http://travis-ci.org/tbergeron/ThinAir)
 
 ---
 
