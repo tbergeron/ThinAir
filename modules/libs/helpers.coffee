@@ -1,5 +1,6 @@
 collection = require("mongo-col")
 pd = require("pd")
+
 Helpers =
   checkIfAuthorized: (req, res) ->
     if req.session.is_logged

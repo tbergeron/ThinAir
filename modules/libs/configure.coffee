@@ -1,7 +1,9 @@
 express = require("express")
 cons = require("consolidate")
+
 module.exports = start: (app) ->
   that = this
+
   app.locals.use (req, res) ->
     res.locals.session = req.session
     res.locals.messages = that.messages.getMessages(req)

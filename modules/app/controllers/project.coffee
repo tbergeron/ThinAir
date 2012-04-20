@@ -1,6 +1,8 @@
 helpers = require("../../libs/helpers")
+
 ProjectController =
   Projects: null
+
   initialize: (req, res) ->
     helpers.checkIfAuthorized req, res
     @Projects = @repositories.Projects

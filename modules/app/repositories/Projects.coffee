@@ -1,5 +1,6 @@
 helpers = require("../../libs/helpers")
 createRepository = require("../../libs/repository").createRepository
+
 Projects = createRepository("projects",
   allByDate: (callback) ->
     @find().sort(date_created: 1).toArray (err, projects) ->
@@ -30,4 +31,5 @@ Projects = createRepository("projects",
     , (err) ->
       callback err  if err
 )
+
 module.exports = Projects

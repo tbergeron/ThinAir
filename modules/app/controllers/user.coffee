@@ -1,6 +1,8 @@
 helpers = require("../../libs/helpers")
+
 UserController =
   Users: null
+
   initialize: (req, res) ->
     @Users = @repositories.Users
 

@@ -1,4 +1,5 @@
 createRepository = require("../../libs/repository").createRepository
+
 Users = createRepository("users",
   byUsernameAndPassword: (username, password, callback) ->
     @findOne
@@ -11,4 +12,5 @@ Users = createRepository("users",
       else
         callback null
 )
+
 module.exports = Users
