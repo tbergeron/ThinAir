@@ -1,5 +1,5 @@
-var helpers          = require('../../libs/helpers'),
-    validator        = require('../../libs/validator'),
+var helpers          = require('./helpers'),
+    validator        = require('./validator'),
     collection       = require('mongo-col'),
     pd               = require('pd');
 
