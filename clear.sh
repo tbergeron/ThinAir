@@ -1,1 +1,2 @@
-rm -rf ./modules/libs/*.js
+cd ./modules
+find . -name '*.js' -exec rm -f {} \;

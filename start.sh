@@ -1,3 +1,3 @@
-rm -rf ./modules/libs/*.js
-coffee --compile ./modules/libs
+./clear.sh
+coffee --compile ./modules
 node core.js
