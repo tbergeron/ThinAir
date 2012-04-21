@@ -1,7 +1,7 @@
-helpers = require("./helpers")
-validator = require("./validator")
+helpers    = require("./helpers")
+validator  = require("./validator")
 collection = require("mongo-col")
-pd = require("pd")
+pd         = require("pd")
 
 Repository = createRepository: (name, content) ->
   db = collection(name, process.env["MONGODB_DATABASE"])

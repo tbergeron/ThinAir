@@ -1,8 +1,8 @@
 module.exports = registerRoutes: (app) ->
   getAction = @router.getAction
-  home = @controllers.home
-  user = @controllers.user
-  project = @controllers.project
+  home      = @controllers.home
+  user      = @controllers.user
+  project   = @controllers.project
 
   app.get "/", getAction(home, "index")
 

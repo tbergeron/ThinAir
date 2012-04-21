@@ -1,5 +1,5 @@
 check = require("validator").check
-fs = require("fs")
+fs    = require("fs")
 
 Validator =
   validationErrors: []
@@ -9,16 +9,18 @@ Validator =
     that = this
 
     fs.stat validationsFilePath, (err) ->
-      unless err
-        content = fs.readFileSync(validationsFilePath, "utf8")
-        validations = JSON.parse(content)
+      if err
+        console.log "Error reading validations file."
+      else
+        content               = fs.readFileSync(validationsFilePath, "utf8")
+        validations           = JSON.parse(content)
         that.validationErrors = []
+
         for fieldValidationIndex of validations
           for fieldName of validations[fieldValidationIndex]
             that.validateField fieldName, validations[fieldValidationIndex][fieldName], object[fieldName]
+
         callback (if (that.validationErrors.length > 0) then that.validationErrors else null)
-      else
-        console.log "Error reading validations file."
 
   flashErrors: (req, errors) ->
     for errorIndex of errors

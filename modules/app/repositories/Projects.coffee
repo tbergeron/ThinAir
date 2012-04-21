@@ -1,4 +1,4 @@
-helpers = require("../../libs/helpers")
+helpers          = require("../../libs/helpers")
 createRepository = require("../../libs/repository").createRepository
 
 Projects = createRepository("projects",

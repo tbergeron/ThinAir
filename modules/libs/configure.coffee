@@ -1,5 +1,5 @@
 express = require("express")
-cons = require("consolidate")
+cons    = require("consolidate")
 
 module.exports = start: (app) ->
   that = this

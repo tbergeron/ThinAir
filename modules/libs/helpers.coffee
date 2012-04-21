@@ -1,5 +1,5 @@
 collection = require("mongo-col")
-pd = require("pd")
+pd         = require("pd")
 
 Helpers =
   checkIfAuthorized: (req, res) ->
