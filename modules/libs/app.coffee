@@ -9,6 +9,4 @@ module.exports = start: start = (server) ->
   @routes.registerRoutes app
   @partials.registerPartials hbs
 
-  helpers.registerHandlebarsHelpers hbs
-
   server.on "request", app

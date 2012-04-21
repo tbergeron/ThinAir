@@ -4,21 +4,13 @@ createRepository = require("../../libs/repository").createRepository
 Projects = createRepository("projects",
   allByDate: (callback) ->
     @find().sort(date_created: 1).toArray (err, projects) ->
-      console.log err  if err
-      if projects
-        callback projects
-      else
-        callback null
+      if err then console.log err
+      callback if projects then projects else null
 
   byCode: (code, callback) ->
-    @findOne
-      code: code
-    , (err, project) ->
-      console.log err  if err
-      if project
-        callback project
-      else
-        callback null
+    @findOne code: code, (err, project) ->
+      if err then console.log err
+      callback if project then project else null
 
   save: (project, callback) ->
     project.code = helpers.slugify(project.name)
@@ -26,10 +18,8 @@ Projects = createRepository("projects",
       callback savedProject, errors
 
   delete: (code, callback) ->
-    @remove
-      code: code
-    , (err) ->
-      callback err  if err
+    @remove code: code, (err) ->
+      if err then callback err
 )
 
 module.exports = Projects

@@ -15,6 +15,12 @@ Helpers =
   isPost: (req) ->
     (if (req.route.method is "post") then true else false)
 
+  isNew: (object) ->
+    (if (object._id is `undefined`) then true else false)
+
+  isDefined: (object) ->
+    (if (object is `undefined`) then false else true)
+
   slugify: (str) ->
     str = str.replace(/^\s+|\s+$/g, "")
     str = str.toLowerCase()
@@ -28,13 +34,5 @@ Helpers =
       i++
     str = str.replace(/[^a-z0-9 -]/g, "").replace(/\s+/g, "-").replace(/-+/g, "-")
     str
-
-  isNew: (object) ->
-    (if (object._id is `undefined`) then true else false)
-
-  isDefined: (object) ->
-    (if (object is `undefined`) then false else true)
-
-  registerHandlebarsHelpers: (hbs) ->
 
 module.exports = Helpers

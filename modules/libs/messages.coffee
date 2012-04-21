@@ -1,12 +1,12 @@
 Messages =
   addMessage: (req, type, message) ->
-    req.session.messages = []  if req.session.messages is `undefined`
-    if (type isnt `undefined`) and (message isnt `undefined`)
-      messageObject =
-        type: type
-        message: message
+    if req.session.messages is `undefined`
+      req.session.messages = []
 
+    if (type isnt `undefined`) and (message isnt `undefined`)
+      messageObject = type: type, message: message
       req.session.messages.push messageObject
+
     req.session.messages
 
   getMessages: (req) ->
