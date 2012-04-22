@@ -16,7 +16,7 @@ Helpers =
     (if (req.route.method is "post") then true else false)
 
   isNew: (object) ->
-    (if (object._id is `undefined`) then true else false)
+    (if (object._id is `undefined` or object._id is "") then true else false)
 
   isDefined: (object) ->
     (if (object is `undefined`) then false else true)

@@ -10,13 +10,28 @@ Repositories = createRepository: (name, content) ->
     ObjectId: require("mongodb").ObjectID
 
     baseSave: (object, callback) ->
+      that = this
+
       validator.validate name, object, (errors) ->
         if errors
           callback object, errors
         else
-          db.save object, (err) ->
-            if err
-              console.log err
-              callback object, err
+          if helpers.isNew object
+            object._id = undefined
+
+            db.save object, (err) ->
+              if err
+                console.log err
+                callback object, err
+          else
+            objectToUpdate = pd.extend {}, object
+            delete objectToUpdate._id
+
+            db.update { _id: that.ObjectId(object._id) }, { $set: objectToUpdate }, (err) ->
+              if err
+                console.log err
+                callback object, err
+
+          callback object
 
 module.exports = Repositories
