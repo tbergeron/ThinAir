@@ -1,5 +1,5 @@
 helpers          = require("../../libs/helpers")
-createRepository = require("../../libs/repository").createRepository
+createRepository = require("../../libs/repositories").createRepository
 
 Projects = createRepository("projects",
   allByDate: (callback) ->

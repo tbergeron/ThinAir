@@ -1,4 +1,4 @@
-createRepository = require("../../libs/repository").createRepository
+createRepository = require("../../libs/repositories").createRepository
 
 Users = createRepository("users",
   byUsernameAndPassword: (username, password, callback) ->

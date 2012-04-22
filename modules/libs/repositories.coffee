@@ -3,7 +3,7 @@ validator  = require("./validator")
 collection = require("mongo-col")
 pd         = require("pd")
 
-Repository = createRepository: (name, content) ->
+Repositories = createRepository: (name, content) ->
   db = collection(name, process.env["MONGODB_DATABASE"])
 
   pd.extend Object.create(db), content,
@@ -19,4 +19,4 @@ Repository = createRepository: (name, content) ->
               console.log err
               callback object, err
 
-module.exports = Repository
+module.exports = Repositories
