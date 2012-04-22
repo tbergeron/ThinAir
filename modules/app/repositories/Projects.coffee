@@ -20,6 +20,7 @@ Projects = createRepository("projects",
   delete: (code, callback) ->
     @remove code: code, (err) ->
       if err then callback err
+      callback null
 )
 
 module.exports = Projects

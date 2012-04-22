@@ -46,7 +46,7 @@ ProjectController =
 
   delete: (req, res) ->
     that = this
-    @Projects.remove req.params.project_code, (err) ->
+    @Projects.delete req.params.project_code, (err) ->
       that.messages.addMessage req, "success", "Project with code \"" + req.params.project_code + "\" has been deleted with success."  unless err
       res.redirect "/projects"
 
