@@ -1,3 +1,4 @@
+require('coffee-script');
 require('../db');
 
 var should = require("should");
