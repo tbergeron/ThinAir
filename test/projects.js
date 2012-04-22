@@ -1,13 +1,11 @@
-require("coffee-script");
+require('../db');
+
 var should = require("should");
-
-process.env['MONGODB_HOST'] = 'linux.brainpad.org';
-process.env['MONGODB_DATABASE'] = 'thinair';
-
 var Projects = require('../modules/app/repositories/Projects.coffee')
 var newProject = { name: "TEST_PROJECT" };
 
 describe('Projects', function() {
+
   describe('#save()', function() {
     it('should save without error', function(done) {
 
@@ -15,6 +13,7 @@ describe('Projects', function() {
         should.not.exist(errors);
         should.exist(project);
         project.should.have.property('_id');
+        project.should.have.property('code');
         done();
       });
 
