@@ -17,7 +17,7 @@ Repositories = createRepository: (name, content) ->
           callback object, errors
         else
           if helpers.isNew object
-            object._id = undefined
+            object._id = new that.ObjectId()
 
             db.save object, (err) ->
               if err
