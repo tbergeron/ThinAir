@@ -1,7 +1,7 @@
 var http = require("http");
 
 module.exports = {
-  init: init = function() {
+  init: function() {
     process.env.PORT = 3000;
 
     var server = http.createServer().listen(process.env.PORT);
