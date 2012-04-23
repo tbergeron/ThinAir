@@ -3,7 +3,7 @@ var express = require("express"),
     helpers = require("./helpers");
 
 module.exports = {
-  start: start = function(server) {
+  start: function(server) {
     var app = express();
 
     this.configure.start(app);
