@@ -13,6 +13,6 @@ module.exports = {
     app.get("/projects/new", getAction(project, "new"));
     app.get("/projects/edit/:project_code", getAction(project, "editGet"));
     app.post("/projects/edit", getAction(project, "editPost"));
-    app.get("/projects/delete/:project_code", getAction(project, "delete"));
+    app.get("/projects/delete/:object_id", getAction(project, "delete"));
   }
 };

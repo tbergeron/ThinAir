@@ -12,16 +12,10 @@ var ProjectController = {
     var that = this;
 
     this.Projects.allByDate(function(projects) {
-      if (projects) {
-        res.render("projects/list", {
-          title: "List of projects",
-          projects: projects
-        });
-
-      } else {
-        that.messages.addMessage(req, "error", "No projects found.");
-        res.redirect("/");
-      }
+      res.render("projects/list", {
+        title: "List of projects",
+        projects: projects
+      });
     });
   },
 
@@ -66,13 +60,16 @@ var ProjectController = {
   delete: function(req, res) {
     var that = this;
 
-    this.Projects.delete(req.params.project_code, function(err) {
-      if (!err) {
-        that.messages.addMessage(req, "success", "Project with code \"" + req.params.project_code + "\" has been deleted with success.");
+    this.Projects.delete(req.params.object_id, function(success, project) {
+      if (success) {
+        that.messages.addMessage(req, "success", "Project \"" + project.name + "\" has been deleted with success.");
+      } else {
+        that.messages.addMessage(req, "error", "Unable to find project.");
       }
       res.redirect("/projects");
     });
   }
+
 };
 
 module.exports = ProjectController;

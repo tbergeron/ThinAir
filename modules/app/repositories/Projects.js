@@ -11,9 +11,7 @@ var Projects = createRepository("projects", {
   },
 
   byCode: function(code, callback) {
-    this.findOne({ code: code }, function(err, project) {
-      if (err) console.log(err);
-
+    this.baseFindOne({ code: code }, function(project) {
       return callback(project ? project : null);
     });
   },
@@ -26,10 +24,9 @@ var Projects = createRepository("projects", {
     });
   },
 
-  delete: function(code, callback) {
-    this.remove({ code: code }, function(err) {
-      if (err) callback(err);
-      return callback(null);
+  delete: function(objectId, callback) {
+    this.baseDelete({ _id: this.ObjectId(objectId) }, function(success, project) {
+      return callback(success, project);
     });
   }
 });

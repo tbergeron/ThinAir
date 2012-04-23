@@ -10,6 +10,27 @@ var Repositories = {
     return pd.extend(Object.create(db), content, {
       ObjectId: require("mongodb").ObjectID,
 
+      baseFindOne: function(conditions, callback) {
+        db.findOne(conditions, function(err, object) {
+          if (err) console.log(err);
+          return callback(object ? object : null);
+        });
+      },
+
+      baseDelete: function(conditions, callback) {
+        var that = this;
+
+        this.baseFindOne(conditions, function(object) {
+          if (object) {
+            db.remove(conditions, function(err) {
+              return callback((err) ? false : true, object);
+            });
+          } else {
+            return callback(false, null);
+          }
+        });
+      },
+
       baseSave: function(object, callback) {
         var that = this;
 
