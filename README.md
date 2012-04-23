@@ -4,7 +4,7 @@
 Built with Node.js, Express.js, MongoDB and CoffeeScript. 
 
 #### Project status: **In active development** [![Build Status](https://secure.travis-ci.org/tbergeron/ThinAir.png?branch=master)](http://travis-ci.org/tbergeron/ThinAir)
----
+
 
 ## Goals
 
