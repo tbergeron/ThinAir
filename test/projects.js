@@ -1,8 +1,7 @@
-require('coffee-script');
 require('../db');
 
 var should = require("should");
-var Projects = require('../modules/app/repositories/Projects.coffee')
+var Projects = require('../modules/app/repositories/Projects.js')
 var newProject = { name: "TEST_PROJECT" };
 
 describe('Projects', function() {
