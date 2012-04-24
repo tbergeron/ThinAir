@@ -14,5 +14,7 @@ module.exports = {
     app.get("/projects/edit/:project_code", getAction(project, "editGet"));
     app.post("/projects/edit", getAction(project, "editPost"));
     app.get("/projects/delete/:object_id", getAction(project, "delete"));
+
+    app.get('*', getAction(home, "error"));
   }
 };
