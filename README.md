@@ -8,6 +8,7 @@ Built with Node.js, Express.js and MongoDB.
 ---
 
  - [Goals][1]
+ - [Documentation][4]
  - [Contributors][2]
  - [Thanks][3]
 
@@ -19,7 +20,12 @@ The main goal of *ThinAir* is to give a basic but versatile set of tools to Node
 
 This ain't no revolution, but a simple, concised way of achieving what you want without having to re-invent the wheel.
 
-Another goal I have in mind while doing this project is to show everyone (even **PHP** developers!) that Node.js projects are fun, flexible and can finally replace those old technologies once and for all.
+Another goal I have in mind while doing this project is to show everyone (even *PHP* developers!) that Node.js projects are fun, flexible and can finally replace those old technologies once and for all.
+
+
+## <a name="documentation" href="#documentation">Documentation</a>
+
+The code base is currently moving way too fast to actually generate "reliable" docs. But don't worry though, I'm currently in the process of stabilizing it, so the docs should be out pretty soon!
 
 
 ## <a name="contributors" href="#contributors">Contributors</a>
@@ -37,3 +43,4 @@ Also thanks to [TJ Holowaychuk](https://github.com/visionmedia) for his help and
   [1]: #goals
   [2]: #contributors
   [3]: #thanks
+  [4]: #documentation
