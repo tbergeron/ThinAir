@@ -1,9 +1,10 @@
-var helpers = require("../../libs/helpers");
+var createController = require("../../libs/controllers").createController,
+    helpers = require("../../libs/helpers");
 
-var UserController = {
+var UserController = createController({
   Users: null,
 
-  initialize: function(req, res) {
+  setup: function(req, res) {
     this.Users = this.repositories.Users;
   },
 
@@ -32,6 +33,6 @@ var UserController = {
 
     res.redirect("/");
   }
-};
+});
 
 module.exports = UserController;

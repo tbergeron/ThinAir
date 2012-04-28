@@ -1,6 +1,7 @@
-var helpers = require("../../libs/helpers");
+var helpers = require("../../libs/helpers"),
+    createController = require("../../libs/controllers").createController;
 
-var ProjectController = {
+var ProjectController = createController({
   Projects: null,
 
   initialize: function(req, res) {
@@ -70,6 +71,6 @@ var ProjectController = {
     });
   }
 
-};
+});
 
 module.exports = ProjectController;
