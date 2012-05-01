@@ -4,8 +4,7 @@ var helpers = require("../../libs/helpers"),
 var ProjectController = createController({
   Projects: null,
 
-  initialize: function(req, res) {
-    helpers.checkIfAuthorized(req, res);
+  setup: function(req, res) {
     this.Projects = this.repositories.Projects;
   },
 

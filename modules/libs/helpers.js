@@ -1,5 +1,5 @@
 var collection = require("mongo-col"),
-    pd = require("pd");
+    pd         = require("pd");
 
 var Helpers = {
   checkIfAuthorized: function(req, res) {
