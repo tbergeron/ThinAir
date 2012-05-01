@@ -8,6 +8,7 @@ var UserController = createController({
     this.Users = this.repositories.Users;
   },
 
+  // /user/login
   login: function(req, res) {
     var that = this,
         username = req.body.username,
@@ -27,6 +28,7 @@ var UserController = createController({
     });
   },
 
+  // /user/logout
   logout: function(req, res) {
     req.session.is_logged = null;
     req.session.username = null;

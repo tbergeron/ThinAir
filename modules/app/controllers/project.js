@@ -8,6 +8,7 @@ var ProjectController = createController({
     this.Projects = this.repositories.Projects;
   },
 
+  // /projects
   list: function(req, res) {
     var that = this;
 
@@ -19,10 +20,12 @@ var ProjectController = createController({
     });
   },
 
+  // /projects/new
   new: function(req, res) {
     res.render("projects/edit", { title: "Create a new project" });
   },
 
+  // /projects/edit/:project_code
   editGet: function(req, res) {
     var that = this;
 
@@ -40,6 +43,7 @@ var ProjectController = createController({
     });
   },
 
+  // /projects/edit/:project_code
   editPost: function(req, res) {
     var that = this;
 
@@ -57,6 +61,7 @@ var ProjectController = createController({
     });
   },
 
+  // /projects/delete/:object_id
   delete: function(req, res) {
     var that = this;
 
