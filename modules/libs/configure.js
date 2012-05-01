@@ -1,5 +1,6 @@
-var express = require("express"),
-    cons = require("consolidate");
+var express      = require("express"),
+    cons         = require("consolidate"),
+    MongoStore   = require('connect-mongo')(express);
 
 module.exports = {
   start: function(app) {
@@ -19,8 +20,14 @@ module.exports = {
       app.use(express["static"](__dirname + "/../../public"));
       app.use(express.bodyParser());
       app.use(express.methodOverride());
+
       app.use(express.cookieParser("secret"));
-      app.use(express.session({ secret: "keyboard cat" }));
+      app.use(express.session({
+        secret: "keyboard cat",
+        maxAge: new Date(Date.now() + 3600000),
+        store:  new MongoStore({ db: process.env['MONGODB_DATABASE'], host: process.env['MONGODB_HOST'] })
+      }));
+
 
       app.use(app.router);
     });

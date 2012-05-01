@@ -18,7 +18,8 @@
     "consolidate": "0.2.0",
     "validator": "0.4.5",
     "mongodb": "0.9.9-8",
-    "commander": "0.6.0"
+    "commander": "0.6.0",
+    "connect-mongo": "git://github.com/kcbanner/connect-mongo.git"
     },
     "scripts": {
       "test": "make test"
