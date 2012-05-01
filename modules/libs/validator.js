@@ -4,6 +4,7 @@ var check = require("validator").check,
 var Validator = {
   validationErrors: [],
 
+  // validates an object and return, return its errors
   validate: function(modelName, object, callback) {
     var validationsFilePath = __dirname + "/../app/validations/" + modelName + ".validations.json";
     var that = this;
@@ -29,12 +30,14 @@ var Validator = {
     });
   },
 
+  // adds an error to the collection
   flashErrors: function(req, errors) {
     for (var errorIndex in errors) {
       this.messages.addMessage(req, "error", errors[errorIndex]);
     }
   },
 
+  // validates a field with it's specified validations
   validateField: function(fieldName, fieldValidations, value) {
     for (var validatorIndex in fieldValidations) {
       for (var validator in fieldValidations[validatorIndex]) {
@@ -43,6 +46,7 @@ var Validator = {
     }
   },
 
+  // uses a specified validator with a specified value
   useValidator: function(fieldName, validatorName, argument, value) {
     switch (validatorName) {
       case "minimumLength":
@@ -52,6 +56,7 @@ var Validator = {
     }
   },
 
+  // minimumLength validator
   validatorMinimumLength: function(fieldName, value, length) {
     var errorMessage = "The value entered for \"" + fieldName + "\" (" + value + ") is too short (minimum of " + length + " character(s)).";
 

@@ -1,4 +1,5 @@
 var Messages = {
+  // adds a message to the collection
   addMessage: function(req, type, message) {
     if (req.session.messages === undefined) {
       req.session.messages = [];
@@ -10,6 +11,7 @@ var Messages = {
     return req.session.messages;
   },
 
+  // returns the message list
   getMessages: function(req) {
     if (req.session.messages !== undefined) {
       var messages = req.session.messages;

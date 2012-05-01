@@ -2,6 +2,7 @@ var collection = require("mongo-col"),
     pd         = require("pd");
 
 var Helpers = {
+  // checks if a request is authorized
   checkIfAuthorized: function(req, res) {
     if (req.session.is_logged) {
       return true;
@@ -11,6 +12,7 @@ var Helpers = {
     }
   },
 
+  // is a GET request?
   isGet: function(req) {
     if (req.route.method === "get") {
       return true;
@@ -19,6 +21,7 @@ var Helpers = {
     }
   },
 
+  // is a POST request?
   isPost: function(req) {
     if (req.route.method === "post") {
       return true;
@@ -27,6 +30,7 @@ var Helpers = {
     }
   },
 
+  // is a new MongoDB object?
   isNew: function(object) {
     if (object._id === undefined || object._id === "") {
       return true;
@@ -35,6 +39,7 @@ var Helpers = {
     }
   },
 
+  // is the object defined?
   isDefined: function(object) {
     if (object === undefined) {
       return false;

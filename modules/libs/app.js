@@ -1,5 +1,5 @@
 var express = require("express"),
-    hbs = require("handlebars"),
+    hbs     = require("handlebars"),
     helpers = require("./helpers");
 
 module.exports = {

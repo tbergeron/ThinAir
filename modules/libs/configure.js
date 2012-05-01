@@ -6,6 +6,7 @@ module.exports = {
   start: function(app) {
     var that = this;
 
+    // locals are objects that can be used within views.
     app.locals.use(function(req, res) {
       res.locals.session = req.session;
       return res.locals.messages = that.messages.getMessages(req);
@@ -21,13 +22,13 @@ module.exports = {
       app.use(express.bodyParser());
       app.use(express.methodOverride());
 
+      // sessions are stored inside the database
       app.use(express.cookieParser("secret"));
       app.use(express.session({
         secret: "keyboard cat",
         maxAge: new Date(Date.now() + 3600000),
         store:  new MongoStore({ db: process.env['MONGODB_DATABASE'], host: process.env['MONGODB_HOST'] })
       }));
-
 
       app.use(app.router);
     });

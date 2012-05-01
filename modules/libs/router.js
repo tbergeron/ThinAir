@@ -1,18 +1,13 @@
-var helpers = require('./helpers');
+var helpers   = require('./helpers'),
+    isDefined = helpers.isDefined;
 
 var Router = {
+  // gets a requested action, and handles its parameters
   getAction: function(controller, action, parameters) {
     return function(req, res) {
-      console.log(parameters);
-            console.log('zouzoupuce');
-
-      if (parameters != undefined) {
-
-        if (parameters.checkIfAuthorized != undefined) {
-
-          if (parameters.checkIfAuthorized) {
+      if isDefined(parameters) {
+        if isDefined(parameters.checkIfAuthorized) && parameters.checkIfAuthorized {
             helpers.checkIfAuthorized(req, res);
-          }        
         }
       }
 
