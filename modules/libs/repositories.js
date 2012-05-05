@@ -50,7 +50,7 @@ var Repositories = {
             // if it's a new object, save it and return it with its new ObjectID
             if (helpers.isNew(object)) {
               object._id = new that.ObjectId();
-              db.save(object, function(err) {
+              db.insert(object, function(err) {
                 if (err) {
                   console.log(err);
                   return callback(object, err);
