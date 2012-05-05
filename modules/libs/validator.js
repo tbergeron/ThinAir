@@ -31,7 +31,7 @@ var Validator = {
   },
 
   // adds an error to the collection
-  flashErrors: function(req, errors) {
+  addErrorsToMessages: function(req, errors) {
     for (var errorIndex in errors) {
       this.messages.addMessage(req, "error", errors[errorIndex]);
     }
@@ -48,6 +48,7 @@ var Validator = {
 
   // uses a specified validator with a specified value
   useValidator: function(fieldName, validatorName, argument, value) {
+    // todo: find another way, I hate this switch.
     switch (validatorName) {
       case "minimumLength":
         return this.validatorMinimumLength(fieldName, value, argument);

@@ -14,7 +14,7 @@ var UserController = createController({
         username = req.body.username,
         password = req.body.password;
 
-    this.Users.byUsernameAndPassword(username, password, function(user) {
+    this.Users.getByUsernameAndPassword(username, password, function(user) {
       if (!user) {
         that.messages.addMessage(req, "error", "We are unable to find this user or maybe your password is wrong? Please try again.");
 

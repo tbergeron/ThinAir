@@ -3,7 +3,7 @@ var helpers = require("../../libs/helpers"),
 
 var Projects = createRepository("projects", {
   // gets a list of project, sorted by date_created
-  allByDate: function(callback) {
+  getAllByDate: function(callback) {
     this.find().sort({ date_created: 1 }).toArray(function(err, projects) {
       if (err) console.log(err);
 
@@ -12,7 +12,7 @@ var Projects = createRepository("projects", {
   },
 
   // gets one project by its code
-  byCode: function(code, callback) {
+  getByCode: function(code, callback) {
     this.baseFindOne({ code: code }, function(project) {
       return callback(project ? project : null);
     });

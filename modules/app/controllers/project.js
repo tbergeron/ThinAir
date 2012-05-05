@@ -29,7 +29,7 @@ var ProjectController = createController({
   editGet: function(req, res) {
     var that = this;
 
-    this.Projects.byCode(req.params.project_code, function(project) {
+    this.Projects.getByCode(req.params.project_code, function(project) {
       if (project) {
         res.render("projects/edit", {
           title: "Editing project: " + project.name,
@@ -49,7 +49,7 @@ var ProjectController = createController({
 
     this.Projects.save(req.body.project, function(project, errors) {
       if (errors) {
-        that.validator.flashErrors(req, errors);
+        that.validator.addErrorsToMessages(req, errors);
       } else {
         that.messages.addMessage(req, "success", "Saved with success.");
       }
