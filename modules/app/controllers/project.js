@@ -12,7 +12,7 @@ var ProjectController = createController({
   list: function(req, res) {
     var that = this;
 
-    this.Projects.allByDate(function(projects) {
+    this.Projects.getAllByDate(function(projects) {
       res.render("projects/list", {
         title: "List of projects",
         projects: projects
