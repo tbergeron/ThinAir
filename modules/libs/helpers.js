@@ -65,12 +65,8 @@ var Helpers = {
   },
 
   // is the request an AJAX call?
-  // To recognize this, we unfortunately cannot rely on the
-  // X_REQUESTED_WITH header since some browsers (IE7) don't support it.
-  // So we're checking the "Accept" header of the request and see
-  // if it's asking for the "application/json" content-type.
   isXHR: function(req, res) {
-    if (req.header.accepts('application/json')) {
+    if (req.header('HTTP_X_REQUESTED_WITH') === 'XMLHttpRequest') {
       return true;
     } else {
       return false;
@@ -79,3 +75,4 @@ var Helpers = {
 };
 
 module.exports = Helpers;
+
