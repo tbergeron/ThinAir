@@ -62,6 +62,19 @@ var Helpers = {
     }
     str = str.replace(/[^a-z0-9 -]/g, "").replace(/\s+/g, "-").replace(/-+/g, "-");
     return str;
+  },
+
+  // is the request an AJAX call?
+  // To recognize this, we unfortunately cannot rely on the
+  // X_REQUESTED_WITH header since some browsers (IE7) don't support it.
+  // So we're checking the "Accept" header of the request and see
+  // if it's asking for the "application/json" content-type.
+  isXHR: function(req, res) {
+    if (req.header.accepts('application/json')) {
+      return true;
+    } else {
+      return false;
+    }
   }
 };
 
