@@ -32,6 +32,7 @@ The code base is currently moving way too fast to actually generate "reliable" d
 
  - [tbergeron](https://github.com/tbergeron)
  - [Raynos](https://github.com/Raynos)
+ - [Ralt](https://github.com/Ralt)
 
 
 ## <a name="thanks" href="#thanks">Thanks</a>
