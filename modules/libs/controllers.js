@@ -1,5 +1,4 @@
-var helpers = require("./helpers"),
-    pd      = require("pd");
+var pd = require("pd");
 
 var Controllers = {
   // creates a basic controller

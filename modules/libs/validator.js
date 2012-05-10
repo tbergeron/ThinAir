@@ -1,5 +1,5 @@
 var check = require("validator").check,
-    fs = require("fs");
+    fs    = require("fs");
 
 var Validator = {
   validationErrors: [],
