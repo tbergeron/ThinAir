@@ -1,4 +1,4 @@
-var helpers = require("../../libs/helpers"),
+var strings = require("../../libs/helpers/strings"),
     createRepository = require("../../libs/repositories").createRepository;
 
 var Projects = createRepository("projects", {
@@ -21,7 +21,7 @@ var Projects = createRepository("projects", {
   // saves a project
   save: function(project, callback) {
     // converts the project's code to a slug
-    project.code = helpers.slugify(project.name);
+    project.code = strings.slugify(project.name);
 
     this.baseSave(project, function(savedProject, errors) {
       return callback(savedProject, errors);

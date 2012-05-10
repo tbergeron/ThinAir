@@ -1,5 +1,5 @@
-var sessions  = require('./sessions'),
-    isDefined = require('./helpers').isDefined;
+var sessions  = require('./helpers/sessions'),
+    isDefined = require('./helpers/objects').isDefined;
 
 var Router = {
   // gets a requested action, and handles its parameters

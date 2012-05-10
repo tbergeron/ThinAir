@@ -1,4 +1,4 @@
-var mongo      = require("./mongo"),
+var mongo      = require("./helpers/mongo"),
     validator  = require("./validator"),
     collection = require("mongo-col"),
     pd         = require("pd");
