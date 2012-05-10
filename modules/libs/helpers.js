@@ -62,7 +62,17 @@ var Helpers = {
     }
     str = str.replace(/[^a-z0-9 -]/g, "").replace(/\s+/g, "-").replace(/-+/g, "-");
     return str;
+  },
+
+  // is the request an AJAX call?
+  isXHR: function(req, res) {
+    if (req.header('HTTP_X_REQUESTED_WITH') === 'XMLHttpRequest') {
+      return true;
+    } else {
+      return false;
+    }
   }
 };
 
 module.exports = Helpers;
+
