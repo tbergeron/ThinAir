@@ -27,7 +27,7 @@
     "messages": "messages.js",
     "validator": "validator.js"
   },
-  ".helpers/sessions.js": {
+  "./helpers/sessions.js": {
     "messages": "messages.js"
   }
 }
