@@ -1,9 +1,14 @@
 require("./db");
 
+var path = require('path');
+
 require("ncore/modules/core")({
-    uri: require("path").join(__dirname),
+    uri: __dirname,
     dependencyMapper: {
-        jsonUri: require("path").join(__dirname, "libs", "dependency.json"),
+        jsonUri: path.join(__dirname, "libs", "dependency.json"),
         uri: __dirname
+    },
+    moduleLoader: {
+      skip: /test|public|node_modules|bin/
     }
 });
