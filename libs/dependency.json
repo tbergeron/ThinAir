@@ -1,33 +1,33 @@
 {
-  "server.js": {
-    "app": "app.js"
+  "libs/server.js": {
+    "app": "libs/app.js"
   },
-  "app.js": {
-    "configure": "configure.js",
-    "routes": "../app/routes.js",
-    "partials": "partials.js",
-    "messages": "messages.js"
+  "libs/app.js": {
+    "configure": "libs/configure.js",
+    "routes": "app/routes.js",
+    "partials": "libs/partials.js",
+    "messages": "libs/messages.js"
   },
-  "configure.js": {
-    "messages": "messages.js"
+  "libs/configure.js": {
+    "messages": "libs/messages.js"
   },
-  "validator.js": {
-    "messages": "messages.js"
+  "libs/validator.js": {
+    "messages": "libs/messages.js"
   },
-  "../app/routes.js": {
-    "router": "router.js",
-    "controllers": ["../app/controllers/"]
+  "app/routes.js": {
+    "router": "libs/router.js",
+    "controllers": ["app/controllers/"]
   },
-  "../app/controllers/": {
-    "messages": "messages.js",
-    "validator": "validator.js",
-    "repositories": ["../app/repositories/"]
+  "app/controllers/": {
+    "messages": "libs/messages.js",
+    "validator": "libs/validator.js",
+    "repositories": ["app/repositories/"]
   },
-  "../app/repositories/": {
-    "messages": "messages.js",
-    "validator": "validator.js"
+  "app/repositories/": {
+    "messages": "libs/messages.js",
+    "validator": "libs/validator.js"
   },
-  "./helpers/sessions.js": {
-    "messages": "messages.js"
+  "libs/helpers/sessions.js": {
+    "messages": "libs/messages.js"
   }
 }
