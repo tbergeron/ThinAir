@@ -2,8 +2,8 @@ var http = require("http");
 
 module.exports = {
   init: function() {
-    // default port
-    process.env.PORT = 3000;
+    // if ran from c9, use its port
+    process.env.PORT = (process.env.C9_PORT != undefined) ? process.env.C9_PORT : 3000;
 
     // starts the server
     this.app.start(http.createServer().listen(process.env.PORT));

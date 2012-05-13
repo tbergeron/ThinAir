@@ -1,5 +1,4 @@
-var createController = require("../../libs/controllers").createController,
-    helpers = require("../../libs/helpers");
+var createController = require("../../libs/controllers").createController;
 
 var UserController = createController({
   Users: null,

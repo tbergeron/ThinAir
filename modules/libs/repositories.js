@@ -1,4 +1,4 @@
-var helpers    = require("./helpers"),
+var mongo      = require("./helpers/mongo"),
     validator  = require("./validator"),
     collection = require("mongo-col"),
     pd         = require("pd");
@@ -48,7 +48,7 @@ var Repositories = {
 
           } else {
             // if it's a new object, save it and return it with its new ObjectID
-            if (helpers.isNew(object)) {
+            if (mongo.isNew(object)) {
               object._id = new that.ObjectId();
               db.insert(object, function(err) {
                 if (err) {

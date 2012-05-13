@@ -27,7 +27,7 @@
     "messages": "./libs/messages.js",
     "validator": "./libs/validator.js"
   },
-  "./libs/helpers.js": {
+  "./libs/helpers/sessions.js": {
     "messages": "./libs/messages.js"
   }
 }

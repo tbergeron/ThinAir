@@ -30,8 +30,9 @@ The code base is currently moving way too fast to actually generate "reliable" d
 
 ## <a name="contributors" href="#contributors">Contributors</a>
 
- - [tbergeron](https://github.com/tbergeron)
+ - [Tommy Bergeron](https://github.com/tbergeron)
  - [Raynos](https://github.com/Raynos)
+ - [Florian Margaine](https://github.com/Ralt)
 
 
 ## <a name="thanks" href="#thanks">Thanks</a>
