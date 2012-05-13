@@ -1,0 +1,33 @@
+{
+  "server.js": {
+    "app": "app.js"
+  },
+  "app.js": {
+    "configure": "configure.js",
+    "routes": "../app/routes.js",
+    "partials": "partials.js",
+    "messages": "messages.js"
+  },
+  "configure.js": {
+    "messages": "messages.js"
+  },
+  "validator.js": {
+    "messages": "messages.js"
+  },
+  "../app/routes.js": {
+    "router": "router.js",
+    "controllers": ["../app/controllers/"]
+  },
+  "../app/controllers/": {
+    "messages": "messages.js",
+    "validator": "validator.js",
+    "repositories": ["../app/repositories/"]
+  },
+  "../app/repositories/": {
+    "messages": "messages.js",
+    "validator": "validator.js"
+  },
+  ".helpers/sessions.js": {
+    "messages": "messages.js"
+  }
+}
