@@ -3,7 +3,7 @@
 ### Currently developed by Tommy Bergeron / 2012.
 Built with Node.js, Express.js and MongoDB. 
 
-#### Project status: **In active development** [![Build Status](https://secure.travis-ci.org/tbergeron/ThinAir.png?branch=master)](http://travis-ci.org/tbergeron/ThinAir)
+#### Project status: **ALMOST ready for production** [![Build Status](https://secure.travis-ci.org/tbergeron/ThinAir.png?branch=master)](http://travis-ci.org/tbergeron/ThinAir)
 
 ---
 
@@ -25,8 +25,7 @@ Another goal I have in mind while doing this project is to show everyone (even *
 
 ## <a name="documentation" href="#documentation">Documentation</a>
 
-The code base is currently moving way too fast to actually generate "reliable" docs. But don't worry though, I'm currently in the process of stabilizing it, so the docs should be out pretty soon!
-
+2012-05-14: Docs are currently in-progress, you can read what's done in the <a href="https://github.com/tbergeron/ThinAir/wiki">wiki</a>.
 
 ## <a name="contributors" href="#contributors">Contributors</a>
 
