@@ -32,8 +32,3 @@ Another goal I have in mind while doing this project is to show everyone (even *
 Thanks to [Raynos](https://github.com/Raynos) for his help and patience (nCore is GREAT!)
 
 Also thanks to [TJ Holowaychuk](https://github.com/visionmedia) for his help and ongoing support of Express.js and all that good stuff.
-
-  [1]: #goals
-  [2]: #contributors
-  [3]: #thanks
-  [4]: #documentation
