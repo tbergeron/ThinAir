@@ -11,7 +11,8 @@ var Validator = {
 
     fs.stat(validationsFilePath, function(err) {
       if (err) {
-        return console.log("Error reading validations file.");
+        console.log("Error reading validations file.");
+        return callback(null);
 
       } else {
         var content = fs.readFileSync(validationsFilePath, "utf8"),
