@@ -25,7 +25,7 @@ var ProjectController = createController({
 
     this.Projects.getAllByDate(function(projects) {
       // if called from reactive method
-      if (res == undefined) {
+      if (!res) {
         reactiveMethodCallback(projects);
       }
 
