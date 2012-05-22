@@ -26,6 +26,7 @@ module.exports = {
 
     // todo: find a better place and structure for this
     io.sockets.on('connection', function (socket) {
+        // sends a view's content to client
         socket.on('getView', function (name, callback) {
             var viewFilePath = __dirname + "/../app/views/" + name + ".html";
 
