@@ -25,10 +25,11 @@ Another goal I have in mind while doing this project is to show everyone (even *
  - [Tommy Bergeron](https://github.com/tbergeron)
  - [Raynos](https://github.com/Raynos)
  - [Florian Margaine](https://github.com/Ralt)
+ - [Hubert Perron](https://github.com/hubertperron)
 
 
 ## Thanks
 
-Thanks to [Raynos](https://github.com/Raynos) for his help and patience (nCore is GREAT!)
-
-Also thanks to [TJ Holowaychuk](https://github.com/visionmedia) for his help and ongoing support of Express.js and all that good stuff.
+Thanks to [Raynos](https://github.com/Raynos) for his help, patience and nCore (nCore is GREAT!)
+Thanks to [Florian Margaine](https://github.com/Ralt) for all the time you've spent helping me finding great solutions!
+Thanks to [Hubert Perron](https://github.com/hubertperron) for kicking my ass in the good direction when I'm trying too hard to reinvent the wheel! ;-)
