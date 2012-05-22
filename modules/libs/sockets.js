@@ -10,9 +10,9 @@ module.exports = {
 
         this.io.sockets.on('connection', function(socket) {
             // once the client connection is received, initialize reactive methods
-            for (var i = 0; i < that.reactiveMethods.length; i++) {
-                socket.on(that.reactiveMethodNames[i], that.reactiveMethods[i]);
-            }
+            that.reactiveMethods.forEach(function(reactiveMethod, index) {
+                socket.on(that.reactiveMethodNames[index], reactiveMethod);
+            });
         });
     },
 
