@@ -1,7 +1,10 @@
-$(function(){
-	var currentUri = window.location.pathname;
-	var elementName = currentUri.replace(/^\/([^\/]*).*$/, '$1');
+var socket = io.connect();
 
-	// selected element from the navigation
-	$('ul.nav li.' + ((elementName.length > 0) ? elementName : 'home')).addClass('active');
-});
+// gets a view from the server and compiles it with handlebars
+function getViewFromServer(viewName, context, callback) {
+	socket.emit('getView', viewName, function (data) {
+		var template = Handlebars.compile(data);
+		var view = template(context);
+		callback(view);
+	});
+}

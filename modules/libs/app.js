@@ -9,6 +9,13 @@ module.exports = {
     this.routes.registerRoutes(app);
     this.partials.registerPartials(hbs);
 
+	io.sockets.on('connection', function (socket) {
+		socket.on('getView', function (name, callback) {
+            
+			callback("yo manne");
+		});
+	});
+
     server.on("request", app);
   }
 };

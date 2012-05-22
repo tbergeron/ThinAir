@@ -1,5 +1,14 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/js/bootstrap.js"></script>
+    <script src="/js/handlebars.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="/js/thinair.js"></script>
+	<script>
+		// gets a view from the server
+		getViewFromServer("hello", { hello: "world" }, function(data){
+			console.log(data);
+		});
+	</script>
+
   </body>
 </html>
