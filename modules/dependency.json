@@ -3,7 +3,8 @@
     "configure": "./libs/configure.js",
     "routes": "./app/routes.js",
     "partials": "./libs/partials.js",
-    "messages": "./libs/messages.js"
+    "messages": "./libs/messages.js",
+    "sockets": "./libs/sockets.js"
   },
   "./libs/configure.js": {
     "messages": "./libs/messages.js"
@@ -18,6 +19,7 @@
   "./app/controllers/": {
     "messages": "./libs/messages.js",
     "validator": "./libs/validator.js",
+    "sockets": "./libs/sockets.js",
     "repositories": ["./app/repositories/"]
   },
   "./app/repositories": {

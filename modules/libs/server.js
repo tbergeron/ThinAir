@@ -21,20 +21,8 @@ module.exports = {
 
     server.on("request", app);
 
-    // socket.io stuff
-    var io = require('socket.io').listen(server);
-
-    // todo: find a better place and structure for this
-    io.sockets.on('connection', function (socket) {
-        // sends a view's content to client
-        socket.on('getView', function (name, callback) {
-            var viewFilePath = __dirname + "/../app/views/" + name + ".html";
-
-            fs.readFile(viewFilePath, "utf-8", function (err, data) {
-                callback(data);
-            });
-        });
-    });
+    // socket.io initialization
+    this.sockets.initialize(server);
 
     return console.log("Express server listening on port " + process.env.PORT);
   }

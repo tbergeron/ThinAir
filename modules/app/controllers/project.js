@@ -7,6 +7,12 @@ var ProjectController = createController({
     this.Projects = this.repositories.Projects;
   },
 
+  init: function(){
+    this.sockets.createReactiveMethod('getProject', function(name, callback){
+      callback("oh yeah");
+    });
+  },
+
   // /projects
   list: function(req, res) {
     var that = this;
