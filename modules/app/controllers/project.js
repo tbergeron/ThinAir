@@ -9,7 +9,8 @@ var ProjectController = createController({
 
   init: function(){
     this.sockets.createReactiveMethod('getProject', function(name, callback){
-      callback("oh yeah");
+      console.log("ROCK ON?");
+      callback("oh yeah look: " + name);
     });
   },
 
