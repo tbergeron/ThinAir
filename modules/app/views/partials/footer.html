@@ -4,7 +4,8 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/thinair.js"></script>
 	<script>
-		callReactiveMethod('getProject', { test: "name", well: "done" }, function(data){
+		// gets a project object
+		callReactiveMethod('getProject', { code: "test123" }, function(data){
 			console.log(data)
 		});
 

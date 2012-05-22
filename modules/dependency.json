@@ -24,7 +24,8 @@
   },
   "./app/repositories": {
     "messages": "./libs/messages.js",
-    "validator": "./libs/validator.js"
+    "validator": "./libs/validator.js",
+    "sockets": "./libs/sockets.js"
   },
   "./libs/helpers/sessions.js": {
     "messages": "./libs/messages.js"

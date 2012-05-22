@@ -2,6 +2,18 @@ var strings = require("../../libs/helpers/strings"),
     createRepository = require("../../libs/repositories").createRepository;
 
 var Projects = createRepository("projects", {
+  init: function(){
+    // initializing a reactive method
+    var that = this;
+    this.sockets.createReactiveMethod('getProject', function(parameters, callback){
+      if (parameters.code) {
+        that.getByCode(parameters.code, function(project){
+          callback(project);
+        });
+      }
+    });
+  },
+
   // gets a list of project, sorted by date_created
   getAllByDate: function(callback) {
     this.find().sort({ date_created: 1 }).toArray(function(err, projects) {

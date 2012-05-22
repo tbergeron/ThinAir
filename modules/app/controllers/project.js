@@ -7,13 +7,6 @@ var ProjectController = createController({
     this.Projects = this.repositories.Projects;
   },
 
-  init: function(){
-    // initializing a reactive method
-    this.sockets.createReactiveMethod('getProject', function(parameters, callback){
-      callback(parameters);
-    });
-  },
-
   // /projects
   list: function(req, res) {
     var that = this;
