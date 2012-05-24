@@ -51,6 +51,7 @@ var Repositories = {
             if (mongo.isNew(object)) {
               object._id = new that.ObjectId();
               object.addedDate = new Date();
+
               db.insert(object, function(err) {
                 if (err) {
                   console.log(err);
@@ -69,6 +70,10 @@ var Repositories = {
                   console.log(err);
                   return callback(object, err);
                 }
+
+                that.baseFindOne({ _id: that.ObjectId(object._id) }, function(updatedObject){
+                  return callback(updatedObject);
+                })
               });
             }
 
