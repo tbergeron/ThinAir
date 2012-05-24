@@ -50,6 +50,7 @@ var Repositories = {
             // if it's a new object, save it and return it with its new ObjectID
             if (mongo.isNew(object)) {
               object._id = new that.ObjectId();
+              object.addedDate = new Date();
               db.insert(object, function(err) {
                 if (err) {
                   console.log(err);
@@ -61,6 +62,7 @@ var Repositories = {
               // if the object already exists, update it and return the object
               var objectToUpdate = pd.extend({}, object);
               delete objectToUpdate._id;
+              object.updatedDate = new Date();
 
               db.update({ _id: that.ObjectId(object._id) }, { $set: objectToUpdate }, function(err) {
                 if (err) {
