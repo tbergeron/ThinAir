@@ -3,7 +3,7 @@ var createController = require("../../libs/controllers").createController;
 var ProjectController = createController({
   Projects: null,
 
-  setup: function(req, res) {
+  setup: function() {
     this.Projects = this.repositories.Projects;
   },
 
