@@ -3,7 +3,7 @@ var createController = require("../../libs/controllers").createController;
 var UserController = createController({
   Users: null,
 
-  setup: function(req, res) {
+  setup: function() {
     this.Users = this.repositories.Users;
   },
 
