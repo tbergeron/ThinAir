@@ -1,4 +1,4 @@
-require("./db");
+require("./config");
 
 var path = require('path');
 
