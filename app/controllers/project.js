@@ -7,11 +7,27 @@ var ProjectController = createController({
     this.Projects = this.repositories.Projects;
   },
 
+  init: function(){
+    //initializing a reactive method
+    var that = this;
+    this.sockets.createReactiveMethod('callProjectListController', function(parameters, callback){
+      that.list(null, null, function(projects){
+        callback(projects);        
+      });
+    });
+  },
+
   // /projects
-  list: function(req, res) {
+  // reactiveMethodCallback is there to make the method usable via reactive methods
+  list: function(req, res, reactiveMethodCallback) {
     var that = this;
 
     this.Projects.getAllByDate(function(projects) {
+      // if called from reactive method
+      if (!res) {
+        return reactiveMethodCallback(projects);
+      }
+
       res.render("projects/list", {
         title: "List of projects",
         projects: projects

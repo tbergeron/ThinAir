@@ -31,7 +31,7 @@ module.exports = {
           db: process.env['MONGODB_DATABASE'], 
           host: process.env['MONGODB_HOST'],
           port: process.env['MONGODB_PORT'],
-          username: process.env['MONGODB_USERNAME'],
+          username: process.env['MONGODB_USER'],
           password: process.env['MONGODB_PASSWORD']
         })
       }));

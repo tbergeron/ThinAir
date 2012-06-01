@@ -1,7 +1,17 @@
-$(function(){
-	var currentUri = window.location.pathname;
-	var elementName = currentUri.replace(/^\/([^\/]*).*$/, '$1');
+var socket = io.connect();
 
-	// selected element from the navigation
-	$('ul.nav li.' + ((elementName.length > 0) ? elementName : 'home')).addClass('active');
-});
+// calls a reactive method
+var callReactiveMethod = function(name, parameters, callback) {
+	socket.emit(name, parameters, function (data) {
+		callback(data);
+	});
+}
+
+// gets a view from the server and compiles it with handlebars
+// function getViewFromServer(viewName, context, callback) {
+// 	callReactiveMethod('getView', { name: viewName }, function(data){
+// 		var template = Handlebars.compile(data);
+// 		var view = template(context);
+// 		callback(view);
+// 	});
+// }
