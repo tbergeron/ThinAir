@@ -8,20 +8,12 @@ var ProjectController = createController({
   },
 
   init: function(){
-<<<<<<< HEAD:modules/app/controllers/project.js
-    // initializing a reactive method
-=======
     //initializing a reactive method
->>>>>>> ncore-restructure:app/controllers/project.js
     var that = this;
     this.sockets.createReactiveMethod('callProjectListController', function(parameters, callback){
       that.list(null, null, function(projects){
         callback(projects);        
       });
-<<<<<<< HEAD:modules/app/controllers/project.js
-
-=======
->>>>>>> ncore-restructure:app/controllers/project.js
     });
   },
 
