@@ -1,4 +1,4 @@
-require('../db');
+require('../config');
 
 var should = require("should");
 var Projects = require('../app/repositories/Projects.js')
