@@ -1,0 +1,26 @@
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/handlebars.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/thinair.js"></script>
+	<script>
+		// gets a project object
+		callReactiveMethod('getProject', { code: "test123" }, function(data){
+			console.log('getProject:');
+			console.log(data);
+		});
+
+		// gets a project object
+		callReactiveMethod('callProjectListController', null, function(data){
+			console.log('callProjectListController');
+			console.log(data);
+		});
+
+		// gets a view from the server
+		//getViewFromServer("hello", { hello: "world" }, function(data){
+		//	console.log(data);
+		//});
+	</script>
+
+  </body>
+</html>

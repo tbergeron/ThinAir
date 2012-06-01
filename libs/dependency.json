@@ -1,0 +1,33 @@
+{
+  "libs/server.js": {
+    "configure": "libs/configure.js",
+    "routes": "app/routes.js",
+    "partials": "libs/partials.js",
+    "messages": "libs/messages.js",
+    "sockets": "libs/sockets.js"
+  },
+  "libs/configure.js": {
+    "messages": "libs/messages.js"
+  },
+  "libs/validator.js": {
+    "messages": "libs/messages.js"
+  },
+  "app/routes.js": {
+    "router": "libs/router.js",
+    "controllers": ["app/controllers/"]
+  },
+  "app/controllers/": {
+    "messages": "libs/messages.js",
+    "validator": "libs/validator.js",
+    "sockets": "libs/sockets.js",
+    "repositories": ["app/repositories/"]
+  },
+  "app/repositories": {
+    "messages": "libs/messages.js",
+    "validator": "libs/validator.js",
+    "sockets": "libs/sockets.js"
+  },
+  "libs/helpers/sessions.js": {
+    "messages": "libs/messages.js"
+  }
+}

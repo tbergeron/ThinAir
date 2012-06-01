@@ -1,7 +1,7 @@
 require('../db');
 
 var should = require("should");
-var Projects = require('../modules/app/repositories/Projects.js')
+var Projects = require('../app/repositories/Projects.js')
 var newProject = { name: "TEST_PROJECT" };
 
 describe('Projects', function() {
