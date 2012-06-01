@@ -27,7 +27,13 @@ module.exports = {
       app.use(express.session({
         secret: "keyboard cat",
         maxAge: new Date(Date.now() + 3600000),
-        store:  new MongoStore({ db: process.env['MONGODB_DATABASE'], host: process.env['MONGODB_HOST'] })
+        store:  new MongoStore({
+          db: process.env['MONGODB_DATABASE'], 
+          host: process.env['MONGODB_HOST'],
+          port: process.env['MONGODB_PORT'],
+          username: process.env['MONGODB_USERNAME'],
+          password: process.env['MONGODB_PASSWORD']
+        })
       }));
 
       app.use(app.router);
