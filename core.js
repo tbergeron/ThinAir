@@ -2,13 +2,12 @@ require("./config");
 
 var path = require('path');
 
-require("ncore/modules/core")({
+require("ncore")({
     uri: __dirname,
     dependencyMapper: {
-        jsonUri: path.join(__dirname, "libs", "dependency.json"),
-        uri: __dirname
+        jsonUri: path.join(__dirname, "libs", "dependency.json")
     },
     moduleLoader: {
-      skip: /test|public|node_modules|bin/
+        skip: /test|public|node_modules|bin/
     }
 });
