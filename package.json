@@ -1,37 +1,39 @@
 {
-  "author": "Tommy Bergeron <t.bergeron@gmail.com>",
-  "name": "ThinAir",
-  "description": "Web Development Framework based on Node.js and Express.js",
-  "version": "0.0.1",
-  "homepage": "https://github.com/tbergeron/ThinAir",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/tbergeron/ThinAir.git"
-  },
-  "dependencies": {
-    "ncore": "2.2.3",
-    "handlebars": "1.0.5beta",
-    "mongojs": "0.3.2",
-    "pd": "0.6.3",
-    "mongo-col": "0.1.7",
-    "path": "0.4.9",
-    "consolidate": "0.2.0",
-    "validator": "0.4.5",
-    "mongodb": "0.9.9-8",
-    "commander": "0.6.0",
-    "connect-mongo": "git://github.com/kcbanner/connect-mongo.git",
-    "socket.io": "0.9.6"
+    "author": "Tommy Bergeron <t.bergeron@gmail.com>",
+    "name": "ThinAir",
+    "description": "Web Development Framework based on Node.js and Express.js",
+    "version": "0.0.1",
+    "homepage": "https://github.com/tbergeron/ThinAir",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/tbergeron/ThinAir.git"
+    },
+    "dependencies": {
+        "ncore": "2.2.3",
+        "handlebars": "1.0.5beta",
+        "mongojs": "0.3.2",
+        "pd": "0.6.3",
+        "mongo-col": "0.1.7",
+        "path": "0.4.9",
+        "consolidate": "0.2.0",
+        "validator": "0.4.5",
+        "mongodb": "0.9.9-8",
+        "commander": "0.6.0",
+        "connect-mongo": "git://github.com/kcbanner/connect-mongo.git",
+        "socket.io": "0.9.6",
+        "iterate-files": "0.1.1",
+        "mime": "1.2.6"
     },
     "scripts": {
-      "test": "make test"
+        "test": "make test"
     },
     "devDependencies": {
-    "mocha": "1.0.1",
-    "should": "0.6.1",
-    "express": "git://github.com/visionmedia/express.git"
+        "mocha": "1.0.1",
+        "should": "0.6.1",
+        "express": "3.0.0beta1"
     },
-  "optionalDependencies": {},
-  "engines": {
-    "node": "0.6.x"
-  }
+    "optionalDependencies": {},
+    "engines": {
+        "node": "0.6.x"
+    }
 }

@@ -1,5 +1,5 @@
 // Application Port
-process.env['PORT'] = 80;
+process.env['PORT'] = 3000;
 
 // MongoDB Configuration
 process.env['MONGODB_HOST'] = 'staff.mongohq.com';
