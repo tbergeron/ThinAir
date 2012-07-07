@@ -1,6 +1,6 @@
-var createController = require("../../libs/controllers").createController;
+var ThinAir = require("../../libs/thinair");
 
-var HomeController = createController({
+var HomeController = ThinAir.createController({
     index: function(req, res, params) {
         this.sendHtml(res, '<strong>hello world</strong>');
     }
