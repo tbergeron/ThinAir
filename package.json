@@ -17,7 +17,11 @@
         "pd": "0.6.3",
         "path": "0.4.9",
         "validator": "0.4.5",
-        "socket.io": "0.9.6"
+        "socket.io": "0.9.6",
+        "routil": "0.0.13",
+        "routil-cookie": "0.0.1",
+        "routes.js": "0.0.1",
+        "templar": "0.0.6"
     },
     "scripts": {
     },
