@@ -21,14 +21,18 @@ var Router = {
 
     // gets a requested action, and handles its parameters
     getAction: function(controller, action, parameters) {
+        var that = this;
+
         return function(req, res) {
+            var controllerObject = that.controllers[controller];
+
             if (isDefined(parameters)) {
                 if (isDefined(parameters.checkIfAuthorized)) {
                     sessions.checkIfAuthorized(req, res);
                 }
             }
 
-            return controller[action](req, res);
+            return controllerObject[action](req, res);
         };
     }
 };
