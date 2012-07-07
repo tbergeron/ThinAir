@@ -1,7 +1,7 @@
 var HttpHelpers = {
     // is a GET request?
     isGet: function(req) {
-        if (req.route.method === "get") {
+        if (req.route.method === 'get') {
             return true;
         } else {
             return false;
@@ -10,7 +10,7 @@ var HttpHelpers = {
 
     // is a POST request?
     isPost: function(req) {
-        if (req.route.method === "post") {
+        if (req.route.method === 'post') {
             return true;
         } else {
             return false;

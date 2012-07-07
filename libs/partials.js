@@ -1,4 +1,4 @@
-var fs = require("fs");
+var fs = require('fs');
 
 var Partials = {
     // registers any partial contained in app/views/partials
@@ -10,11 +10,11 @@ var Partials = {
 
         // register the hbs partial
         loadPartial = function(file) {
-            var partialName = file.replace(".html", "");
-            return hbs.registerPartial(partialName, fs.readFileSync(__dirname + "/../app/views/partials/" + file, "UTF-8"));
+            var partialName = file.replace('.html', '');
+            return hbs.registerPartial(partialName, fs.readFileSync(__dirname + '/../app/views/partials/' + file, 'UTF-8'));
         };
 
-        return fs.readdir(__dirname + "/../app/views/partials", readPartials);
+        return fs.readdir(__dirname + '/../app/views/partials', readPartials);
     }
 };
 

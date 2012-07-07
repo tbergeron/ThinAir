@@ -1,17 +1,17 @@
-var mongo = require("./helpers/mongo"),
-    validator = require("./validator"),
-    collection = require("mongo-col"),
-    pd = require("pd");
+var mongo = require('./helpers/mongo'),
+    validator = require('./validator'),
+    collection = require('mongo-col'),
+    pd = require('pd');
 
 var Repositories = {
     // creates a basic repository
     createRepository: function(name, content) {
         // connection to the collection
-        var db = collection(name, process.env["MONGODB_DATABASE"]);
+        var db = collection(name, process.env['MONGODB_DATABASE']);
 
         return pd.extend(Object.create(db), content, {
             // reference to MongoDB's ObjectID
-            ObjectId: require("mongodb").ObjectID,
+            ObjectId: require('mongodb').ObjectID,
 
             // basic findOne
             baseFindOne: function(conditions, callback) {

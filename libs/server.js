@@ -1,9 +1,13 @@
-var http = require("http");
+var http = require('http'),
+    routil = require('routil');
 
 module.exports = {
     init: function() {
         // if ran from c9, use its port
         process.env.PORT = (process.env.C9_PORT != undefined) ? process.env.C9_PORT : process.env.PORT;
+
+        // starting template engine
+        this.template.initializeTemplateEngine(routil, __dirname + '/../app/views');
 
         // registering routes
         var router = this.router;
@@ -18,6 +22,6 @@ module.exports = {
         // socket.io initialization
         this.sockets.initialize(server);
 
-        return console.log("ThinAir server listening on port " + process.env.PORT);
+        return console.log('ThinAir server listening on port ' + process.env.PORT);
     }
 };

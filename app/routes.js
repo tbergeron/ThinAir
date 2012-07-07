@@ -1,3 +1,3 @@
 module.exports = function(router, getAction) {
-    router.add("/", getAction("home", "index"));
+    router.add('/', getAction('home', 'index'));
 };

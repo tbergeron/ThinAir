@@ -4,8 +4,8 @@ var SessionsHelpers = {
         if (req.session.is_logged) {
             return true;
         } else {
-            this.messages.addMessage(req, "error", "You need to be logged in to access this page.");
-            return res.redirect("/");
+            this.messages.addMessage(req, 'error', 'You need to be logged in to access this page.');
+            return res.redirect('/');
         }
     }
 };

@@ -1,21 +1,21 @@
-var check = require("validator").check,
-    fs = require("fs");
+var check = require('validator').check,
+    fs = require('fs');
 
 var Validator = {
     validationErrors: [],
 
     // validates an object and return, return its errors
     validate: function(modelName, object, callback) {
-        var validationsFilePath = __dirname + "/../app/validations/" + modelName + ".validations.json";
+        var validationsFilePath = __dirname + '/../app/validations/' + modelName + '.validations.json';
         var that = this;
 
         fs.stat(validationsFilePath, function(err) {
             if (err) {
-                console.log("Error reading validations file.");
+                console.log('Error reading validations file.');
                 return callback(null);
 
             } else {
-                var content = fs.readFileSync(validationsFilePath, "utf8"),
+                var content = fs.readFileSync(validationsFilePath, 'utf8'),
                     validations = JSON.parse(content);
 
                 that.validationErrors = [];
@@ -34,7 +34,7 @@ var Validator = {
     // adds an error to the collection
     addErrorsToMessages: function(req, errors) {
         for (var errorIndex in errors) {
-            this.messages.addMessage(req, "error", errors[errorIndex]);
+            this.messages.addMessage(req, 'error', errors[errorIndex]);
         }
     },
 
@@ -51,16 +51,16 @@ var Validator = {
     useValidator: function(fieldName, validatorName, argument, value) {
         // todo: find another way, I hate this switch.
         switch (validatorName) {
-            case "minimumLength":
+            case 'minimumLength':
                 return this.validatorMinimumLength(fieldName, value, argument);
             default:
-                return console.log("Validator (" + validatorName + ") has not been found.");
+                return console.log('Validator (' + validatorName + ') has not been found.');
         }
     },
 
     // minimumLength validator
     validatorMinimumLength: function(fieldName, value, length) {
-        var errorMessage = "The value entered for \"" + fieldName + "\" (" + value + ") is too short (minimum of " + length + " character(s)).";
+        var errorMessage = 'The value entered for \'' + fieldName + '\' (' + value + ') is too short (minimum of ' + length + ' character(s)).';
 
         try {
             return check(value, errorMessage).len(length);

@@ -1,6 +1,6 @@
 var pd = require('pd'),
     createController = require('./controllers').createController,
-    createRepository = require("./repositories").createRepository;
+    createRepository = require('./repositories').createRepository;
 
 
 // proxies for general framework-related methods
