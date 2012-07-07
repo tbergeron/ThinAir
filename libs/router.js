@@ -1,4 +1,5 @@
 var router = new require('routes').Router(),
+    routil = require('routil'),
     sessions = require('./helpers/sessions'),
     isDefined = require('./helpers/objects').isDefined;
 
@@ -16,6 +17,9 @@ var Router = {
         // if one is matched, executing the reponse function
         if (route) {
             route.fn(req, res, route.params, route.splats);
+        } else {
+            // TOTODB: send 404 here with routil
+            // routil.errorPage(req, res, [404 new Error("send error")])
         }
     },
 
