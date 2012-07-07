@@ -18,8 +18,7 @@ var Router = {
         if (route) {
             route.fn(req, res, route.params, route.splats);
         } else {
-            // TOTODB: send 404 here with routil
-            // routil.errorPage(req, res, [404 new Error("send error")])
+            routil.errorPage(req, res, 404);
         }
     },
 
