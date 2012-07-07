@@ -1,3 +1,6 @@
+// Environment [ DEV | PROD ]
+process.env['ENVIRONMENT'] = 'DEV';
+
 // Application Port
 process.env['PORT'] = 3000;
 

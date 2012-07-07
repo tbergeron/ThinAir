@@ -14,9 +14,19 @@ var Router = {
         // matching a route
         var route = router.match(req.url);
 
-        // if one is matched, executing the reponse function
+        // if a route is matched, executing the reponse function
         if (route) {
-            route.fn(req, res, route.params, route.splats);
+            try {
+                route.fn(req, res, route.params, route.splats);
+            } catch (e) {
+                // If something wrong happens, shoot the error stack.
+                if (process.env['ENVIRONMENT'] == 'DEV') {
+                    // TODOTB: Maybe make some kind of custom page for errors.
+                    routil.sendHtml(res, '<pre>' + e.stack + '</pre>');
+                } else {
+                    routil.errorPage(req, res, 500);
+                }
+            }
         } else {
             routil.errorPage(req, res, 404);
         }

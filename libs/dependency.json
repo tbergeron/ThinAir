@@ -3,7 +3,6 @@
         "template": "libs/template.js",
         "routes": "app/routes.js",
         "router": "libs/router.js",
-        "partials": "libs/partials.js",
         "messages": "libs/messages.js",
         "sockets": "libs/sockets.js"
     },
