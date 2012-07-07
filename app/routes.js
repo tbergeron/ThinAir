@@ -1,7 +1,6 @@
 module.exports = {
-  registerRoutes: function() {
-    var router = this.router,
-        getAction = this.router.getAction;
+  registerRoutes: function(router) {
+    var getAction = router.getAction;
 
     router.add("/", getAction("home", "index"));
   }

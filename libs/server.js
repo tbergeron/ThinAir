@@ -6,9 +6,8 @@ module.exports = {
         process.env.PORT = (process.env.C9_PORT != undefined) ? process.env.C9_PORT : process.env.PORT;
 
         // registering routes
-        this.routes.registerRoutes();
-
         var router = this.router;
+        this.routes.registerRoutes(this.router);
 
         // starts the server
         var server = http.createServer(function(req, res) {

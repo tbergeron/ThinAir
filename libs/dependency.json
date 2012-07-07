@@ -12,9 +12,6 @@
     "libs/validator.js": {
         "messages": "libs/messages.js"
     },
-    "app/routes.js": {
-        "router": "libs/router.js"
-    },
     "libs/router.js": {
         "controllers": ["app/controllers/"]
     },
