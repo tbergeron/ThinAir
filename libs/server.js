@@ -7,7 +7,7 @@ module.exports = {
 
         // registering routes
         var router = this.router;
-        this.routes.registerRoutes(this.router);
+        var routes = new this.routes(router, router.getAction);
 
         // starts the server
         var server = http.createServer(function(req, res) {
