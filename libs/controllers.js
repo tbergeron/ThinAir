@@ -1,11 +1,10 @@
 var pd = require('pd'),
     routil = require('routil'),
     Session = require("routil-session"),
-    session = Session({
-        store: require('mongo-store')({
-            collection: require('mongo-col')('sessions', process.env['MONGODB_DATABASE'])
-        })
-    });
+    db = require('mongodb').Db,
+    Server = require('mongodb').Server,
+    dbInstance = new db(process.env['MONGODB_DATABASE'], new Server(process.env['MONGODB_HOST'], process.env["MONGODB_PORT"])),
+    session = Session();
 
 var Controllers = {
     // creates a basic controller
