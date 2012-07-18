@@ -1,3 +1,8 @@
+// if using DEV use console-trace for console.log by default
+if (process.env['ENVIRONMENT'] == 'DEV') {
+    require('console-trace')({ always: true });
+}
+
 var pd = require('pd'),
     createController = require('./controllers').createController,
     createRepository = require('./repositories').createRepository;

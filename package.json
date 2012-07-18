@@ -12,6 +12,7 @@
         "mongodb": "0.9.9-8",
         "mongojs": "0.3.2",
         "mongo-col": "0.1.7",
+        "mongo-store": "0.0.2",
         "ncore": "2.2.3",
         "handlebars": "1.0.5beta",
         "pd": "0.6.3",
@@ -20,12 +21,14 @@
         "socket.io": "0.9.6",
         "routil": "0.0.13",
         "routil-cookie": "0.0.1",
+        "routil-session": "0.1.0",
         "routes.js": "0.0.1",
         "templar": "0.0.6"
     },
     "scripts": {
     },
     "devDependencies": {
+        "console-trace": "0.2.1"
     },
     "optionalDependencies": {},
     "engines": {

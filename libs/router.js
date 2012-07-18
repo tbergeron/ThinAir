@@ -41,6 +41,7 @@ var Router = {
 
             if (isDefined(parameters)) {
                 if (isDefined(parameters.checkIfAuthorized)) {
+                    // TODOTB: Fix this with new sessions.
                     sessions.checkIfAuthorized(req, res);
                 }
             }
