@@ -1,6 +1,7 @@
 var SessionsHelpers = {
     // checks if a request is authorized
     checkIfAuthorized: function(req, res) {
+        // TODOTB: change this for the new session system
         if (req.session.is_logged) {
             return true;
         } else {

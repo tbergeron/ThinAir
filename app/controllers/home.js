@@ -20,20 +20,22 @@ module.exports = ThinAir.createController({
     },
 
     create: function(req, res, params) {
-        this.createSession(res, { foo: "data!" }, function(err) {
+        console.log(req.sessions);
+        
+        req.sessions.createSession(res, { foo: "data!" }, function(err) {
             console.log('created! ' + err);
         });
     },
 
     get: function(req, res, params) {
-        this.getSession(req, function(err, data) {
+        req.sessions.getSession(req, function(err, data) {
             console.log('session data:');
             console.log(data);
         });
     },
 
     delete: function(req, res, params) {
-        this.destroySession(req, res, function(err) {
+        req.sessions.destroySession(req, res, function(err) {
             console.log('deleted! ' + err);
         });
     }

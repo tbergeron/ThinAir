@@ -1,5 +1,8 @@
-var router = new require('routes').Router(),
+var pd = require('pd'),
+    router = new require('routes').Router(),
     routil = require('routil'),
+    Session = require("routil-session"),
+    session = Session(),
     sessions = require('./helpers/sessions'),
     isDefined = require('./helpers/objects').isDefined;
 
@@ -17,6 +20,9 @@ var Router = {
         // if a route is matched, executing the reponse function
         if (route) {
             try {
+                // Adding sessions methods to req
+                req = pd.extend(Object.create({}), req, session);
+                
                 route.fn(req, res, route.params, route.splats);
             } catch (e) {
                 // If something wrong happens, shoot the error stack.
