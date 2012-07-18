@@ -8,7 +8,6 @@ module.exports = ThinAir.createController({
     },
 
     index: function(req, res, params) {
-        // TODOTB: There's some fuck with the partial because the other below works damn it.
         this.sendTemplate(req, res, 'index');
     },
 
