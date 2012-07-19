@@ -1,8 +1,11 @@
-var pd = require('pd'),
-    router = new require('routes').Router(),
+var router = new require('routes').Router(),
     routil = require('routil'),
-    isDefined = require('./helpers/objects').isDefined,
-    session = require("routil-session")();
+    isDefined = require('./helpers/objects').isDefined;
+    test = require('../test');
+
+// NOTE TO RAYNOS: Will be executed, at runtime.
+console.log('object with a function scream is expected here:');
+console.log(test);
 
 var Router = {
     // registers a route
@@ -15,15 +18,13 @@ var Router = {
         // matching a route
         var route = router.match(req.url);
 
+        // NOTE TO RAYNOS: Will be executed when you'll go on http://localhost:3000
+        console.log('object with a function scream is expected here:');
+        console.log(test);
+
         // if a route is matched, executing the reponse function
         if (route) {
             try {
-                // trying to debug what the hell is happening
-                console.log(session);
-
-                // merging sessions in req
-                req = pd.extend(Object.create(req), { sessions: session });
-
                 route.fn(req, res, route.params, route.splats);
             } catch (e) {
                 // If something wrong happens, shoot the error stack.

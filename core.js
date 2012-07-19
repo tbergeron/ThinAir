@@ -1,5 +1,10 @@
 require("./config");
 
+// if using DEV use console-trace for console.log by default
+if (process.env['ENVIRONMENT'] == 'DEV') {
+    require('console-trace')({ always: true });
+}
+
 var path = require('path');
 
 require("ncore")({
