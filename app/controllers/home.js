@@ -20,11 +20,11 @@ module.exports = ThinAir.createController({
     },
 
     create: function(req, res, params) {
-        this.createSession(res, { userId: 9 });
+        req.createSession(res, { userId: 9 });
     },
 
     get: function(req, res, params) {
-        this.getSession(req, function(err, data) {
+        req.getSession(req, function(err, data) {
             console.log(data);
         });
     }
