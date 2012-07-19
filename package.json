@@ -21,7 +21,7 @@
         "socket.io": "0.9.6",
         "routil": "0.0.13",
         "routil-cookie": "0.0.1",
-        "routil-session": "0.1.0",
+        "routil-session": "0.1.1",
         "routes": "0.1.1",
         "templar": "0.0.6"
     },

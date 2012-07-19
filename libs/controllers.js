@@ -1,11 +1,11 @@
 var pd = require('pd'),
-    routil = require('routil');
+    routil = require('routil'),
+    Session = require("routil-session");
 
 var Controllers = {
     // creates a basic controller
     createController: function(content) {
-        return pd.extend(Object.create({}), routil, content, {
-
+        return pd.extend(Object.create({}), routil, Session(), content, {
             // sends a template
             sendTemplate: function(req, res, name, params) {
                 // preventing templar to throw an error if there's no data
