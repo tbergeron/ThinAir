@@ -1,6 +1,6 @@
 var router = new require('routes').Router(),
     routil = require('routil'),
-    isDefined = require('./helpers/objects').isDefined;
+    isDefined = require('./thinair').isDefined;
     test = require('../test');
 
 // NOTE TO RAYNOS: Will be executed, at runtime.

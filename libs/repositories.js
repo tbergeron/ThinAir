@@ -1,5 +1,4 @@
-var mongo = require('./helpers/mongo'),
-    validator = require('./validator'),
+var validator = require('./validator'),
     collection = require('mongo-col'),
     pd = require('pd');
 
@@ -12,6 +11,15 @@ var Repositories = {
         return pd.extend(Object.create(db), content, {
             // reference to MongoDB's ObjectID
             ObjectId: require('mongodb').ObjectID,
+
+            // is a new MongoDB object?
+            isNew: function(object) {
+                if (object._id === undefined || object._id === '') {
+                    return true;
+                } else {
+                    return false;
+                }
+            },
 
             // basic findOne
             baseFindOne: function(conditions, callback) {
@@ -48,7 +56,7 @@ var Repositories = {
 
                     } else {
                         // if it's a new object, save it and return it with its new ObjectID
-                        if (mongo.isNew(object)) {
+                        if (that.isNew(object)) {
                             object._id = new that.ObjectId();
                             object.addedDate = new Date().toString();
                             

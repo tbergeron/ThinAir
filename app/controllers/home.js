@@ -22,8 +22,17 @@ module.exports = ThinAir.createController({
     validators: function(req, res, params) {
         var message;
 
+        // response from the form
         if (this.isPost(req)) {
-            message = 'been posted!';
+            var that = this;
+
+            this.Projects.save(params.project, function(project, errors) {
+                if (errors) {
+                    that.validator.addErrorsToMessages(req, errors);
+                } else {
+                    message = 'full of win!';
+                }
+            });
         }
 
         this.sendTemplate(req, res, 'validators', { message: message });
