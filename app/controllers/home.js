@@ -19,6 +19,16 @@ module.exports = ThinAir.createController({
         });
     },
 
+    validators: function(req, res, params) {
+        var message;
+
+        if (this.isPost(req)) {
+            message = 'been posted!';
+        }
+
+        this.sendTemplate(req, res, 'validators', { message: message });
+    },
+
     create: function(req, res, params) {
         req.createSession(res, { userId: 9 });
     },

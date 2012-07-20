@@ -18,6 +18,8 @@ var Router = {
         // matching a route
         var route = router.match(req.url);
 
+        console.log(route)
+
         // NOTE TO RAYNOS: Will be executed when you'll go on http://localhost:3000
         console.log('object with a function scream is expected here:');
         console.log(test);
