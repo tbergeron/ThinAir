@@ -2,10 +2,7 @@ var router = new require('routes').Router(),
     routil = require('routil'),
     isDefined = require('./thinair').isDefined,
     pd = require('pd'),
-    session = require('routil-session')(),
     qsObjects = require('qs-objects');
-
-console.log('this is sparta', session)
 
 var Router = {
     // registers a route
@@ -40,10 +37,9 @@ var Router = {
                 } else {
                     route.fn(req, res, route.params, route.splats);
                 }
-
             } catch (e) {
                 // If something wrong happens, shoot the error stack.
-                if (process.env['ENVIRONMENT'] == 'DEV') {
+                if (process.env.ENVIRONMENT === 'DEV') {
                     // TODOTB: Maybe make some kind of custom page for errors.
                     routil.sendHtml(res, '<pre>' + e.stack + '</pre>');
                 } else {

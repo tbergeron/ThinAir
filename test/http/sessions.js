@@ -1,6 +1,6 @@
-var test = require("testling")
-    , core = require("../../core")
-    , request = require('request')
+var test = require("testling"), 
+    request = require('request'),
+    core = require("../../core")
 
 core(startTests)
 
@@ -38,7 +38,7 @@ function startTests() {
 }
 
 function makeRequest(opts, cb) {
-    if (typeof opts ===  'string') {
+    if (typeof opts === 'string') {
         opts = "https://localhost:3000" + opts
     } else {
         opts.uri = "http://localhost:3000" + opts.uri

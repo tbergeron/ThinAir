@@ -1,5 +1,4 @@
-var ThinAir = require('../../libs/thinair')
-    , session = require("routil-session")()
+var ThinAir = require('../../libs/thinair');
 
 module.exports = ThinAir.createController({
     Projects: null,
@@ -42,12 +41,12 @@ module.exports = ThinAir.createController({
     },
 
     create: function(req, res, params) {
-        session.createSession(req, res, { userId: 9 });
+        this.sessions.createSession(req, res, { userId: 9 });
         res.end();
     },
 
     get: function(req, res, params) {
-        session.getSession(req, function(err, data) {
+        this.sessions.getSession(req, function(err, data) {
             console.error('data?', data)
             res.end(data)
         });
