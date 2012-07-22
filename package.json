@@ -30,7 +30,8 @@
     },
     "devDependencies": {
         "console-trace": "0.2.1",
-        "testem": "git://github.com/Raynos/testem#master"
+        "testem": "git://github.com/Raynos/testem#master",
+        "tap": "0.2.5"
     },
     "optionalDependencies": {},
     "engines": {
