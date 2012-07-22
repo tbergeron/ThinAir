@@ -1,6 +1,8 @@
 var router = new require('routes').Router(),
     routil = require('routil'),
-    isDefined = require('./thinair').isDefined;
+    isDefined = require('./thinair').isDefined,
+    pd = require('pd'),
+    qsObjects = require('qs-objects'),
     test = require('../test');
 
 // NOTE TO RAYNOS: Will be executed, at runtime.
@@ -27,7 +29,26 @@ var Router = {
         // if a route is matched, executing the reponse function
         if (route) {
             try {
-                route.fn(req, res, route.params, route.splats);
+                if (req.method == 'POST') {
+                    // Converting query string to objects
+                    var buffer = '';
+
+                    req.on('data', function(chunk) {
+                        buffer += chunk.toString();
+                    });
+
+                    req.on('end', function() {
+                        var body = qsObjects(buffer);
+
+                        // merging body inside req
+                        req = pd.extend(Object.create(req), { body: body });
+
+                        route.fn(req, res, route.params, route.splats);
+                    });
+                } else {
+                    route.fn(req, res, route.params, route.splats);
+                }
+
             } catch (e) {
                 // If something wrong happens, shoot the error stack.
                 if (process.env['ENVIRONMENT'] == 'DEV') {

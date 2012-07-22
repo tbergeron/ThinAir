@@ -23,12 +23,14 @@
         "routil-cookie": "0.0.1",
         "routil-session": "0.1.1",
         "routes": "0.1.1",
-        "templar": "0.0.6"
+        "templar": "0.0.6",
+        "qs-objects": "0.1.1"
     },
     "scripts": {
     },
     "devDependencies": {
-        "console-trace": "0.2.1"
+        "console-trace": "0.2.1",
+        "testem": "git://github.com/Raynos/testem#master"
     },
     "optionalDependencies": {},
     "engines": {

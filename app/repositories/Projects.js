@@ -7,5 +7,15 @@ module.exports = ThinAir.createRepository("projects", {
             if (err) console.log(err);
             return callback(projects ? projects : null);
         });
+    },
+    
+    // saves a project
+    save: function(project, callback) {
+        // converts the project's code to a slug
+        project.code = strings.slugify(project.name);
+
+        this.baseSave(project, function(savedProject, errors) {
+            return callback(savedProject, errors);
+        });
     }
 });
