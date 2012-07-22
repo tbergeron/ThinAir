@@ -1,13 +1,27 @@
 require("./config");
 
-var path = require('path');
+// if using DEV use console-trace for console.log by default
+if (process.env.ENVIRONMENT === 'DEV') {
+    require('console-trace')({ always: true });
+}
 
-require("ncore")({
-    uri: __dirname,
-    dependencyMapper: {
-        jsonUri: path.join(__dirname, "libs", "dependency.json")
-    },
-    moduleLoader: {
-        skip: /test|public|node_modules|bin/
-    }
-});
+var path = require('path');
+module.exports = startNcore
+
+function startNcore(callback) {
+    require("ncore")({
+        uri: __dirname,
+        dependencyMapper: {
+            jsonUri: path.join(__dirname, "libs", "dependency.json")
+        },
+        moduleLoader: {
+            skip: /test|public|node_modules|bin/
+        }
+    }, callback);
+}
+
+if (require.main === module) {
+    startNcore(noop)
+}
+
+function noop() {}

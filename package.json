@@ -1,39 +1,55 @@
 {
-    "author": "Tommy Bergeron <t.bergeron@gmail.com>",
-    "name": "ThinAir",
-    "description": "Web Development Framework based on Node.js and Express.js",
-    "version": "0.0.1",
-    "homepage": "https://github.com/tbergeron/ThinAir",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/tbergeron/ThinAir.git"
-    },
-    "dependencies": {
-        "ncore": "2.2.3",
-        "handlebars": "1.0.5beta",
-        "mongojs": "0.3.2",
-        "pd": "0.6.3",
-        "mongo-col": "0.1.7",
-        "path": "0.4.9",
-        "consolidate": "0.2.0",
-        "validator": "0.4.5",
-        "mongodb": "0.9.9-8",
-        "commander": "0.6.0",
-        "connect-mongo": "git://github.com/kcbanner/connect-mongo.git",
-        "socket.io": "0.9.6",
-        "iterate-files": "0.1.1",
-        "mime": "1.2.6"
-    },
-    "scripts": {
-        "test": "make test"
-    },
-    "devDependencies": {
-        "mocha": "1.0.1",
-        "should": "0.6.1",
-        "express": "3.0.0beta1"
-    },
-    "optionalDependencies": {},
-    "engines": {
-        "node": "0.6.x"
+  "author": "Tommy Bergeron <t.bergeron@gmail.com>",
+  "name": "ThinAir",
+  "description": "Web Development Framework based on Node.js and Express.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/tbergeron/ThinAir",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tbergeron/ThinAir.git"
+  },
+  "contributors": [
+    {
+      "name": "Tommy Bergeron"
     }
+  ],
+  "bugs": {
+    "url": "https://github.com/tbergeron/ThinAir/issues",
+    "email": "t.bergeron@gmail.com"
+  },
+  "dependencies": {
+    "mongodb": "0.9.9-8",
+    "mongojs": "0.3.2",
+    "mongo-col": "0.1.7",
+    "mongo-store": "0.0.2",
+    "ncore": "2.2.3",
+    "handlebars": "1.0.5beta",
+    "pd": "0.6.3",
+    "path": "0.4.9",
+    "validator": "0.4.5",
+    "socket.io": "0.9.6",
+    "routil": "0.0.13",
+    "routil-cookie": "0.0.1",
+    "routil-session": "0.1.1",
+    "routes": "0.1.1",
+    "templar": "0.0.6",
+    "qs-objects": "0.1.1"
+  },
+  "devDependencies": {
+    "console-trace": "0.2.1",
+    "testling": "git://github.com/Raynos/testling#master",
+    "testem": "git://github.com/Raynos/testem#master",
+    "sinon": "1.4.2",
+    "tap": "0.2.5",
+    "request": "~2.9.203"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/tbergeron/ThinAir/raw/master/LICENSE"
+    }
+  ],
+  "scripts": {
+    "test": "make node-test"
+  }
 }

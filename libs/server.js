@@ -1,29 +1,30 @@
-var http = require("http"),
-    express = require("express"),
-    hbs = require("handlebars"),
-    fs = require("fs");
-
+var http = require('http'),
+    routil = require('routil');
+    
 module.exports = {
-    init: function() {
+    setup: function (done)  {
         // if ran from c9, use its port
         process.env.PORT = (process.env.C9_PORT != undefined) ? process.env.C9_PORT : process.env.PORT;
 
-        // initialize the app
-        var app = express();
+        // starting template engine
+        this.template.initializeTemplateEngine(routil, __dirname + '/../app/views');
 
-        this.configure.start(app);
-        this.routes.registerRoutes(app);
-        this.partials.registerPartials(hbs);
+        // registering routes
+        var router = this.router;
+        var routes = new this.routes(router, router.getAction);
 
         // starts the server
-        var server = http.createServer();
-        server.listen(process.env.PORT)
+        var server = http.createServer(function(req, res) {
+            // sending request to router
+            router.match(req, res);
+        }).listen(process.env.PORT, done);
 
-        server.on("request", app);
 
         // socket.io initialization
         this.sockets.initialize(server);
 
-        return console.log("Express server listening on port " + process.env.PORT);
+        return console.log('ThinAir server listening on port ' + process.env.PORT);
+    },
+    init: function() {
     }
 };
