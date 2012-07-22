@@ -2,6 +2,8 @@ var pd = require('pd'),
     routil = require('routil'),
     session = require('routil-session')();
 
+console.log("session?", session)
+
 var Controllers = {
     // creates a basic controller
     createController: function(content) {
