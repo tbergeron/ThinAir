@@ -2,7 +2,10 @@ var router = new require('routes').Router(),
     routil = require('routil'),
     isDefined = require('./thinair').isDefined,
     pd = require('pd'),
+    session = require('routil-session')(),
     qsObjects = require('qs-objects');
+
+console.log('this is sparta', session)
 
 var Router = {
     // registers a route
