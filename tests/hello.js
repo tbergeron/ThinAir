@@ -1,3 +1,5 @@
+var test = require("testling")
+
 function hello(){
     return "hello world"
 }

@@ -2,12 +2,7 @@ var router = new require('routes').Router(),
     routil = require('routil'),
     isDefined = require('./thinair').isDefined,
     pd = require('pd'),
-    qsObjects = require('qs-objects'),
-    test = require('../test');
-
-// NOTE TO RAYNOS: Will be executed, at runtime.
-console.log('object with a function scream is expected here:');
-console.log(test);
+    qsObjects = require('qs-objects');
 
 var Router = {
     // registers a route
@@ -19,12 +14,6 @@ var Router = {
     match: function(req, res) {
         // matching a route
         var route = router.match(req.url);
-
-        console.log(route)
-
-        // NOTE TO RAYNOS: Will be executed when you'll go on http://localhost:3000
-        console.log('object with a function scream is expected here:');
-        console.log(test);
 
         // if a route is matched, executing the reponse function
         if (route) {

@@ -30,6 +30,7 @@
     },
     "devDependencies": {
         "console-trace": "0.2.1",
+        "testling": "git://github.com/Raynos/testling#master",
         "testem": "git://github.com/Raynos/testem#master",
         "tap": "0.2.5"
     },
