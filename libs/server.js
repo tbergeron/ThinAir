@@ -19,10 +19,4 @@ requestHandler.startServer = function() {
     console.log('ThinAir server is started and listening on port ' + process.env.PORT);
 };
 
-requestHandler.setup = function(done) {
-    this.startServer();
-    done();
-}
-
-
 module.exports = requestHandler;
