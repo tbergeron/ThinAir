@@ -1,6 +1,7 @@
 require("./config");
 
-var path = require('path');
+var path = require('path'),
+    server = require('./libs/server');
 
 // if using DEV use console-trace for console.log by default
 if (process.env.ENVIRONMENT === 'DEV') {
@@ -20,9 +21,9 @@ var nCoreStart = function(callback) {
 }
 
 if (require.main === module) {
-    nCoreStart(noop);
+    nCoreStart(function(){
+        server.startServer();
+    });
 }
-
-function noop() {}
 
 module.exports = nCoreStart;
