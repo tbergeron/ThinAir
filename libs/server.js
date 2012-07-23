@@ -7,8 +7,10 @@ var requestHandler = function(req, res) {
 };
 
 requestHandler.setup = function(done) {
-    // if it's called by node
-    if (require.main != module) {
+    // if it's called by tests
+    if (require.main === module) {
+        done();
+    } else {
         // if ran from c9, use its port
         process.env.PORT = (process.env.C9_PORT != undefined) ? process.env.C9_PORT : process.env.PORT;
 
@@ -20,7 +22,6 @@ requestHandler.setup = function(done) {
 
         return console.log('ThinAir server listening on port ' + process.env.PORT);
     }
-    done();
 }
 
 module.exports = requestHandler;
