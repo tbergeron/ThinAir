@@ -2,7 +2,7 @@ var test = require("testling"),
     testServer = require("test-server"),
     request = require('request'),
     nCoreStart = require("../../core"),
-    server = require("../../libs/server");
+    server = require("../../libs/server")
 
 var startTests = function(request, done) {
     test('session get', function (t) {
@@ -36,4 +36,6 @@ var startTests = function(request, done) {
     })
 }
 
-nCoreStart(testServer(server, startTests));
+nCoreStart(function() {
+    testServer(server, startTests)
+});
