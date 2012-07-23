@@ -7,6 +7,7 @@ module.exports = function(router, getAction) {
     
     // router test routes
     router.add('/routes/test', getAction('routes', 'test'));
+    router.add('/routes/test-template', getAction('routes', 'testTemplate'));
 
     router.add('/validators', getAction('home', 'validators'));
 

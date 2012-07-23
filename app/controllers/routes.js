@@ -7,4 +7,8 @@ module.exports = ThinAir.createController({
         res.end();
     },
 
+    testTemplate: function(req, res, params) {
+        this.sendTemplate(req, res, 'index');
+    }
+
 });

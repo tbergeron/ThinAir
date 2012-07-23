@@ -5,7 +5,7 @@ var test = require("testling"),
     server = require("../../libs/server")
 
 var startTests = function(request, done) {
-    test('route get', function (t) {
+    test('route get 200', function (t) {
         request("/routes/test", function (err, res, body) {
             t.equal(err, null, "error should be undefined")
             t.equal(res.statusCode, 200, "status code should be 200")
@@ -14,7 +14,16 @@ var startTests = function(request, done) {
         })
     })
 
-    test('route get', function (t) {
+    test('route get 200 template', function (t) {
+        request("/routes/test-template", function (err, res, body) {
+            t.equal(err, null, "error should be undefined")
+            t.equal(res.statusCode, 200, "status code should be 200")
+            t.equal(body.length, 168, "body should be have a length of 168 characters")
+            t.end()
+        })
+    })
+
+    test('route get 404', function (t) {
         request("/routes/404", function (err, res, body) {
             t.equal(err, null, "error should be undefined")
             t.equal(res.statusCode, 404, "status code should be 404")

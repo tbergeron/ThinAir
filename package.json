@@ -1,6 +1,6 @@
 {
   "author": "Tommy Bergeron <t.bergeron@gmail.com>",
-  "name": "ThinAir",
+  "name": "thinair",
   "description": "Web Development Framework based on Node.js and Express.js",
   "version": "0.0.1",
   "homepage": "https://github.com/tbergeron/ThinAir",
