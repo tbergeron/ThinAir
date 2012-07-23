@@ -33,6 +33,7 @@ function startTests() {
     })
 }
 
+// TODOTB: use test-server instead.
 function makeRequest(opts, cb) {
     if (typeof opts === 'string') {
         opts = "http://localhost:3000" + opts
