@@ -4,11 +4,11 @@ var test = require("testling"),
     nCoreStart = require("../../core"),
     server = require("../../libs/server");
 
-nCoreStart(testServer(server, startTests));
+nCoreStart(testServer(server, {}, startTests));
 
-function startTests() {
+var startTests = function(request, done) {
     test('session get', function (t) {
-        makeRequest("/get", function (err, res, body) {
+        request("/get", function (err, res, body) {
             t.equal(err, null, "error should be undefined")
             t.equal(body, undefined, "body should be undefined")
             t.end()
@@ -16,7 +16,7 @@ function startTests() {
     })
 
     test('session create', function (t) {
-        makeRequest("/create", function (err, res, body) {
+        request("/create", function (err, res, body) {
             t.equal(err, null, "error should be undefined")
             t.equal(body, undefined, "body should be undefined")
             t.end()
@@ -24,7 +24,7 @@ function startTests() {
     })
 
     test('session get', function (t) {
-        makeRequest('/get', function (err, res, body) {
+        request('/get', function (err, res, body) {
             t.equal(err, null, "error should be undefined")
             t.type(body, "string", "body should be a string")
             t.end()
@@ -36,14 +36,6 @@ function startTests() {
             process.exit(0)
         }, 1000)
     })
-}
 
-// TODOTB: use test-server instead.
-function makeRequest(opts, cb) {
-    if (typeof opts === 'string') {
-        opts = "http://localhost:3000" + opts
-    } else {
-        opts.uri = "http://localhost:3000" + opts.uri
-    }
-    request(opts, cb)
+    done()
 }
