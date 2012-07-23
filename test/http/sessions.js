@@ -7,6 +7,7 @@ nCoreStart(startTests)
 function startTests() {
     test('session get', function (t) {
         makeRequest("/get", function (err, res, body) {
+            t.equal(err, null, "error should be undefined")
             t.equal(body, undefined, "body should be undefined")
             t.end()
         })
@@ -14,6 +15,7 @@ function startTests() {
 
     test('session create', function (t) {
         makeRequest("/create", function (err, res, body) {
+            t.equal(err, null, "error should be undefined")
             t.equal(body, undefined, "body should be undefined")
             t.end()
         })
@@ -21,6 +23,7 @@ function startTests() {
 
     test('session get', function (t) {
         makeRequest('/get', function (err, res, body) {
+            t.equal(err, null, "error should be undefined")
             t.type(body, "string", "body should be a string")
             t.end()
         })
