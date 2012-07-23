@@ -1,7 +1,10 @@
 {
-    "libs/server.js": {
+    "libs/thinair.js": {
         "template": "libs/template.js",
         "routes": "app/routes.js",
+        "router": "libs/router.js"
+    },
+    "libs/server.js": {
         "router": "libs/router.js",
         "messages": "libs/messages.js",
         "sockets": "libs/sockets.js"

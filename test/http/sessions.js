@@ -1,4 +1,5 @@
 var test = require("testling"), 
+    testServer = require("test-server"),
     request = require('request'),
     nCoreStart = require("../../core")
 

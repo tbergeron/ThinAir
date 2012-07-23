@@ -1,10 +1,22 @@
 var pd = require('pd'),
+    routil = require('routil'),
     createController = require('./controllers').createController,
     createRepository = require('./repositories').createRepository;
 
 // proxies for general framework-related methods
 // and very generic methods
 var ThinAir = {
+    setup: function (done)  {
+        console.log('ThinAir is starting...');
+        
+        // starting template engine
+        this.template.initializeTemplateEngine(routil, __dirname + '/../app/views');
+
+        // registering routes
+        var router = this.router;
+        var routes = this.routes(router, router.getAction);
+    },
+
     createController: function(content) { 
         return createController(content); 
     },

@@ -30,7 +30,7 @@ module.exports = ThinAir.createController({
                 if (errors) {
                     message = errors[0];
                 } else {
-                    message = 'full of win!';
+                    message = 'success';
                 }
                 
                 that.sendTemplate(req, res, 'validators', { message: message });
