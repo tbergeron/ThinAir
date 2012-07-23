@@ -1,3 +1,5 @@
+process.env.CALLED_FROM_TESTS = true;
+
 var test = require("testling"), 
     testServer = require("test-server"),
     request = require('request'),

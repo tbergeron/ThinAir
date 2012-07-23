@@ -1,15 +1,24 @@
 var static = require('node-static'),
-    file = new(static.Server)('./public'),
     router = new require('routes').Router(),
     routil = require('routil'),
     isDefined = require('./thinair').isDefined,
     pd = require('pd'),
     qsObjects = require('qs-objects');
 
+
+// change the path if it's called from tests
+if (process.env.CALLED_FROM_TESTS) {
+    var publicPath = '../../public';
+} else {
+    var publicPath = './public';
+}
+
+var file = new(static.Server)(publicPath);
+
 var Router = {
     // registers a route
     add: function(uri, fn) { 
-        router.addRoute(uri, fn); 
+        router.addRoute(uri, fn);
     },
 
     // match a route and execute its related function
