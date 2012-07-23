@@ -5,6 +5,8 @@ module.exports = ThinAir.createController({
 
     setup: function(done) {
         this.Projects = this.repositories.Projects;
+
+        // never forget to tell when the controller has finished setup
         done();
     },
 

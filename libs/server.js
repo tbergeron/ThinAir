@@ -16,7 +16,7 @@ requestHandler.startServer = function() {
     // socket.io initialization
     this.sockets.initialize(server);
 
-    return console.log('ThinAir server listening on port ' + process.env.PORT);
+    console.log('ThinAir server is started and listening on port ' + process.env.PORT);
 };
 
 requestHandler.setup = function(done) {

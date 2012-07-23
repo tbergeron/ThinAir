@@ -20,6 +20,7 @@ var nCoreStart = function(callback) {
     }, callback);
 }
 
+// if it's called by node
 if (require.main === module) {
     nCoreStart(function(){
         server.startServer();
