@@ -55,7 +55,7 @@ var Router = {
     getAction: function(controller, action, parameters) {
         var that = this;
 
-        return function(req, res) {
+        return function(req, res, params, splats) {
             var controllerObject = that.controllers[controller];
 
             // TODOTB: Re-implement this.
@@ -65,7 +65,7 @@ var Router = {
             //     }
             // }
 
-            return controllerObject[action](req, res);
+            return controllerObject[action](req, res, params, splats);
         };
     }
 };
