@@ -50,11 +50,14 @@ var Router = {
                 }
             }
         } else {
+            var thatReq = req,
+                thatRes = res;
+
             // if no route is matched, try to find a static file to serve
             file.serve(req, res, function (e, res) {
                 // If the file wasn't found, send 404
                 if (e && (e.status === 404)) {
-                    routil.errorPage(req, res, 404);
+                    routil.errorPage(thatReq, thatRes, 404);
                 }
             });
         }
