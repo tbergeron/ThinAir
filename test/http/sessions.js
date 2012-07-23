@@ -4,7 +4,7 @@ var test = require("testling"),
     nCoreStart = require("../../core"),
     server = require("../../libs/server");
 
-nCoreStart(testServer(server, {}, startTests));
+nCoreStart(testServer(server, startTests));
 
 var startTests = function(request, done) {
     test('session get', function (t) {
