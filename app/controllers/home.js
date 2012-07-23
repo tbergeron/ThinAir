@@ -41,23 +41,6 @@ module.exports = ThinAir.createController({
         } else {
             this.sendTemplate(req, res, 'validators');
         }
-    },
-
-    create: function(req, res, params) {
-        this.sessions.createSession(res, { userId: 9 }, function(err) { 
-            console.log('holy shit', err); 
-        });
-
-        res.end();
-    },
-
-    get: function(req, res, params) {
-        this.sessions.getSession(req, function(err, data) {
-            if (data) {
-                res.write(JSON.stringify(data));
-            }
-
-            res.end();
-        });
     }
+    
 });

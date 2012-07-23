@@ -22,7 +22,7 @@
     "mongojs": "0.3.2",
     "mongo-col": "0.1.17",
     "mongo-store": "0.0.2",
-    "ncore": "2.2.3",
+    "ncore": "git://github.com/tbergeron/ncore.git#master",
     "handlebars": "1.0.5beta",
     "pd": "0.6.3",
     "path": "0.4.9",

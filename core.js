@@ -1,7 +1,8 @@
 require("./config");
 
 var path = require('path'),
-    server = require('./libs/server');
+    server = require('./libs/server'),
+    nCore = require('./node_modules/ncore/modules/core');
 
 // if using DEV use console-trace for console.log by default
 if (process.env.ENVIRONMENT === 'DEV') {
@@ -9,7 +10,7 @@ if (process.env.ENVIRONMENT === 'DEV') {
 }
 
 var nCoreStart = function(callback) {
-    require("ncore")({
+    nCore({
         uri: __dirname,
         dependencyMapper: {
             jsonUri: path.join(__dirname, "libs", "dependency.json")
