@@ -1,11 +1,10 @@
 var static = require('node-static'),
+    file = new(static.Server)('./public'),
     router = new require('routes').Router(),
     routil = require('routil'),
     isDefined = require('./thinair').isDefined,
     pd = require('pd'),
     qsObjects = require('qs-objects');
-
-var file = new(static.Server)('./public');
 
 var Router = {
     // registers a route

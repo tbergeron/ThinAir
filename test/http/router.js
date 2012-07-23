@@ -23,6 +23,16 @@ var startTests = function(request, done) {
         })
     })
 
+    test('route get 304 static file', function (t) {
+        request("/test.txt", function (err, res, body) {
+            console.warn('body', err)
+            t.equal(err, null, "error should be undefined")
+            t.equal(res.statusCode, 304, "status code should be 200")
+            t.equal(body.length, 26, "body should be have a length of 26 characters")
+            t.end()
+        })
+    })
+
     test('route get 404', function (t) {
         request("/routes/404", function (err, res, body) {
             t.equal(err, null, "error should be undefined")
