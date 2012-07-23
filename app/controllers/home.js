@@ -28,14 +28,16 @@ module.exports = ThinAir.createController({
 
             this.Projects.save(req.body.project, function(project, errors) {
                 if (errors) {
-                    console.log('form errors', errors);
+                    message = errors[0];
                 } else {
                     message = 'full of win!';
                 }
+                
+                that.sendTemplate(req, res, 'validators', { message: message });
             });
+        } else {
+            this.sendTemplate(req, res, 'validators');
         }
-
-        this.sendTemplate(req, res, 'validators', { message: message });
     },
 
     create: function(req, res, params) {

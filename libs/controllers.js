@@ -40,7 +40,7 @@ var Controllers = {
                 // preventing templar to throw an error if there's no data
                 if (!params) params = {};
 
-                this.template(req, res, name + '.html', params);
+                return this.template(req, res, name + '.html', params);
             }
         });
     }
