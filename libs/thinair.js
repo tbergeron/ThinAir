@@ -15,6 +15,8 @@ var ThinAir = {
         var routes = this.routes(router, router.getAction);
 
         console.log('ThinAir is starting...');
+
+        done();
     },
 
     createController: function(content) { 
