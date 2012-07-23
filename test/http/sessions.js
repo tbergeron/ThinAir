@@ -1,31 +1,27 @@
 var test = require("testling"), 
     request = require('request'),
-    core = require("../../core")
+    nCoreStart = require("../../core")
 
-core(startTests)
+nCoreStart(startTests)
 
 function startTests() {
     test('session get', function (t) {
         makeRequest("/get", function (err, res, body) {
-            console.error('body', body)
-
+            t.equal(body, undefined, "body should be undefined")
             t.end()
         })
     })
 
     test('session create', function (t) {
         makeRequest("/create", function (err, res, body) {
-            console.error('body', body)
-
+            t.equal(body, undefined, "body should be undefined")
             t.end()
         })
     })
 
     test('session get', function (t) {
         makeRequest('/get', function (err, res, body) {
-            console.error('error', err)
-            console.error('body', body)
-
+            t.type(body, "string", "body should be a string")
             t.end()
         })
     })
@@ -39,7 +35,7 @@ function startTests() {
 
 function makeRequest(opts, cb) {
     if (typeof opts === 'string') {
-        opts = "https://localhost:3000" + opts
+        opts = "http://localhost:3000" + opts
     } else {
         opts.uri = "http://localhost:3000" + opts.uri
     }
