@@ -7,8 +7,6 @@ var static = require('node-static'),
 
 var file = new(static.Server)('./public');
 
-console.log('hey', file);
-
 var Router = {
     // registers a route
     add: function(uri, fn) { 
@@ -52,11 +50,13 @@ var Router = {
                 }
             }
         } else {
-            console.log('hoe', file);
-            console.warn(req.url);
-            file.serve(req, res);
-
-            // routil.errorPage(req, res, 404);
+            // if no route is matched, try to find a static file to serve
+            file.serve(req, res, function (e, res) {
+                // If the file wasn't found, send 404
+                if (e && (e.status === 404)) {
+                    routil.errorPage(req, res, 404);
+                }
+            });
         }
     },
 
