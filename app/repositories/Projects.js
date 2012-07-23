@@ -12,7 +12,7 @@ module.exports = ThinAir.createRepository("projects", {
     // saves a project
     save: function(project, callback) {
         // converts the project's code to a slug
-        project.code = strings.slugify(project.name);
+        project.code = ThinAir.slugify(project.name);
 
         this.baseSave(project, function(savedProject, errors) {
             return callback(savedProject, errors);

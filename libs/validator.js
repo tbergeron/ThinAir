@@ -31,13 +31,6 @@ var Validator = {
         });
     },
 
-    // adds an error to the collection
-    addErrorsToMessages: function(req, errors) {
-        for (var errorIndex in errors) {
-            this.messages.addMessage(req, 'error', errors[errorIndex]);
-        }
-    },
-
     // validates a field with it's specified validations
     validateField: function(fieldName, fieldValidations, value) {
         for (var validatorIndex in fieldValidations) {
