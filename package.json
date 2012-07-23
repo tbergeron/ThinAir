@@ -20,7 +20,7 @@
   "dependencies": {
     "mongodb": "0.9.9-8",
     "mongojs": "0.3.2",
-    "mongo-col": "0.1.16",
+    "mongo-col": "git://github.com/tbergeron/mongo-col",
     "mongo-store": "0.0.2",
     "ncore": "2.2.3",
     "handlebars": "1.0.5beta",
