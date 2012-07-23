@@ -1,9 +1,10 @@
 var test = require("testling"), 
     testServer = require("test-server"),
     request = require('request'),
-    nCoreStart = require("../../core")
+    nCoreStart = require("../../core"),
+    server = require("../../libs/server");
 
-nCoreStart(startTests)
+nCoreStart(testServer(server, startTests));
 
 function startTests() {
     test('session get', function (t) {

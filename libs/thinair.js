@@ -7,14 +7,14 @@ var pd = require('pd'),
 // and very generic methods
 var ThinAir = {
     setup: function (done)  {
-        console.log('ThinAir is starting...');
-        
         // starting template engine
         this.template.initializeTemplateEngine(routil, __dirname + '/../app/views');
 
         // registering routes
         var router = this.router;
         var routes = this.routes(router, router.getAction);
+
+        console.log('ThinAir has started.');
     },
 
     createController: function(content) { 
