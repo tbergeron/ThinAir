@@ -22,7 +22,6 @@
     "mongojs": "0.3.2",
     "mongo-col": "0.1.17",
     "mongo-store": "0.0.2",
-    "ncore": "git://github.com/tbergeron/ncore.git#master",
     "handlebars": "1.0.5beta",
     "pd": "0.6.3",
     "path": "0.4.9",
@@ -34,7 +33,8 @@
     "routes": "0.1.1",
     "templar": "0.0.6",
     "qs-objects": "0.1.1",
-    "node-static": "~0.6.0"
+    "node-static": "~0.6.0",
+    "ncore": "git://github.com/tbergeron/ncore.git"
   },
   "devDependencies": {
     "console-trace": "0.2.1",

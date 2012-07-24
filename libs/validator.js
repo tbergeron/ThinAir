@@ -42,25 +42,13 @@ var Validator = {
 
     // uses a specified validator with a specified value
     useValidator: function(fieldName, validatorName, argument, value) {
-        // todo: find another way, I hate this switch.
-        switch (validatorName) {
-            case 'minimumLength':
-                return this.validatorMinimumLength(fieldName, value, argument);
-            default:
-                return console.log('Validator (' + validatorName + ') has not been found.');
+        if (this.valiators[validatorName] !== undefined) {
+            return this.validators[validatorName](fieldName, value, argument);            
+        } else {
+            return console.log('Validator (' + validatorName + ') has not been found.');
         }
     },
-
-    // minimumLength validator
-    validatorMinimumLength: function(fieldName, value, length) {
-        var errorMessage = 'The value entered for \'' + fieldName + '\' (' + value + ') is too short (minimum of ' + length + ' character(s)).';
-
-        try {
-            return check(value, errorMessage).len(length);
-        } catch (e) {
-            return this.validationErrors.push(e.message);
-        }
-    }
+    
 };
 
 module.exports = Validator;

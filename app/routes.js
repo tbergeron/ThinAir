@@ -1,4 +1,5 @@
 module.exports = function(router, getAction) {
+    console.warn('ouat the fuck')
     router.add('/', getAction('home', 'index'));
 
     // sessions test routes

@@ -18,6 +18,7 @@ var file = new(static.Server)(publicPath);
 var Router = {
     // registers a route
     add: function(uri, fn) { 
+        console.warn('route', uri);
         router.addRoute(uri, fn);
     },
 
@@ -25,6 +26,8 @@ var Router = {
     match: function(req, res) {
         // matching a route
         var route = router.match(req.url);
+
+        console.warn('route', route);
 
         // if a route is matched, executing the reponse function
         if (route) {

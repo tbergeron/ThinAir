@@ -2,6 +2,7 @@ require("./config");
 
 var path = require('path'),
     server = require('./libs/server'),
+    sockets = require('./libs/sockets'),
     nCore = require('./node_modules/ncore/modules/core');
 
 // if using DEV use console-trace for console.log by default
@@ -24,7 +25,10 @@ var nCoreStart = function(callback) {
 // if it's called by node
 if (require.main === module) {
     nCoreStart(function(){
-        server.startServer();
+        var serverInstance = server.startServer();
+
+        // socket.io initialization
+        sockets.initialize(serverInstance);
     });
 }
 
