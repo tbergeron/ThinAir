@@ -43,10 +43,10 @@ var Router = {
                         // merging body inside req
                         req = pd.extend(Object.create(req), { body: body });
 
-                        route.fn(req, res, route.params, route.splats);
+                        route.fn(req, res, route.params);
                     });
                 } else {
-                    route.fn(req, res, route.params, route.splats);
+                    route.fn(req, res, route.params);
                 }
             } catch (e) {
                 // If something wrong happens, shoot the error stack.
@@ -75,7 +75,7 @@ var Router = {
     getAction: function(controller, action, parameters) {
         var that = this;
 
-        return function(req, res, params, splats) {
+        return function(req, res, params) {
             var controllerObject = that.controllers[controller];
 
             // TODOTB: Re-implement this.
@@ -85,7 +85,7 @@ var Router = {
             //     }
             // }
 
-            return controllerObject[action](req, res, params, splats);
+            return controllerObject[action](req, res, params);
         };
     }
 };

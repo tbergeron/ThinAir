@@ -1,5 +1,4 @@
-var check = require('validator').check,
-    fs = require('fs');
+var fs = require('fs');
 
 var Validator = {
     validationErrors: [],
@@ -42,8 +41,14 @@ var Validator = {
 
     // uses a specified validator with a specified value
     useValidator: function(fieldName, validatorName, argument, value) {
-        if (this.valiators[validatorName] !== undefined) {
-            return this.validators[validatorName](fieldName, value, argument);            
+        if (this.validators[validatorName] !== undefined) {
+            var result = this.validators[validatorName](fieldName, value, argument, this.validationErrors);    
+
+                console.warn('result', result);
+            if (typeof result == 'array') {
+                console.warn('result', result);
+                this.validationErrors = result;
+            }
         } else {
             return console.log('Validator (' + validatorName + ') has not been found.');
         }
