@@ -17,7 +17,7 @@ Another goal I have in mind while doing this project is to show everyone (even *
 
 ## Documentation
 
-2012-07-20: Docs will have to be rewritten since ThinAir is on an ongoing rewrite.
+2012-07-25: Docs have been updated but a lot still has to be written.
 
 ## Contributors
 
