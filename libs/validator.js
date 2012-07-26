@@ -43,10 +43,7 @@ var Validator = {
     useValidator: function(fieldName, validatorName, argument, value) {
         if (this.validators[validatorName] !== undefined) {
             var result = this.validators[validatorName](fieldName, value, argument, this.validationErrors);    
-
-                console.warn('result', result);
             if (typeof result == 'array') {
-                console.warn('result', result);
                 this.validationErrors = result;
             }
         } else {
