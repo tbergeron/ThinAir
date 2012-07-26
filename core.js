@@ -26,7 +26,7 @@ var nCoreStart = function(callback) {
 if (require.main === module) {
     nCoreStart(function(err){
         if (err) {
-            console.error('Error starting nCore: ', err);
+            console.error('Error starting nCore:', err);
             process.exit(0);
         } else {
             var serverInstance = server.startServer();

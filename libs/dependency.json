@@ -15,5 +15,8 @@
     "app/repositories": {
         "validator": "libs/validator.js",
         "sockets": "libs/sockets.js"
+    },
+    "libs/router.js": {
+        "controllers": ["app/controllers/"]
     }
 }

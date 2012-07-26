@@ -26,8 +26,6 @@ var Router = {
         // matching a route
         var route = router.match(req.url);
 
-        console.warn('route', route);
-
         // if a route is matched, executing the reponse function
         if (route) {
             try {
