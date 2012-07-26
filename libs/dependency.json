@@ -4,7 +4,7 @@
         "router": "libs/router.js",
         "routes": "app/routes.js"
     },
-    "libs/validator": {
+    "libs/validator.js": {
         "validators": ["libs/validators/"]
     },
     "app/controllers/": {

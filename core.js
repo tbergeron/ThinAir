@@ -24,11 +24,16 @@ var nCoreStart = function(callback) {
 
 // if it's called by node
 if (require.main === module) {
-    nCoreStart(function(){
-        var serverInstance = server.startServer();
+    nCoreStart(function(err){
+        if (err) {
+            console.error('Error starting nCore: ', err);
+            process.exit(0);
+        } else {
+            var serverInstance = server.startServer();
 
-        // socket.io initialization
-        sockets.initialize(serverInstance);
+            // socket.io initialization
+            sockets.initialize(serverInstance);
+        }
     });
 }
 

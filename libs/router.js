@@ -18,7 +18,6 @@ var file = new(static.Server)(publicPath);
 var Router = {
     // registers a route
     add: function(uri, fn) { 
-        console.warn('route', uri);
         router.addRoute(uri, fn);
     },
 

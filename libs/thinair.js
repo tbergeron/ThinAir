@@ -7,7 +7,6 @@ var pd = require('pd'),
 // and very generic methods
 var ThinAir = {
     setup: function (done)  {
-        console.log('oh crisse');
         // starting template engine
         this.template.initializeTemplateEngine(routil, __dirname + '/../app/views');
 
