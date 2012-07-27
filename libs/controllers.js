@@ -35,6 +35,15 @@ var Controllers = {
                 }
             },
 
+            sendJson: function(req, res, json) {
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                
+                var json = JSON.stringify(json);
+
+                res.write(json);
+                res.end();
+            },
+
             // sends a template
             sendTemplate: function(req, res, name, params) {
                 // preventing templar to throw an error if there's no data
