@@ -47,7 +47,7 @@ var Controllers = {
             sendString: function(req, res, string) {
                 res.write(string);
                 res.end();
-            }
+            },
 
             // sends a template
             sendTemplate: function(req, res, name, params) {
