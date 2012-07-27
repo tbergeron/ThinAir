@@ -44,6 +44,11 @@ var Controllers = {
                 res.end();
             },
 
+            sendString: function(req, res, string) {
+                res.write(string);
+                res.end();
+            }
+
             // sends a template
             sendTemplate: function(req, res, name, params) {
                 // preventing templar to throw an error if there's no data
