@@ -62,7 +62,7 @@ var Repositories = {
                             
                             db.insert(object, function(err) {
                                 if (err) {
-                                    console.error(err);
+                                    console.log(err);
                                     return callback(object, err);
                                 }
                             });
@@ -75,13 +75,15 @@ var Repositories = {
                             delete objectToUpdate._id;
                             objectToUpdate.updatedDate = new Date().toString();
 
-                            db.update({ _id: that.ObjectId(object._id) }, { $set: objectToUpdate }, function(err) {
+                            var objectId = (typeof object._id === 'object') ? object._id : that.ObjectId(object._id);
+
+                            db.update({ _id: objectId }, { $set: objectToUpdate }, function(err) {
                                 if (err) {
-                                    console.error(err);
+                                    console.log(err);
                                     return callback(object, err);
                                 }
 
-                                that.baseFindOne({ _id: that.ObjectId(object._id) }, function(updatedObject) {
+                                that.baseFindOne({ _id: objectId }, function(updatedObject) {
                                     return callback(updatedObject);
                                 })
                             });
