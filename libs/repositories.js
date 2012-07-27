@@ -24,7 +24,7 @@ var Repositories = {
             // basic findOne
             baseFindOne: function(conditions, callback) {
                 db.findOne(conditions, function(err, object) {
-                    if (err) console.log(err);
+                    if (err) console.error(err);
                     return callback(object ? object : null);
                 });
             },
@@ -62,7 +62,7 @@ var Repositories = {
                             
                             db.insert(object, function(err) {
                                 if (err) {
-                                    console.log(err);
+                                    console.error(err);
                                     return callback(object, err);
                                 }
                             });
@@ -77,7 +77,7 @@ var Repositories = {
 
                             db.update({ _id: that.ObjectId(object._id) }, { $set: objectToUpdate }, function(err) {
                                 if (err) {
-                                    console.log(err);
+                                    console.error(err);
                                     return callback(object, err);
                                 }
 

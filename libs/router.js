@@ -38,10 +38,10 @@ var Router = {
                     });
 
                     req.on('end', function() {
-                        var body = qsObjects(buffer);
+                        var post = qsObjects(buffer);
 
                         // merging body inside req
-                        req = pd.extend(Object.create(req), { body: body });
+                        route.params = pd.extend(Object.create({}), route.params, { post: post });
 
                         route.fn(req, res, route.params);
                     });
