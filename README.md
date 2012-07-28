@@ -2,7 +2,9 @@
 ## PITA-less Web Development Framework built with Node.js.
 ### Currently developed by Tommy Bergeron / 2012.
 
-#### Project status: **Almost ready for production** [![Build Status](https://secure.travis-ci.org/tbergeron/ThinAir.png?branch=master)](http://travis-ci.org/tbergeron/ThinAir)
+#### Project status: **Ready for development** [![Build Status](https://secure.travis-ci.org/tbergeron/ThinAir.png?branch=master)](http://travis-ci.org/tbergeron/ThinAir)
+
+**Update 2012-07-28**: ThinAir is now _Ready for development_. What it means is that developers who want to try the framework and develop project with it are now welcome to do so! Documentation is almost 100% finished, if anything seems missing, please open an issue. 
 
 ***
 
@@ -17,7 +19,25 @@ Another goal I have in mind while doing this project is to show everyone (even *
 
 ## Documentation
 
-2012-07-25: Docs have been updated but a lot still has to be written.
+2012-07-28: Docs are finally done! Not deeply explanatory but still, every component of ThinAir has been covered. If any questions are left to be answered do not hesitate to open an issue!
+
+
+## Installation
+
+There's no **NPM** package yet because some of the packages used aren't very modulable. But it's certain that it will become available in a near future.
+
+To install ThinAir, you'll need to fork this repository of clone it and simply replace the stuff from the _app/_ directory with your stuff. Simple as this.
+
+
+## Usage
+
+To start ThinAir, simply type:
+```
+node core.js
+```
+
+You can read more  about ThinAir usage in the [wiki](https://github.com/tbergeron/ThinAir/wiki).
+
 
 ## Contributors
 
