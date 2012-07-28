@@ -9,6 +9,9 @@
 ##### Update 2012-07-28
 ThinAir is now _Ready for development_. What it means is that developers who want to try the framework and develop project with it are now welcome to do so! Documentation is almost 100% finished, if anything seems missing, please open an issue. 
 
+##### Update 2012-07-27
+Docs are finally done! Not deeply explanatory but still, every component of ThinAir has been covered. If any questions are left to be answered do not hesitate to open an issue!
+
 ***
 
 ## Goals
@@ -18,11 +21,6 @@ The main goal of *ThinAir* is to give a basic but versatile set of tools to Node
 This ain't no revolution, but a simple, concised way of achieving what you want without having to re-invent the wheel.
 
 Another goal I have in mind while doing this project is to show everyone (even *PHP* developers!) that Node.js projects are fun, flexible and can finally replace those old technologies once and for all.
-
-
-## Documentation
-
-2012-07-28: Docs are finally done! Not deeply explanatory but still, every component of ThinAir has been covered. If any questions are left to be answered do not hesitate to open an issue!
 
 
 ## Installation
