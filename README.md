@@ -19,6 +19,20 @@ Another goal I have in mind while doing this project is to show everyone (even *
 
 2012-07-27: Docs are almost done, Validators is the only page that remains.
 
+
+## Installation
+
+There's no NPM package yet because some of the packages used aren't very modulable. But it's certain that it will become available in a near future.
+
+To install ThinAir, you'll need to fork this repository of clone it and simply replace the stuff from the _app/_ directory with your stuff. Simple as this.
+
+### Usage
+To start ThinAir, simply type:
+```
+node core.js
+```
+
+
 ## Contributors
 
  - [Tommy Bergeron](https://github.com/tbergeron)
