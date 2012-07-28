@@ -17,7 +17,7 @@ Another goal I have in mind while doing this project is to show everyone (even *
 
 ## Documentation
 
-2012-07-25: Docs have been updated but a lot still has to be written.
+2012-07-27: Docs are almost done, [[Validators]] is the only page that remains.
 
 ## Contributors
 
