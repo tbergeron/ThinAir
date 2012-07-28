@@ -28,14 +28,15 @@ There's no **NPM** package yet because some of the packages used aren't very mod
 
 To install ThinAir, you'll need to fork this repository of clone it and simply replace the stuff from the _app/_ directory with your stuff. Simple as this.
 
-### Usage
+
+## Usage
+
 To start ThinAir, simply type:
 ```
 node core.js
 ```
 
-## Usage
-You can read about ThinAir usage in the [wiki](https://github.com/tbergeron/ThinAir/wiki).
+You can read more  about ThinAir usage in the [wiki](https://github.com/tbergeron/ThinAir/wiki).
 
 
 ## Contributors
