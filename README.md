@@ -19,7 +19,7 @@ Another goal I have in mind while doing this project is to show everyone (even *
 
 ## Documentation
 
-2012-07-27: Docs are almost done, Validators is the only page that remains.
+2012-07-28: Docs are finally done! Not deeply explanatory but still, every component of ThinAir has been covered. If any questions are left to be answered do not hesitate to open an issue!
 
 
 ## Installation
