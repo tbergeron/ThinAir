@@ -34,6 +34,9 @@ To start ThinAir, simply type:
 node core.js
 ```
 
+## Usage
+You can read about ThinAir usage in the [wiki](https://github.com/tbergeron/ThinAir/wiki).
+
 
 ## Contributors
 
