@@ -46,5 +46,7 @@ node core.js
 ## Thanks
 
 Thanks to [Raynos](https://github.com/Raynos) for his help, patience and nCore (nCore is GREAT!)
+
 Thanks to [Florian Margaine](https://github.com/Ralt) for all the time you've spent helping me finding great solutions!
+
 Thanks to [Hubert Perron](https://github.com/hubertperron) for kicking my ass in the good direction when I'm trying too hard to reinvent the wheel! ;-)
