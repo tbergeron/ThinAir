@@ -29,6 +29,7 @@ There's no **NPM** package yet because some of the packages used aren't very mod
 
 To install ThinAir, you'll need to fork this repository of clone it and simply replace the stuff from the _app/_ directory with your stuff. Simple as this.
 
+Be sure though, to run `npm install` before trying to use anything. (This will install ThinAir's dependencies).
 
 ## Usage
 
