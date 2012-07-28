@@ -28,7 +28,7 @@ var Controllers = {
             },
 
             // is the request an AJAX call?
-            isXHR: function(req, res) {
+            isXHR: function(req) {
                 if (req.header('HTTP_X_REQUESTED_WITH') === 'XMLHttpRequest') {
                     return true;
                 } else {

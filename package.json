@@ -2,7 +2,7 @@
   "author": "Tommy Bergeron <t.bergeron@gmail.com>",
   "name": "thinair",
   "description": "Web Development Framework based on Node.js and Express.js",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "homepage": "https://github.com/tbergeron/ThinAir",
   "repository": {
     "type": "git",
