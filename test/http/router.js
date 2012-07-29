@@ -20,7 +20,7 @@ var startTests = function(request, done) {
         request("/routes/test-template", function (err, res, body) {
             t.equal(err, null, "error should be undefined")
             t.equal(res.statusCode, 200, "status code should be 200")
-            t.equal(body.length, 168, "body should be have a length of 168 characters")
+            t.equal(body.length, 264, "body should be have a length of 168 characters")
             t.end()
         })
     })
