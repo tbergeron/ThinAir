@@ -40,7 +40,7 @@ node core.js
 
 You can read more  about ThinAir usage in the [wiki](https://github.com/tbergeron/ThinAir/wiki).
 
-# Updates
+## Updates
 Since there's no **npm** yet, I made a little auto-update bash script that you can simply use by doing `./updateThinAir.sh`. What it does is, it clones ThinAir in a temporary directory, replaces the `package.json` and the `libs/` directory with the new content and finally runs `npm install` to get the latest dependencies.
 
 ## Contributors
