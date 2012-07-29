@@ -25,7 +25,7 @@ Another goal I have in mind while doing this project is to show everyone (even *
 
 ## Installation
 
-There's no **NPM** package yet because some of the packages used aren't very modulable. But it's certain that it will become available in a near future.
+There's no **npm** package yet because some of the packages used aren't very modulable. But it's certain that it will become available in a near future.
 
 To install ThinAir, you'll need to fork this repository of clone it and simply replace the stuff from the _app/_ directory with your stuff. Simple as this.
 
@@ -40,6 +40,8 @@ node core.js
 
 You can read more  about ThinAir usage in the [wiki](https://github.com/tbergeron/ThinAir/wiki).
 
+## Updates
+Since there's no **npm** yet, I made a little auto-update bash script that you can simply use by doing `./updateThinAir.sh`. What it does is, it clones ThinAir in a temporary directory, replaces the `package.json` and the `libs/` directory with the new content and finally runs `npm install` to get the latest dependencies.
 
 ## Contributors
 
