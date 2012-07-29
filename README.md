@@ -4,7 +4,13 @@
 
 #### Project status: **Ready for development** [![Build Status](https://secure.travis-ci.org/tbergeron/ThinAir.png?branch=master)](http://travis-ci.org/tbergeron/ThinAir)
 
-**Update 2012-07-28**: ThinAir is now _Ready for development_. What it means is that developers who want to try the framework and develop project with it are now welcome to do so! Documentation is almost 100% finished, if anything seems missing, please open an issue. 
+***
+
+##### Update 2012-07-28
+ThinAir is now _Ready for development_. What it means is that developers who want to try the framework and develop project with it are now welcome to do so! Documentation is almost 100% finished, if anything seems missing, please open an issue. 
+
+##### Update 2012-07-27
+Docs are finally done! Not deeply explanatory but still, every component of ThinAir has been covered. If any questions are left to be answered do not hesitate to open an issue!
 
 ***
 
@@ -17,17 +23,13 @@ This ain't no revolution, but a simple, concised way of achieving what you want 
 Another goal I have in mind while doing this project is to show everyone (even *PHP* developers!) that Node.js projects are fun, flexible and can finally replace those old technologies once and for all.
 
 
-## Documentation
-
-2012-07-28: Docs are finally done! Not deeply explanatory but still, every component of ThinAir has been covered. If any questions are left to be answered do not hesitate to open an issue!
-
-
 ## Installation
 
 There's no **NPM** package yet because some of the packages used aren't very modulable. But it's certain that it will become available in a near future.
 
 To install ThinAir, you'll need to fork this repository of clone it and simply replace the stuff from the _app/_ directory with your stuff. Simple as this.
 
+Be sure though, to run `npm install` before trying to use anything. (This will install ThinAir's dependencies).
 
 ## Usage
 
