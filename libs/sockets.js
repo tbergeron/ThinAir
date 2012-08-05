@@ -4,7 +4,7 @@ module.exports = {
     reactiveMethods: [],
 
     initialize: function(server) {
-        this.io = require('socket.io').listen(server);
+        this.io = require('socket.io').listen(server, { log: false });
 
         var that = this;
 
