@@ -3,7 +3,8 @@ var static = require('node-static'),
     routil = require('routil'),
     isDefined = require('./thinair').isDefined,
     pd = require('pd'),
-    qsObjects = require('qs-objects');
+    qsObjects = require('qs-objects'),
+    formidable = require('formidable');
 
 
 // change the path if it's called from tests
@@ -30,20 +31,17 @@ var Router = {
         if (route) {
             try {
                 if (req.method == 'POST') {
-                    // Converting query string to objects
-                    var buffer = '';
+                    var form = new formidable.IncomingForm(),
+                        thatReq = req,
+                        thatRes = res;
 
-                    req.on('data', function(chunk) {
-                        buffer += chunk.toString();
-                    });
-
-                    req.on('end', function() {
-                        var post = qsObjects(buffer);
+                    form.parse(req, function(err, fields, files) {
+                        var post = qsObjects(fields);
 
                         // merging body inside req
-                        route.params = pd.extend(Object.create({}), route.params, { post: post });
+                        route.params = pd.extend(Object.create({}), route.params, { post: post, files: files });
 
-                        route.fn(req, res, route.params);
+                        route.fn(thatReq, thatRes, route.params);
                     });
                 } else {
                     route.fn(req, res, route.params);

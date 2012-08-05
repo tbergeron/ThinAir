@@ -35,7 +35,8 @@
     "qs-objects": "0.1.1",
     "node-static": "~0.6.0",
     "ncore": "git://github.com/tbergeron/ncore.git",
-    "routil-send": "0.0.1"
+    "routil-send": "0.0.1",
+    "formidable": "~1.0.11"
   },
   "devDependencies": {
     "console-trace": "0.2.1",
