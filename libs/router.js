@@ -5,10 +5,15 @@ var static = require('node-static'),
     pd = require('pd'),
     qsObjects = require('qs-objects'),
     formidable = require('formidable'),
-    path = require('path');
+    path = require('path'),
+    session = require('routil-session')();
 
-
-var publicPath = path.join(__dirname, '../public');
+// change the path if it's called from tests
+if (process.env.CALLED_FROM_TESTS) {
+    var publicPath = path.join(__dirname, '../../public');
+} else {
+    var publicPath = path.join(__dirname, '../public');
+}
 
 var file = new(static.Server)(publicPath);
 
@@ -72,14 +77,16 @@ var Router = {
         return function(req, res, params) {
             var controllerObject = that.controllers[controller];
 
-            // TODOTB: Re-implement this.
-            // if (isDefined(parameters)) {
-            //     if (isDefined(parameters.checkIfAuthorized)) {
-            //         sessionsHelper.checkIfAuthorized(req, res);
-            //     }
-            // }
+            // shorthand to get if user is logged
+            session.getSession(req, function(err, data) {
+                if ((data) && (data.user_is_logged)) {
+                    params.user_is_logged = true;
+                } else {
+                    params.user_is_logged = false;
+                }
 
-            return controllerObject[action](req, res, params);
+                controllerObject[action](req, res, params);
+            });
         };
     }
 };
