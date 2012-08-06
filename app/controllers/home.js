@@ -1,8 +1,6 @@
 var ThinAir = require('../../libs/thinair');
 
 module.exports = ThinAir.createController({
-    Projects: null,
-
     setup: function(done) {
         this.Projects = this.repositories.Projects;
 
