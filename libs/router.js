@@ -7,12 +7,7 @@ var static = require('node-static'),
     formidable = require('formidable'),
     path = require('path')
 
-// change the path if it's called from tests
-if (process.env.CALLED_FROM_TESTS) {
-    var publicPath = path.join(__dirname, '../../public')
-} else {
-    var publicPath = path.join(__dirname, '../public')
-}
+var publicPath = path.join(__dirname, '../public');
 
 var file = new(static.Server)(publicPath)
 
