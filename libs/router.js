@@ -27,15 +27,10 @@ var Router = {
         if (route) {
             try {
                 // Fetching sessions, adding them to req
-                var sessions = new Sessions(req, res)
-                req.sessions = sessions
+                req.sessions = new Sessions(req, res)
 
                 // Setting user_is_logged so it can be used app-wide
-                route.params.user_is_logged = (sessions.getData('user_is_logged')) ? true : false
-
-                // Getting messages from sessions, so they can be shown anywhere at anytime
-                var messages = this.messages.getMessages(req)
-                route.params.messages = messages
+                route.params.user_is_logged = (req.sessions.getData('user_is_logged')) ? true : false
 
                 if (req.method == 'POST') {
                     var form = new formidable.IncomingForm(),
@@ -43,9 +38,7 @@ var Router = {
                         thatRes = res
 
                     form.parse(req, function(err, fields, files) {
-                        var post = qsObjects(fields)
-
-                        route.params.post = post
+                        route.params.post = qsObjects(fields)
                         route.params.files = files
 
                         route.fn(thatReq, thatRes, route.params)

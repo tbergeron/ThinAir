@@ -22,9 +22,10 @@ module.exports = {
             messages = []
         }
 
-        // resets the messages once they are fetched
-        req.sessions.setData('messages', [])
-
         return messages
+    },
+
+    clearMessages: function(req) {
+        req.sessions.setData('messages', [])
     }
 }

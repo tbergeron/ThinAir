@@ -11,6 +11,9 @@
     "libs/validator.js": {
         "validators": ["libs/validators/"]
     },
+    "libs/controllers.js": {
+        "messages": "libs/messages.js"
+    },
     "app/controllers/": {
         "sockets": "libs/sockets.js",
         "controllers": ["app/controllers/"],

@@ -39,6 +39,12 @@ var Controllers = {
                 // preventing templar to throw an error if there's no data
                 if (!params) params = {}
 
+                // Getting messages from sessions, so they can be shown anywhere at anytime
+                var messages = this.messages.getMessages(req)
+                params.messages = messages
+
+                this.messages.clearMessages(req)
+
                 return this.template(req, res, name + '.html', params)
             }
 
