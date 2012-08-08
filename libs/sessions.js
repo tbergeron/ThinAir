@@ -9,6 +9,6 @@ var Session = require("routil-session"),
                     username: process.env.MONGODB_USER,
                     password: process.env.MONGODB_PASSWORD
                 })
-    });
+    })
 
-module.exports = session;
+module.exports = session

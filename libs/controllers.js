@@ -1,7 +1,7 @@
 var pd = require('pd'),
     routil = require('routil'),
     send = require('routil-send'),
-    sessions = require('./sessions.js');
+    sessions = require('./sessions.js')
 
 var Controllers = {
     // creates a basic controller
@@ -12,40 +12,40 @@ var Controllers = {
             // is a GET request?
             isGet: function(req) {
                 if (req.method === 'GET') {
-                    return true;
+                    return true
                 } else {
-                    return false;
+                    return false
                 }
             },
 
             // is a POST request?
             isPost: function(req) {
                 if (req.method === 'POST') {
-                    return true;
+                    return true
                 } else {
-                    return false;
+                    return false
                 }
             },
 
             // is the request an AJAX call?
             isXHR: function(req) {
                 if (req.header('HTTP_X_REQUESTED_WITH') === 'XMLHttpRequest') {
-                    return true;
+                    return true
                 } else {
-                    return false;
+                    return false
                 }
             },
 
             // sends a template
             sendTemplate: function(req, res, name, params) {
                 // preventing templar to throw an error if there's no data
-                if (!params) params = {};
+                if (!params) params = {}
 
-                return this.template(req, res, name + '.html', params);
+                return this.template(req, res, name + '.html', params)
             }
 
-        });
+        })
     }
-};
+}
 
-module.exports = Controllers;
+module.exports = Controllers
