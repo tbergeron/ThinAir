@@ -32,7 +32,7 @@
     "routil-session": "0.1.1",
     "routes": "0.1.1",
     "templar": "0.0.6",
-    "qs-objects": "0.1.1",
+    "qs-objects": "0.1.2",
     "node-static": "~0.6.0",
     "ncore": "git://github.com/tbergeron/ncore.git",
     "routil-send": "0.0.1",

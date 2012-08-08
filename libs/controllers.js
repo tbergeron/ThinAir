@@ -1,13 +1,13 @@
 var pd = require('pd'),
     routil = require('routil'),
-    session = require('routil-session')(),
-    send = require('routil-send');
+    send = require('routil-send'),
+    sessions = require('./sessions.js');
 
 var Controllers = {
     // creates a basic controller
     createController: function(content) {
-        return pd.extend(Object.create({}), routil, send, content, {
-            sessions: session,
+        return pd.extend(Object.create({}), routil, send, content, sessions, {
+            sessions: sessions,
 
             // is a GET request?
             isGet: function(req) {
@@ -43,6 +43,7 @@ var Controllers = {
 
                 return this.template(req, res, name + '.html', params);
             }
+
         });
     }
 };
