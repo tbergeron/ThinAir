@@ -5,17 +5,18 @@
         "routes": "app/routes.js"
     },
     "libs/router.js": {
-        "controllers": ["app/controllers/"]
+        "controllers": ["app/controllers/"],
+        "messages": "libs/messages.js"
     },
     "libs/validator.js": {
         "validators": ["libs/validators/"]
     },
     "app/controllers/": {
         "sockets": "libs/sockets.js",
-        "sessions": "libs/sessions.js",
         "controllers": ["app/controllers/"],
         "repositories": ["app/repositories/"],
-        "helpers": ["app/helpers/"]
+        "helpers": ["app/helpers/"],
+        "messages": "libs/messages.js"
     },
     "app/repositories": {
         "validator": "libs/validator.js",
@@ -23,6 +24,8 @@
         "helpers": ["app/helpers/"]
     },
     "app/helpers": {
-        "sessions": "libs/sessions.js"
+        "messages": "libs/messages.js",
+        "controllers": ["app/controllers/"],
+        "repositories": ["app/repositories/"]
     }
 }

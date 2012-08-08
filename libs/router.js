@@ -5,9 +5,10 @@ var static = require('node-static'),
     pd = require('pd'),
     qsObjects = require('qs-objects'),
     formidable = require('formidable'),
-    path = require('path')
+    path = require('path'),
+    Sessions = require('./sessions')
 
-var publicPath = path.join(__dirname, '../public');
+var publicPath = path.join(__dirname, '../public')
 
 var file = new(static.Server)(publicPath)
 
@@ -25,6 +26,17 @@ var Router = {
         // if a route is matched, executing the reponse function
         if (route) {
             try {
+                // Fetching sessions, adding them to req
+                var sessions = new Sessions(req, res)
+                req.sessions = sessions
+
+                // Setting user_is_logged so it can be used app-wide
+                route.params.user_is_logged = (sessions.getData('user_is_logged')) ? true : false
+
+                // Getting messages from sessions, so they can be shown anywhere at anytime
+                var messages = this.messages.getMessages(req)
+                route.params.messages = messages
+
                 if (req.method == 'POST') {
                     var form = new formidable.IncomingForm(),
                         thatReq = req,
@@ -33,8 +45,8 @@ var Router = {
                     form.parse(req, function(err, fields, files) {
                         var post = qsObjects(fields)
 
-                        // merging body inside req
-                        route.params = pd.extend(Object.create({}), route.params, { post: post, files: files })
+                        route.params.post = post
+                        route.params.files = files
 
                         route.fn(thatReq, thatRes, route.params)
                     })

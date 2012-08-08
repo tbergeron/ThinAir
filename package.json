@@ -36,7 +36,8 @@
     "node-static": "~0.6.0",
     "ncore": "git://github.com/tbergeron/ncore.git",
     "routil-send": "0.0.1",
-    "formidable": "~1.0.11"
+    "formidable": "~1.0.11",
+    "ajn-session": "git://github.com/tbergeron/ajn-session.git"
   },
   "devDependencies": {
     "console-trace": "0.2.1",
