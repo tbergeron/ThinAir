@@ -9,7 +9,7 @@ echo ''
 echo 'Cleaning temporary cache...'
 rm -rf ./temp_ThinAir
 echo 'Cloning latest version...'
-git clone git://github.com/tbergeron/ThinAir.git temp_ThinAir >/dev/null 2>/dev/null
+git clone git://github.com/Brainpad/ThinAir.git temp_ThinAir >/dev/null 2>/dev/null
 echo 'Cloning complete!'
 cd ./temp_ThinAir
 
