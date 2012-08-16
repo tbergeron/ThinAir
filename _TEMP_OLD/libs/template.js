@@ -39,8 +39,8 @@ function registerPartials(hbs) {
     // register the hbs partial
     loadPartial = function(file) {
         var partialName = file.replace('.html', '')
-        return hbs.registerPartial(partialName, fs.readFileSync(__dirname + '/../../../app/views/partials/' + file, 'UTF-8'))
+        return hbs.registerPartial(partialName, fs.readFileSync(__dirname + '/../app/views/partials/' + file, 'UTF-8'))
     }
 
-    return fs.readdir(__dirname + '/../../../app/views/partials', readPartials)
+    return fs.readdir(__dirname + '/../app/views/partials', readPartials)
 }

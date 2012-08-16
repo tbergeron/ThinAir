@@ -8,7 +8,7 @@ var pd = require('pd'),
 var ThinAir = {
     setup: function (done)  {
         // starting template engine
-        this.template.initializeTemplateEngine(routil, __dirname + '/../../../app/views')
+        this.template.initializeTemplateEngine(routil, __dirname + '/../app/views')
 
         // registering routes
         var router = this.router

@@ -2,10 +2,10 @@
     "libs/thinair.js": {
         "template": "libs/template.js",
         "router": "libs/router.js",
-        "routes": "../../app/routes.js"
+        "routes": "app/routes.js"
     },
     "libs/router.js": {
-        "controllers": ["../../app/controllers/"],
+        "controllers": ["app/controllers/"],
         "messages": "libs/messages.js"
     },
     "libs/validator.js": {
@@ -14,21 +14,21 @@
     "libs/controllers.js": {
         "messages": "libs/messages.js"
     },
-    "../../app/controllers/": {
+    "app/controllers/": {
         "sockets": "libs/sockets.js",
-        "controllers": ["../../app/controllers/"],
-        "repositories": ["../../app/repositories/"],
-        "helpers": ["../../app/helpers/"],
+        "controllers": ["app/controllers/"],
+        "repositories": ["app/repositories/"],
+        "helpers": ["app/helpers/"],
         "messages": "libs/messages.js"
     },
-    "../../app/repositories": {
+    "app/repositories": {
         "validator": "libs/validator.js",
         "sockets": "libs/sockets.js",
-        "helpers": ["../../app/helpers/"]
+        "helpers": ["app/helpers/"]
     },
-    "../../app/helpers": {
+    "app/helpers": {
         "messages": "libs/messages.js",
-        "controllers": ["../../app/controllers/"],
-        "repositories": ["../../app/repositories/"]
+        "controllers": ["app/controllers/"],
+        "repositories": ["app/repositories/"]
     }
 }

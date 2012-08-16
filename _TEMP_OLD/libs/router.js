@@ -8,7 +8,7 @@ var static = require('node-static'),
     path = require('path'),
     Sessions = require('./sessions')
 
-var publicPath = path.join(__dirname, '../../../public')
+var publicPath = path.join(__dirname, '../public')
 
 var file = new(static.Server)(publicPath)
 
