@@ -40,7 +40,51 @@ if (args[0] == 'init') {
 }
 
 function writeBasicAppFiles(callback) {
-    callback()
+    
+    writeRoutes(function(err) {
+        if (err) {
+            console.error('Error while writing app/routes!')
+        } else {
+            console.log('Writing app/routes.js...')
+
+            writeController(function(err) {
+                if (err) {
+                    console.error('Error while writing app/controllers/home.js!')
+                } else {
+                    console.log('Writing app/controllers/home.js...')
+
+                    writeView(function(err) {
+                        if (err) {
+                            console.error('Error while writing app/views/index.html!')
+                        } else {
+                            console.log('Writing app/views/index.html...')
+                        }
+                    })
+                }                
+            })
+        }
+    })
+
+    function writeRoutes(next) {
+        var content = "module.exports = function(router, getAction) {\n    router.add('/', getAction('home', 'index'))\n}"
+        fs.writeFile('./app/routes.js', content, function(err) {
+            next(err)
+        })
+    }
+
+    function writeController(next) {
+        var content = "var ThinAir = require('thinair')\n\nmodule.exports = ThinAir.createController({\n    index: function(req, res, params) {\n        this.sendTemplate(req, res, 'index', params)   \n    }\n})"
+        fs.writeFile('./app/controllers/home.js', content, function(err) {
+            next(err)
+        })
+    }
+
+    function writeView(next) {
+        var content = "<h1>Hello world!</h1>"
+        fs.writeFile('./app/views/index.html', content, function(err) {
+            next(err)
+        })
+    }
 }
 
 function createDirectories(list, callback) {
