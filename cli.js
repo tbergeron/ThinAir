@@ -5,9 +5,13 @@ var fs = require('fs'),
 
 var args = require('optimist').argv._
 
+if (args[0] === undefined) {
+    console.error('Please specify an option. [ start | init ]')
+}
+
 if (args[0] == 'start') {
     if (checkIfAppDirectoryExists()) {
-        require('.').start()
+        require('./index').start()
     } else {
         console.error('This is not a ThinAir application. To create a new one please use: "thinair init"')
     }
