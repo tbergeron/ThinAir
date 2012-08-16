@@ -5,8 +5,9 @@
   },
   "name": "thinair",
   "description": "Web Development Framework based on Node.js and Express.js",
-  "version": "0.2.2",
+  "version": "0.2.5",
   "homepage": "https://github.com/tbergeron/ThinAir",
+  "bin": "./cli.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/tbergeron/ThinAir.git"
@@ -41,7 +42,9 @@
     "ncore": "git://github.com/tbergeron/ncore.git",
     "routil-send": "0.0.1",
     "formidable": "~1.0.11",
-    "ajn-session": "git://github.com/tbergeron/ajn-session.git"
+    "ajn-session": "git://github.com/tbergeron/ajn-session.git",
+    "optimist": "~0.3.4",
+    "async": "~0.1.22"
   },
   "devDependencies": {
     "testling": "git://github.com/Raynos/testling#master",
