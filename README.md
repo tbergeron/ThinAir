@@ -27,6 +27,8 @@ Another goal I have in mind while doing this project is to show everyone (even *
 
 ## Installation
 
+**NOTE**: You can't install the package globally yet. (`npm install -g ...`)
+
 - First be sure to add `./node_modules/.bin` to your PATH
 - Create a new directory for your project
 - Use `npm install thinair` to install ThinAir to your current directory
