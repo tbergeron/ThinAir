@@ -2,11 +2,11 @@
 ## PITA-less Web Development Framework built with Node.js.
 ### Currently developed by Tommy Bergeron / 2012.
 
-#### Project status: **Ready for development** [![Build Status](https://secure.travis-ci.org/tbergeron/ThinAir.png?branch=master)](http://travis-ci.org/tbergeron/ThinAir)
+#### Project status: **Ready for development** [![Build Status](https://secure.travis-ci.org/Brainpad/ThinAir.png?branch=master)](http://travis-ci.org/tbergeron/ThinAir)
 
 ***
 ##### Update 2012-08-16
-ThinAir finally has a npm package! See installation instructions for more details.
+ThinAir finally has a npm package! See installation instructions for more details. Tests aren't working since I'll have to tweak them to adapt to the new package structure. It shouldn't take long.
 
 ##### Update 2012-07-28
 ThinAir is now _Ready for development_. What it means is that developers who want to try the framework and develop project with it are now welcome to do so! Documentation is almost 100% finished, if anything seems missing, please open an issue. 
@@ -24,6 +24,7 @@ This ain't no revolution, but a simple, concised way of achieving what you want 
 
 Another goal I have in mind while doing this project is to show everyone (even *PHP* developers!) that Node.js projects are fun, flexible and can finally replace those old technologies once and for all.
 
+If this is still unclear for you, go checkout the [FAQ](https://github.com/Brainpad/ThinAir/wiki/FAQ).
 
 ## Installation
 
@@ -42,7 +43,7 @@ To start ThinAir, simply type:
 thinair start
 ```
 
-You can read more  about ThinAir usage in the [wiki](https://github.com/tbergeron/ThinAir/wiki).
+You can read more  about ThinAir usage in the [wiki](https://github.com/Brainpad/ThinAir/wiki).
 
 ## Updates
 To update to the latest version you can simply use `npm update thinair`.
@@ -57,7 +58,7 @@ To update to the latest version you can simply use `npm update thinair`.
 
 ## Thanks
 
-Thanks to [Raynos](https://github.com/Raynos) for his help, patience and nCore (nCore is GREAT!)
+Thanks to [Raynos](https://github.com/Raynos) for his help, patience and many contributions.
 
 Thanks to [Florian Margaine](https://github.com/Ralt) for all the time you've spent helping me finding great solutions!
 
