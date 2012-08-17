@@ -6,7 +6,7 @@
 
 ***
 ##### Update 2012-08-16
-ThinAir finally has a npm package! See installation instructions for more details.
+ThinAir finally has a npm package! See installation instructions for more details. Tests aren't working since I'll have to tweak them to adapt to the new package structure. It shouldn't take long.
 
 ##### Update 2012-07-28
 ThinAir is now _Ready for development_. What it means is that developers who want to try the framework and develop project with it are now welcome to do so! Documentation is almost 100% finished, if anything seems missing, please open an issue. 
