@@ -5,6 +5,8 @@
 #### Project status: **Ready for development** [![Build Status](https://secure.travis-ci.org/tbergeron/ThinAir.png?branch=master)](http://travis-ci.org/tbergeron/ThinAir)
 
 ***
+##### Update 2012-08-16
+ThinAir finally has a npm package! See installation instructions for more details.
 
 ##### Update 2012-07-28
 ThinAir is now _Ready for development_. What it means is that developers who want to try the framework and develop project with it are now welcome to do so! Documentation is almost 100% finished, if anything seems missing, please open an issue. 
@@ -25,23 +27,23 @@ Another goal I have in mind while doing this project is to show everyone (even *
 
 ## Installation
 
-There's no **npm** package yet because some of the packages used aren't very modulable. But it's certain that it will become available in a near future.
-
-To install ThinAir, you'll need to fork this repository of clone it and simply replace the stuff from the _app/_ directory with your stuff. Simple as this.
-
-Be sure though, to run `npm install` before trying to use anything. (This will install ThinAir's dependencies).
+- First be sure to add `./node_modules/.bin` to your PATH
+- Create a new directory for your project
+- Use `npm install thinair` to install ThinAir to your current directory
+- Use `thinair init` to create the basic project structure
+- And finally use `thinair start` to start your new application! 
 
 ## Usage
 
 To start ThinAir, simply type:
 ```
-node core.js
+thinair start
 ```
 
 You can read more  about ThinAir usage in the [wiki](https://github.com/tbergeron/ThinAir/wiki).
 
 ## Updates
-Since there's no **npm** yet, I made a little auto-update bash script that you can simply use by doing `./updateThinAir.sh`. What it does is, it clones ThinAir in a temporary directory, replaces the `package.json` and the `libs/` directory with the new content and finally runs `npm install` to get the latest dependencies.
+To update to the latest version you can simply use `npm update thinair`.
 
 ## Contributors
 
