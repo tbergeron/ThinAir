@@ -7,7 +7,7 @@
   "description": "Web Development Framework based on Node.js and Express.js",
   "version": "0.2.11",
   "homepage": "https://github.com/tbergeron/ThinAir",
-  "bin": "./cli.js",
+  "bin": "./bin/thinair.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/tbergeron/ThinAir.git"
