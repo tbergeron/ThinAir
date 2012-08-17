@@ -2,7 +2,7 @@
 ## PITA-less Web Development Framework built with Node.js.
 ### Currently developed by Tommy Bergeron / 2012.
 
-#### Project status: **Ready for development** [![Build Status](https://secure.travis-ci.org/tbergeron/ThinAir.png?branch=master)](http://travis-ci.org/tbergeron/ThinAir)
+#### Project status: **Ready for development** [![Build Status](https://secure.travis-ci.org/Brainpad/ThinAir.png?branch=master)](http://travis-ci.org/tbergeron/ThinAir)
 
 ***
 ##### Update 2012-08-16
