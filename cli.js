@@ -1,9 +1,17 @@
 #!/usr/bin/env node
 
 var fs = require('fs'),
-    async = require('async')
+    async = require('async'),
+    path = require('path')
 
-var args = require('optimist').argv._
+var argv = require('optimist').argv
+var args = argv._
+
+var basePath = '.'
+
+if (argv.path) {
+    basePath = argv.path
+}
 
 if (args[0] === undefined) {
     console.error('Please specify an option. [ start | init ]')
@@ -71,21 +79,21 @@ function writeBasicAppFiles(callback) {
 
     function writeRoutes(next) {
         var content = "module.exports = function(router, getAction) {\n    router.add('/', getAction('home', 'index'))\n}"
-        fs.writeFile('./app/routes.js', content, function(err) {
+        fs.writeFile(path.join(basePath, './app/routes.js'), content, function(err) {
             next(err)
         })
     }
 
     function writeController(next) {
         var content = "var ThinAir = require('thinair')\n\nmodule.exports = ThinAir.createController({\n    index: function(req, res, params) {\n        this.sendTemplate(req, res, 'index', params)   \n    }\n})"
-        fs.writeFile('./app/controllers/home.js', content, function(err) {
+        fs.writeFile(path.join(basePath, './app/controllers/home.js'), content, function(err) {
             next(err)
         })
     }
 
     function writeView(next) {
         var content = "<h1>Hello world!</h1>"
-        fs.writeFile('./app/views/index.html', content, function(err) {
+        fs.writeFile(path.join(basePath, './app/views/index.html'), content, function(err) {
             next(err)
         })
     }
@@ -97,7 +105,7 @@ function createDirectories(list, callback) {
     })
 
     function createDirectory(name, next) {
-        fs.mkdir(name, 0755, function(e) {
+        fs.mkdir(path.join(basePath, name), 0755, function(e) {
             if (e) {
                 console.error('Error while creating', name)
                 next(e)
@@ -110,5 +118,5 @@ function createDirectories(list, callback) {
 }
 
 function checkIfAppDirectoryExists(callback) {
-    return fs.existsSync('./app')
+    return fs.existsSync(path.join(basePath, './app'))
 }
