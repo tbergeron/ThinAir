@@ -58,7 +58,7 @@ To update to the latest version you can simply use `npm update thinair`.
 
 ## Thanks
 
-Thanks to [Raynos](https://github.com/Raynos) for his help, patience and nCore (nCore is GREAT!)
+Thanks to [Raynos](https://github.com/Raynos) for his help, patience and many contributions.
 
 Thanks to [Florian Margaine](https://github.com/Ralt) for all the time you've spent helping me finding great solutions!
 
