@@ -6,7 +6,7 @@ var path = require('path'),
     fs = require('fs'),
     ThinAir = require('./libs/thinair')
 
-var configFile = path.join(__dirname, '../../config')
+var configFile = path.join(__dirname, '../../config.js')
 
 if (fs.existsSync(configFile)) {
     require(configFile)

@@ -15,17 +15,18 @@ if (argv.path) {
 
 if (args[0] === undefined) {
     console.error('Please specify an option. [ start | init ]')
-}
 
-if (args[0] == 'start') {
+} else if (args[0] === 'version') {
+    console.log('You are currently running ThinAir version', require('../package.json').version, "\n", ' => Check https://github.com/Brainpad/ThinAir for the latest updates.')
+
+} else if (args[0] == 'start') {
     if (checkIfAppDirectoryExists()) {
         require('../index').start()
     } else {
         console.error('This is not a ThinAir application. To create a new one please use: "thinair init"')
     }
-}
 
-if (args[0] == 'init') {
+} else if (args[0] == 'init') {
     if (checkIfAppDirectoryExists()) {
         console.error('There is already an application in this directory.')
     } else {
@@ -52,7 +53,6 @@ if (args[0] == 'init') {
 }
 
 function writeBasicAppFiles(callback) {
-    
     writeRoutes(function(err) {
         if (err) {
             console.error('Error while writing app/routes!')
