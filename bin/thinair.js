@@ -14,7 +14,7 @@ if (argv.path) {
 }
 
 if (args[0] === undefined) {
-    console.error('Please specify an option. [ start | init ]')
+    console.error('Please specify an option. [ start | init | version ]')
 
 } else if (args[0] === 'version') {
     console.log('You are currently running ThinAir version', require('../package.json').version, "\n", ' => Check https://github.com/Brainpad/ThinAir for the latest updates.')
