@@ -19,7 +19,7 @@ if (args[0] === undefined) {
 
 if (args[0] == 'start') {
     if (checkIfAppDirectoryExists()) {
-        require('./index').start()
+        require('../index').start()
     } else {
         console.error('This is not a ThinAir application. To create a new one please use: "thinair init"')
     }
