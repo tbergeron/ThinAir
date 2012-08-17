@@ -42,7 +42,7 @@ To start ThinAir, simply type:
 thinair start
 ```
 
-You can read more  about ThinAir usage in the [wiki](https://github.com/tbergeron/ThinAir/wiki).
+You can read more  about ThinAir usage in the [wiki](https://github.com/Brainpad/ThinAir/wiki).
 
 ## Updates
 To update to the latest version you can simply use `npm update thinair`.
