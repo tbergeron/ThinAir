@@ -49,19 +49,19 @@ function writeBasicAppFiles(callback) {
         if (err) {
             console.error('Error while writing app/routes!')
         } else {
-            console.log('Writing app/routes.js...')
+            console.log(' = Writing app/routes.js...')
 
             writeController(function(err) {
                 if (err) {
                     console.error('Error while writing app/controllers/home.js!')
                 } else {
-                    console.log('Writing app/controllers/home.js...')
+                    console.log(' = Writing app/controllers/home.js...')
 
                     writeView(function(err) {
                         if (err) {
                             console.error('Error while writing app/views/index.html!')
                         } else {
-                            console.log('Writing app/views/index.html...')
+                            console.log(' = Writing app/views/index.html...')
                         }
                     })
                 }                
