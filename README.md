@@ -24,6 +24,7 @@ This ain't no revolution, but a simple, concised way of achieving what you want 
 
 Another goal I have in mind while doing this project is to show everyone (even *PHP* developers!) that Node.js projects are fun, flexible and can finally replace those old technologies once and for all.
 
+If this is still unclear for you, go checkout the [FAQ](https://github.com/Brainpad/ThinAir/wiki/FAQ).
 
 ## Installation
 
