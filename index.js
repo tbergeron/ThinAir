@@ -15,7 +15,7 @@ if (fs.existsSync(configFile)) {
     process.env.ENVIRONMENT = 'DEV';
 
     // Application Port
-    process.env.PORT = 3000;
+    process.env.PORT = 9000;
 }
 
 // if using DEV use console-trace for console.log by default
