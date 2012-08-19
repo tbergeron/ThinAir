@@ -4,7 +4,7 @@
     "email": "t.bergeron@gmail.com"
   },
   "name": "thinair",
-  "description": "Web Development Framework based on Node.js and Express.js",
+  "description": "PITA-less Web Development Framework built with Node.js",
   "version": "0.2.16",
   "homepage": "https://github.com/tbergeron/ThinAir",
   "bin": "./bin/thinair.js",
