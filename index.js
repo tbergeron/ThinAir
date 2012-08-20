@@ -26,6 +26,7 @@ if (process.env.ENVIRONMENT === 'DEV') {
 
 var nCoreStart = pd.extend(Object.create(ThinAir), {
     start: function(callback) {
+        console.log('wut?')
         nCore({
             uri: __dirname,
             dependencyMapper: {
@@ -38,6 +39,7 @@ var nCoreStart = pd.extend(Object.create(ThinAir), {
                 process.exit(0);
             } else {
                 if (process.env.CALLED_FROM_TESTS) {
+                    console.log('callback?')
                     callback()
                 } else {
                     var serverInstance = server.startServer()

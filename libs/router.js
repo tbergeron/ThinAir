@@ -10,8 +10,6 @@ var static = require('node-static'),
 
 var publicPath = (process.env.CALLED_FROM_TESTS) ? path.join(__dirname, '../public') : path.join(__dirname, '../../../public')
 
-console.log('eh', publicPath)
-
 var file = new(static.Server)(publicPath)
 
 var Router = {
