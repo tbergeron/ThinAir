@@ -6,11 +6,11 @@
   "name": "thinair",
   "description": "PITA-less Web Development Framework built with Node.js",
   "version": "0.2.17",
-  "homepage": "https://github.com/tbergeron/ThinAir",
+  "homepage": "https://github.com/Brainpad/ThinAir",
   "bin": "./bin/thinair.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/tbergeron/ThinAir.git"
+    "url": "git://github.com/Brainpad/ThinAir.git"
   },
   "contributors": [
     {
@@ -18,7 +18,7 @@
     }
   ],
   "bugs": {
-    "url": "https://github.com/tbergeron/ThinAir/issues",
+    "url": "https://github.com/Brainpad/ThinAir/issues",
     "email": "t.bergeron@gmail.com"
   },
   "dependencies": {
@@ -57,7 +57,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://github.com/tbergeron/ThinAir/raw/master/LICENSE"
+      "url": "http://github.com/Brainpad/ThinAir/raw/master/LICENSE"
     }
   ],
   "scripts": {
