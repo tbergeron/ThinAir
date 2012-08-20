@@ -5,6 +5,8 @@
 #### Project status: **Ready for development** [![Build Status](https://secure.travis-ci.org/Brainpad/ThinAir.png?branch=master)](http://travis-ci.org/Brainpad/ThinAir)
 
 ***
+## News
+
 #### Update 2012-08-19
 Tests are now working again, everything is back to normal. Welcome to ThinAir 0.3.x!
 
