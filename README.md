@@ -5,6 +5,9 @@
 #### Project status: **Ready for development** [![Build Status](https://secure.travis-ci.org/Brainpad/ThinAir.png?branch=master)](http://travis-ci.org/tbergeron/ThinAir)
 
 ***
+#### Update 2012-08-19
+Tests are now working again, everything is back to normal. Welcome to ThinAir 0.3.x!
+
 ##### Update 2012-08-16
 ThinAir finally has a npm package! See installation instructions for more details. Tests aren't working since I'll have to tweak them to adapt to the new package structure. It shouldn't take long.
 
