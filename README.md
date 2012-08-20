@@ -42,9 +42,7 @@ If this is still unclear for you, go checkout the [FAQ](https://github.com/Brain
 ## Usage
 
 To start ThinAir, simply type:
-```javascript
-thinair start
-```
+`thinair start`
 
 You can read more  about ThinAir usage in the [wiki](https://github.com/Brainpad/ThinAir/wiki).
 
