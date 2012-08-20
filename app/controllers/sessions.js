@@ -1,4 +1,4 @@
-var ThinAir = require('../../libs/thinair')
+var ThinAir = require('thinair')
 
 module.exports = ThinAir.createController({
     create: function(req, res, params) {

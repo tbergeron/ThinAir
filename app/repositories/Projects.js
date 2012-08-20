@@ -1,4 +1,4 @@
-var ThinAir = require('../../libs/thinair')
+var ThinAir = require('thinair')
 
 module.exports = ThinAir.createRepository("projects", {
     // gets a list of project
