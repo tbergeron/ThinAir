@@ -26,7 +26,6 @@ if (process.env.ENVIRONMENT === 'DEV') {
 
 var nCoreStart = pd.extend(Object.create(ThinAir), {
     start: function(callback) {
-        console.log('wut?')
         nCore({
             uri: __dirname,
             dependencyMapper: {
