@@ -1,0 +1,34 @@
+{
+    "libs/thinair.js": {
+        "template": "libs/template.js",
+        "router": "libs/router.js",
+        "routes": "app/routes.js"
+    },
+    "libs/router.js": {
+        "controllers": ["app/controllers/"],
+        "messages": "libs/messages.js"
+    },
+    "libs/validator.js": {
+        "validators": ["libs/validators/"]
+    },
+    "libs/controllers.js": {
+        "messages": "libs/messages.js"
+    },
+    "app/controllers/": {
+        "sockets": "libs/sockets.js",
+        "controllers": ["app/controllers/"],
+        "repositories": ["app/repositories/"],
+        "helpers": ["app/helpers/"],
+        "messages": "libs/messages.js"
+    },
+    "app/repositories": {
+        "validator": "libs/validator.js",
+        "sockets": "libs/sockets.js",
+        "helpers": ["app/helpers/"]
+    },
+    "app/helpers": {
+        "messages": "libs/messages.js",
+        "controllers": ["app/controllers/"],
+        "repositories": ["app/repositories/"]
+    }
+}

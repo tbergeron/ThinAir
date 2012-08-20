@@ -31,6 +31,8 @@ function getTemplarInstance(templar, path) {
 
 // registers any partial contained in app/views/partials
 function registerPartials(hbs) {
+    var partialPath = (process.env.CALLED_FROM_TESTS) ?  __dirname + '/../app/views/partials/' : __dirname + '/../../../app/views/partials/'
+    
     // read a partial's content
     readPartials = function(err, files) {
         return files.forEach(loadPartial)
@@ -39,8 +41,8 @@ function registerPartials(hbs) {
     // register the hbs partial
     loadPartial = function(file) {
         var partialName = file.replace('.html', '')
-        return hbs.registerPartial(partialName, fs.readFileSync(__dirname + '/../../../app/views/partials/' + file, 'UTF-8'))
+        return hbs.registerPartial(partialName, fs.readFileSync(partialPath + file, 'UTF-8'))
     }
 
-    return fs.readdir(__dirname + '/../../../app/views/partials', readPartials)
+    return fs.readdir(partialPath, readPartials)
 }

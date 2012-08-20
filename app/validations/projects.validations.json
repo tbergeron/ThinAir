@@ -1,6 +1,0 @@
-[{
-    "name": [{
-        "minimumLength": 5,
-        "isEmail": true
-    }]
-}]

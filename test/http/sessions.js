@@ -1,7 +1,9 @@
+process.env.CALLED_FROM_TESTS = true
+
 var test = require("testling"), 
     testServer = require("test-server"),
     request = require('request'),
-    nCoreStart = require("../../core"),
+    nCoreStart = require("../../index"),
     server = require("../../libs/server")
 
 var startTests = function(request, done) {
@@ -36,6 +38,6 @@ var startTests = function(request, done) {
     })
 }
 
-nCoreStart(function() {
+nCoreStart.start(function() {
     testServer(server, startTests)
 })

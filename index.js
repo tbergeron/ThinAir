@@ -8,6 +8,7 @@ var path = require('path'),
 
 var configFile = path.join(__dirname, '../../config.js')
 
+// If there's no config file, use defaults.
 if (fs.existsSync(configFile)) {
     require(configFile)
 } else {
@@ -29,35 +30,24 @@ var nCoreStart = pd.extend(Object.create(ThinAir), {
             uri: __dirname,
             dependencyMapper: {
                 uri: __dirname,
-                jsonUri: path.join(__dirname, "libs", "dependency.json")
+                jsonUri: path.join(__dirname, "libs", ((process.env.CALLED_FROM_TESTS) ? "dependencies_test.json" : "dependencies.json"))
             }
         }, function(err) {
             if (err) {
                 console.error('Error starting nCore:', err)
                 process.exit(0);
             } else {
-                var serverInstance = server.startServer()
+                if (process.env.CALLED_FROM_TESTS) {
+                    callback()
+                } else {
+                    var serverInstance = server.startServer()
 
-                // socket.io initialization
-                sockets.initialize(serverInstance)
+                    // socket.io initialization
+                    sockets.initialize(serverInstance)
+                }
             }
         })
     }
 })
-
-// // if it's called by node
-// if (require.main === module) {
-//     nCoreStart(function(err){
-//         if (err) {
-//             console.error('Error starting nCore:', err)
-//             process.exit(0);
-//         } else {
-//             var serverInstance = server.startServer()
-
-//             // socket.io initialization
-//             sockets.initialize(serverInstance)
-//         }
-//     });
-// }
 
 module.exports = nCoreStart

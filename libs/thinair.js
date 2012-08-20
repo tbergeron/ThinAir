@@ -7,8 +7,10 @@ var pd = require('pd'),
 // and very generic methods
 var ThinAir = {
     setup: function (done)  {
+        var viewPath = (process.env.CALLED_FROM_TESTS) ? __dirname + '/../app/views' : __dirname + '/../../../app/views'
+
         // starting template engine
-        this.template.initializeTemplateEngine(routil, __dirname + '/../../../app/views')
+        this.template.initializeTemplateEngine(routil, viewPath)
 
         // registering routes
         var router = this.router
