@@ -2,9 +2,11 @@
 ## PITA-less Web Development Framework built with Node.js.
 ### Currently developed by Tommy Bergeron / 2012.
 
-#### Project status: **Ready for development** [![Build Status](https://secure.travis-ci.org/Brainpad/ThinAir.png?branch=master)](http://travis-ci.org/tbergeron/ThinAir)
+#### Project status: **Ready for development** [![Build Status](https://secure.travis-ci.org/Brainpad/ThinAir.png?branch=master)](http://travis-ci.org/Brainpad/ThinAir)
 
 ***
+## News
+
 #### Update 2012-08-19
 Tests are now working again, everything is back to normal. Welcome to ThinAir 0.3.x!
 
@@ -41,10 +43,7 @@ If this is still unclear for you, go checkout the [FAQ](https://github.com/Brain
 
 ## Usage
 
-To start ThinAir, simply type:
-```
-thinair start
-```
+To start ThinAir, simply type: `thinair start`
 
 You can read more  about ThinAir usage in the [wiki](https://github.com/Brainpad/ThinAir/wiki).
 
