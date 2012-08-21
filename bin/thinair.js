@@ -51,7 +51,7 @@ if (args[0] === undefined) {
         })
     }
 }
-
+// TODOTB: Should write thinair.js
 function writeBasicAppFiles(callback) {
     writeRoutes(function(err) {
         if (err) {
@@ -70,6 +70,22 @@ function writeBasicAppFiles(callback) {
                             console.error('Error while writing app/views/index.html!')
                         } else {
                             console.log(' = Writing app/views/index.html...')
+
+                            writePlaceholders(function(err) {
+                                if (err) {
+                                    console.error('Error while writing placeholders!')
+                                } else {
+                                    console.log(' = Writing placeholders...')
+
+                                    writeEntrypoint(function(err) {
+                                        if (err) {
+                                            console.error('Error while writing entry point (index.js)!')
+                                        } else {
+                                            console.log(' = Writing entry point (index.js)...')
+                                        }                                        
+                                    })
+                                }
+                            })
                         }
                     })
                 }                
@@ -95,6 +111,23 @@ function writeBasicAppFiles(callback) {
         var content = "<h1>Hello world!</h1>"
         fs.writeFile(path.join(basePath, './app/views/index.html'), content, function(err) {
             next(err)
+        })
+    }
+
+    function writeEntrypoint(next) {
+        var content = "require('thinair').start()"
+        fs.writeFile(path.join(basePath, './index.js'), content, function(err) {
+            next(err)
+        })
+    }
+
+    function writePlaceholders(next) {
+        fs.writeFile(path.join(basePath, './app/helpers/placeholder.js'), '', function(err) {
+            fs.writeFile(path.join(basePath, './app/repositories/placeholder.js'), '', function(err) {
+                fs.writeFile(path.join(basePath, './app/validations/placeholder.json'), '', function(err) {
+                    next(err)
+                })
+            })
         })
     }
 }
