@@ -1,4 +1,5 @@
 var pd = require('pd'),
+    path = require('path'),
     routil = require('routil'),
     createController = require('./controllers').createController,
     createRepository = require('./repositories').createRepository
@@ -7,7 +8,7 @@ var pd = require('pd'),
 // and very generic methods
 var ThinAir = {
     setup: function (done)  {
-        var viewPath = (process.env.CALLED_FROM_TESTS) ? __dirname + '/../app/views' : __dirname + '/../../../app/views'
+        var viewPath = (process.env.CALLED_FROM_TESTS) ? path.join(__dirname, '../app/views') : path.join(__dirname, '../../../app/views')
 
         // starting template engine
         this.template.initializeTemplateEngine(routil, viewPath)

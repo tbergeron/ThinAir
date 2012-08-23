@@ -1,5 +1,6 @@
 var hbs = require('handlebars'),
-    fs = require('fs')
+    fs = require('fs'),
+    path = require('path')
 
 module.exports = {
     initializeTemplateEngine: function (routil, uri) {
@@ -31,8 +32,8 @@ function getTemplarInstance(templar, path) {
 
 // registers any partial contained in app/views/partials
 function registerPartials(hbs) {
-    var partialPath = (process.env.CALLED_FROM_TESTS) ?  process.cwd() + '/../app/views/partials/' : process.cwd() + '/app/views/partials/'
-    
+    var partialPath = (process.env.CALLED_FROM_TESTS) ?  path.join(process.cwd(), '../app/views/partials') : path.join(__dirname, '../../../app/views/partials')
+
     // read a partial's content
     readPartials = function(err, files) {
         if (files) {
@@ -43,7 +44,7 @@ function registerPartials(hbs) {
     // register the hbs partial
     loadPartial = function(file) {
         var partialName = file.replace('.html', '')
-        return hbs.registerPartial(partialName, fs.readFileSync(partialPath + file, 'UTF-8'))
+        return hbs.registerPartial(partialName, fs.readFileSync(path.join(partialPath, file), 'UTF-8'))
     }
 
     return fs.readdir(partialPath, readPartials)

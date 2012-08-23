@@ -1,10 +1,9 @@
 var fs = require('fs'),
     path = require('path'),
-    configFile = path.join(process.cwd(), '/config.js')
+    configFile = path.join(__dirname, '../../config.js')
 
 // If there's no config file, use defaults.
 if (fs.existsSync(configFile)) {
-    console.log('Found config file! Using it...')
     require(configFile)
 } else {
     // Environment [ DEV | PROD ]
