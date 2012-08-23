@@ -31,7 +31,7 @@ function getTemplarInstance(templar, path) {
 
 // registers any partial contained in app/views/partials
 function registerPartials(hbs) {
-    var partialPath = (process.env.CALLED_FROM_TESTS) ?  process.cwd() + '/../app/views/partials/' : process.cwd() + '/../../../app/views/partials/'
+    var partialPath = (process.env.CALLED_FROM_TESTS) ?  process.cwd() + '/../app/views/partials/' : process.cwd() + '/app/views/partials/'
     
     // read a partial's content
     readPartials = function(err, files) {
