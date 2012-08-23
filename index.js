@@ -1,15 +1,10 @@
-var path = require('path'),
-    server = require('./libs/server'),
-    sockets = require('./libs/sockets'),
-    nCore = require('./node_modules/ncore/modules/core'),
-    pd = require('pd'),
-    fs = require('fs'),
-    ThinAir = require('./libs/thinair')
-
-var configFile = path.join(__dirname, '../../config.js')
+var fs = require('fs'),
+    path = require('path'),
+    configFile = path.join(process.cwd(), '/config.js')
 
 // If there's no config file, use defaults.
 if (fs.existsSync(configFile)) {
+    console.log('Found config file! Using it...')
     require(configFile)
 } else {
     // Environment [ DEV | PROD ]
@@ -23,6 +18,12 @@ if (fs.existsSync(configFile)) {
 if (process.env.ENVIRONMENT === 'DEV') {
     require('console-trace')({ always: true })
 }
+
+var server = require('./libs/server'),
+    sockets = require('./libs/sockets'),
+    nCore = require('./node_modules/ncore/modules/core'),
+    pd = require('pd'),
+    ThinAir = require('./libs/thinair')
 
 var nCoreStart = pd.extend(Object.create(ThinAir), {
     start: function(callback) {
