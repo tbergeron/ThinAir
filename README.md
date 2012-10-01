@@ -7,6 +7,9 @@
 ***
 ## News
 
+#### Update 2012-10-01
+A roadmap has been published. [Check it out](https://github.com/Brainpad/ThinAir/wiki/Roadmap).
+
 #### Update 2012-08-19
 Tests are now working again, everything is back to normal. Welcome to ThinAir 0.3.x!
 
