@@ -95,8 +95,8 @@ function writeBasicAppFiles(callback) {
     });
 
     function writeRoutes(next) {
-        var content = "module.exports = function(router, getAction) {\n    router.add('/', getAction('home', 'index'));\n};";
-        fs.writeFile(path.join(basePath, './app/routes.js'), content, function(err) {
+        var content = '{\n    "/": { "controller": "home", "action": "index" }\n}';
+        fs.writeFile(path.join(basePath, './app/routes.json'), content, function(err) {
             next(err);
         });
     }
