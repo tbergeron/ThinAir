@@ -41,7 +41,7 @@ var startTests = function(request, done) {
             t.equal(res.statusCode, 404, "status code should be 404");
             t.end();
         });
-    });
+    })
 
     .on('end', function () {
         setTimeout(function (){

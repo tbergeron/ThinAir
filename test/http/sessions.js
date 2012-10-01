@@ -29,7 +29,7 @@ var startTests = function(request, done) {
             t.type(body, "string", "body should be a string");
             t.end();
         });
-    });
+    })
 
     .on('end', function () {
         setTimeout(function (){
