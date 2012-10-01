@@ -1,14 +1,14 @@
-var ThinAir = require('../..')
+var ThinAir = require('../..');
 
 module.exports = ThinAir.createController({
 
     test: function(req, res, params) {
-        res.write('hello world')
-        res.end()
+        res.write('hello world');
+        res.end();
     },
 
     testTemplate: function(req, res, params) {
-        this.sendTemplate(req, res, 'index')
+        this.sendTemplate(req, res, 'index');
     }
 
-})
+});

@@ -1,15 +1,15 @@
-var check = require('validator').check
+var check = require('validator').check;
 
 module.exports = function(fieldName, value, argument, validationErrors) {
-    var errorMessage = 'The value entered for \'' + fieldName + '\' (' + value + ') is not an url.'
+    var errorMessage = 'The value entered for \'' + fieldName + '\' (' + value + ') is not an url.';
 
     try {
         if (argument) {
-            return check(value, errorMessage).isUrl()
+            return check(value, errorMessage).isUrl();
         } else {
-            return false
+            return false;
         }
     } catch (e) {
-        return validationErrors.push(e.message)
+        return validationErrors.push(e.message);
     }
-}
+};

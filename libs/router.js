@@ -6,78 +6,78 @@ var static = require('node-static'),
     qsObjects = require('qs-objects'),
     formidable = require('formidable'),
     path = require('path'),
-    Sessions = require('./sessions')
+    Sessions = require('./sessions');
 
-var publicPath = (process.env.CALLED_FROM_TESTS) ? path.join(__dirname, '../public') : path.join(__dirname, '../../../public')
+var publicPath = (process.env.CALLED_FROM_TESTS) ? path.join(__dirname, '../public') : path.join(__dirname, '../../../public');
 
-var file = new(static.Server)(publicPath)
+var file = new(static.Server)(publicPath);
 
 var Router = {
     // registers a route
     add: function(uri, fn) { 
-        router.addRoute(uri, fn)
+        router.addRoute(uri, fn);
     },
 
     // match a route and execute its related function
     match: function(req, res) {
         // matching a route
-        var route = router.match(req.url)
+        var route = router.match(req.url);
 
         // if a route is matched, executing the reponse function
         if (route) {
             try {
                 // Fetching sessions, adding them to req
-                req.sessions = new Sessions(req, res)
+                req.sessions = new Sessions(req, res);
 
                 // Setting user_is_logged so it can be used app-wide
-                route.params.user_is_logged = (req.sessions.getData('user_is_logged')) ? true : false
+                route.params.user_is_logged = (req.sessions.getData('user_is_logged')) ? true : false;
 
                 if (req.method == 'POST') {
                     var form = new formidable.IncomingForm(),
                         thatReq = req,
-                        thatRes = res
+                        thatRes = res;
 
                     form.parse(req, function(err, fields, files) {
-                        route.params.post = qsObjects(fields)
-                        route.params.files = files
+                        route.params.post = qsObjects(fields);
+                        route.params.files = files;
 
-                        route.fn(thatReq, thatRes, route.params)
-                    })
+                        route.fn(thatReq, thatRes, route.params);
+                    });
                 } else {
-                    route.fn(req, res, route.params)
+                    route.fn(req, res, route.params);
                 }
             } catch (e) {
                 // If something wrong happens, shoot the error stack.
                 if (process.env.ENVIRONMENT === 'DEV') {
                     // TODOTB: Maybe make some kind of custom page for errors.
-                    routil.sendHtml(res, '<pre>' + e.stack + '</pre>')
+                    routil.sendHtml(res, '<pre>' + e.stack + '</pre>');
                 } else {
-                    routil.errorPage(req, res, 500)
+                    routil.errorPage(req, res, 500);
                 }
             }
         } else {
             var thatReq = req,
-                thatRes = res
+                thatRes = res;
 
             // if no route is matched, try to find a static file to serve
             file.serve(req, res, function (e, res) {
                 // If the file wasn't found, send 404
                 if (e && (e.status === 404)) {
-                    routil.errorPage(thatReq, thatRes, 404)
+                    routil.errorPage(thatReq, thatRes, 404);
                 }
-            })
+            });
         }
     },
 
     // gets a requested action, and handles its parameters
     getAction: function(controller, action, parameters) {
-        var that = this
+        var that = this;
 
         return function(req, res, params) {
-            var controllerObject = that.controllers[controller]
-            controllerObject[action](req, res, params)
-        }
+            var controllerObject = that.controllers[controller];
+            controllerObject[action](req, res, params);
+        };
     }
-}
+};
 
-module.exports = Router
+module.exports = Router;

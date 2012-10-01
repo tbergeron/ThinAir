@@ -1,15 +1,15 @@
-var check = require('validator').check
+var check = require('validator').check;
 
 module.exports = function(fieldName, value, argument, validationErrors) {
-    var errorMessage = 'The value entered for \'' + fieldName + '\' (' + value + ') is not a number.'
+    var errorMessage = 'The value entered for \'' + fieldName + '\' (' + value + ') is not a number.';
 
     try {
         if (argument) {
-            return check(value, errorMessage).isInt()
+            return check(value, errorMessage).isInt();
         } else {
-            return false
+            return false;
         }
     } catch (e) {
-        return validationErrors.push(e.message)
+        return validationErrors.push(e.message);
     }
-}
+};

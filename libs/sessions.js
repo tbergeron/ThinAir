@@ -11,4 +11,4 @@
     //             })
     // })
 
-module.exports = require('ajn-session').Session
+module.exports = require('ajn-session').Session;

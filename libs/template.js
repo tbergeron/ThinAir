@@ -1,51 +1,51 @@
 var hbs = require('handlebars'),
     fs = require('fs'),
-    path = require('path')
+    path = require('path');
 
 module.exports = {
     initializeTemplateEngine: function (routil, uri) {
         // registering partials
-        registerPartials(hbs)
+        registerPartials(hbs);
 
-        routil.config({ templar: getTemplarInstance(routil.Templar, uri) })
+        routil.config({ templar: getTemplarInstance(routil.Templar, uri) });
     }
 }
 
 function getTemplarInstance(templar, path) {
-    templar.loadFolder(path)
+    templar.loadFolder(path);
     
     var engine = {
         compile: function (contents, options) {
-            var compiled = hbs.compile(contents, options)
+            var compiled = hbs.compile(contents, options);
 
             return function (data) {
-                return compiled(data)
-            }
+                return compiled(data);
+            };
         }
-    }
+    };
 
     return {
         engine: engine,
         folder: path
-    }
+    };
 }
 
 // registers any partial contained in app/views/partials
 function registerPartials(hbs) {
-    var partialPath = (process.env.CALLED_FROM_TESTS) ?  path.join(process.cwd(), '../app/views/partials') : path.join(__dirname, '../../../app/views/partials')
+    var partialPath = (process.env.CALLED_FROM_TESTS) ?  path.join(process.cwd(), '../app/views/partials') : path.join(__dirname, '../../../app/views/partials');
 
     // read a partial's content
-    readPartials = function(err, files) {
+    var readPartials = function(err, files) {
         if (files) {
-            return files.forEach(loadPartial)
+            return files.forEach(loadPartial);
         }
-    }
+    };
 
     // register the hbs partial
-    loadPartial = function(file) {
-        var partialName = file.replace('.html', '')
-        return hbs.registerPartial(partialName, fs.readFileSync(path.join(partialPath, file), 'UTF-8'))
+    var loadPartial = function(file) {
+        var partialName = file.replace('.html', '');
+        return hbs.registerPartial(partialName, fs.readFileSync(path.join(partialPath, file), 'UTF-8'));
     }
 
-    return fs.readdir(partialPath, readPartials)
+    return fs.readdir(partialPath, readPartials);
 }

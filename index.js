@@ -1,10 +1,10 @@
 var fs = require('fs'),
     path = require('path'),
-    configFile = path.join(__dirname, '../../config.js')
+    configFile = path.join(__dirname, '../../config.js');
 
 // If there's no config file, use defaults.
 if (fs.existsSync(configFile)) {
-    require(configFile)
+    require(configFile);
 } else {
     // Environment [ DEV | PROD ]
     process.env.ENVIRONMENT = 'DEV';
@@ -15,14 +15,14 @@ if (fs.existsSync(configFile)) {
 
 // if using DEV use console-trace for console.log by default
 if (process.env.ENVIRONMENT === 'DEV') {
-    require('console-trace')({ always: true })
+    require('console-trace')({ always: true });
 }
 
 var server = require('./libs/server'),
     sockets = require('./libs/sockets'),
     nCore = require('./node_modules/ncore/modules/core'),
     pd = require('pd'),
-    ThinAir = require('./libs/thinair')
+    ThinAir = require('./libs/thinair');
 
 var nCoreStart = pd.extend(Object.create(ThinAir), {
     start: function(callback) {
@@ -34,21 +34,20 @@ var nCoreStart = pd.extend(Object.create(ThinAir), {
             }
         }, function(err) {
             if (err) {
-                console.error('Error starting nCore:', err)
+                console.error('Error starting nCore:', err);
                 process.exit(0);
             } else {
                 if (process.env.CALLED_FROM_TESTS) {
-                    console.log('callback?')
-                    callback()
+                    callback();
                 } else {
-                    var serverInstance = server.startServer()
+                    var serverInstance = server.startServer();
 
                     // socket.io initialization
-                    sockets.initialize(serverInstance)
+                    sockets.initialize(serverInstance);
                 }
             }
-        })
+        });
     }
-})
+});
 
-module.exports = nCoreStart
+module.exports = nCoreStart;

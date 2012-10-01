@@ -94,14 +94,14 @@ function writeBasicAppFiles(callback) {
     })
 
     function writeRoutes(next) {
-        var content = "module.exports = function(router, getAction) {\n    router.add('/', getAction('home', 'index'))\n}"
+        var content = "module.exports = function(router, getAction) {\n    router.add('/', getAction('home', 'index'));\n};"
         fs.writeFile(path.join(basePath, './app/routes.js'), content, function(err) {
             next(err)
         })
     }
 
     function writeController(next) {
-        var content = "var ThinAir = require('thinair')\n\nmodule.exports = ThinAir.createController({\n    index: function(req, res, params) {\n        this.sendTemplate(req, res, 'index', params)   \n    }\n})"
+        var content = "var ThinAir = require('thinair');\n\nmodule.exports = ThinAir.createController({\n    index: function(req, res, params) {\n        this.sendTemplate(req, res, 'index', params);   \n    }\n});"
         fs.writeFile(path.join(basePath, './app/controllers/home.js'), content, function(err) {
             next(err)
         })
@@ -115,7 +115,7 @@ function writeBasicAppFiles(callback) {
     }
 
     function writeEntrypoint(next) {
-        var content = "require('thinair').start()"
+        var content = "require('thinair').start();"
         fs.writeFile(path.join(basePath, './index.js'), content, function(err) {
             next(err)
         })
