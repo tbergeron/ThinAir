@@ -14,8 +14,7 @@ var ThinAir = {
         this.template.initializeTemplateEngine(routil, viewPath);
 
         // registering routes
-        var router = this.router;
-        var routes = this.routes(router, router.getAction);
+        this.router.registerRoutes();
 
         console.log('ThinAir is starting...');
 

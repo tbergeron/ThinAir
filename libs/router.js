@@ -13,6 +13,16 @@ var publicPath = (process.env.CALLED_FROM_TESTS) ? path.join(__dirname, '../publ
 var file = new(static.Server)(publicPath);
 
 var Router = {
+    registerRoutes: function() {
+        var routesPath = (process.env.CALLED_FROM_TESTS) ? path.join(__dirname, '../app/routes.json') : path.join(__dirname, '../../../app/routes.json');
+        var routes = require(routesPath);
+
+        for (var uri in routes) {
+            // todo: add URI parameters
+            this.add(uri, this.getAction(routes[uri].controller, routes[uri].action));
+        }
+    },
+
     // registers a route
     add: function(uri, fn) { 
         router.addRoute(uri, fn);

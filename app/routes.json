@@ -1,0 +1,12 @@
+{
+    "/": { "controller": "home", "action": "index" },
+    
+    "/sessions/create": { "controller": "sessions", "action": "create" },
+    "/sessions/get":    { "controller": "sessions", "action": "get" },
+
+    "/routes/test":             { "controller": "routes", "action": "test" },
+    "/routes/test-template":    { "controller": "routes", "action": "testTemplate" },
+
+    "/validators":  { "controller": "home", "action": "validators" },
+    "/projects":    { "controller": "home", "action": "projects" }
+}

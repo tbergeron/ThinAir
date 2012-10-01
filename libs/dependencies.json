@@ -1,8 +1,7 @@
 {
     "libs/thinair.js": {
         "template": "libs/template.js",
-        "router": "libs/router.js",
-        "routes": "../../app/routes.js"
+        "router": "libs/router.js"
     },
     "libs/router.js": {
         "controllers": ["../../app/controllers/"],
