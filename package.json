@@ -44,7 +44,8 @@
     "formidable": "~1.0.11",
     "ajn-session": "git://github.com/tbergeron/ajn-session.git",
     "optimist": "~0.3.4",
-    "async": "~0.1.22"
+    "async": "~0.1.22",
+    "connect": "~2.5.0"
   },
   "devDependencies": {
     "testling": "git://github.com/Raynos/testling#master",

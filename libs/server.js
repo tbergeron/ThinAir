@@ -1,5 +1,6 @@
 var http = require('http'),
-    router = require('./router');
+    router = require('./router'),
+    connect = require('connect');
     
 var requestHandler = function(req, res) {
     // sending request to router
@@ -11,6 +12,12 @@ requestHandler.startServer = function() {
     process.env.PORT = (process.env.C9_PORT != undefined) ? process.env.C9_PORT : process.env.PORT;
 
     // starts the server
+    connect.createServer(
+        connect.cookieParser(),
+        connect.session({ secret: 'keyboard cat', key: 'sid', cookie: { secure: true }}),
+        requestHandler
+    ).listen(process.env.PORT);
+
     var server = http.createServer(requestHandler).listen(process.env.PORT, function() {
         console.log('ThinAir server is started and listening on port ' + process.env.PORT);
     });

@@ -5,8 +5,7 @@ var static = require('node-static'),
     pd = require('pd'),
     qsObjects = require('qs-objects'),
     formidable = require('formidable'),
-    path = require('path'),
-    Sessions = require('./sessions');
+    path = require('path');
 
 var publicPath = (process.env.CALLED_FROM_TESTS) ? path.join(__dirname, '../public') : path.join(__dirname, '../../../public');
 
@@ -37,10 +36,10 @@ var Router = {
         if (route) {
             try {
                 // Fetching sessions, adding them to req
-                req.sessions = new Sessions(req, res);
+                // req.sessions = new Sessions(req, res);
 
                 // Setting user_is_logged so it can be used app-wide
-                route.params.user_is_logged = (req.sessions.getData('user_is_logged')) ? true : false;
+                route.params.user_is_logged = (req.sessions.user_is_logged) ? true : false;
 
                 if (req.method == 'POST') {
                     var form = new formidable.IncomingForm(),
