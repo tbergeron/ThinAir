@@ -35,11 +35,8 @@ var Router = {
         // if a route is matched, executing the reponse function
         if (route) {
             try {
-                // Fetching sessions, adding them to req
-                // req.sessions = new Sessions(req, res);
-
                 // Setting user_is_logged so it can be used app-wide
-                route.params.user_is_logged = (req.sessions.user_is_logged) ? true : false;
+                route.params.user_is_logged = (req.session.user_is_logged) ? true : false;
 
                 if (req.method == 'POST') {
                     var form = new formidable.IncomingForm(),

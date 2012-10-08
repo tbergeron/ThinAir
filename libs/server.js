@@ -14,7 +14,11 @@ requestHandler.startServer = function() {
     // starts the server
     var server = connect.createServer(
         connect.cookieParser(),
-        connect.session({ secret: 'keyboard cat', key: 'sid', cookie: { secure: true }}),
+        connect.session({ 
+            secret: 'keyboard cat', 
+            key: 'sid', 
+            cookie: { secure: true }
+        }),
         requestHandler
     ).listen(process.env.PORT, function() {
         console.log('ThinAir server is started and listening on port ' + process.env.PORT);
