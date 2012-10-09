@@ -9,18 +9,20 @@ var requestHandler = function(req, res) {
 
 requestHandler.startServer = function() {
     // Sessions
-    var sessionSettings = {
-        secret: 'foo'
+    var sessionOptions = {
+        secret: (process.env.SESSIONS_SECRET) ? process.env.SESSIONS_SECRET : 'hello world'
     };
 
     if (process.env.STORE_SESSIONS_IN_MONGODB) {
-        var Db = require('mongodb').Db,
-            Server = require('mongodb').Server,
-            server_config = new Server(process.env.MONGODB_HOST, process.env.MONGODB_PORT, { auto_reconnect: true, native_parser: true }),
-            db = new Db(process.env.MONGODB_DATABASE, server_config, {}),
-            mongoStore = require('connect-mongodb');
+        var MongoStore = require('connect-mongodb');
 
-        sessionSettings.store = new mongoStore({ db: db });
+        var mongoStoreOptions = {
+            url: 'mongodb://' + process.env.MONGODB_USER + ':' + process.env.MONGODB_PASSWORD + '@' + process.env.MONGODB_HOST + ':' + process.env.MONGODB_PORT + '/' + process.env.MONGODB_DATABASE
+        };
+
+        sessionOptions.store = new MongoStore(mongoStoreOptions, function(err) {
+            if (err) console.log('err', err);
+        });
     }
 
     // if ran from c9, use its port
@@ -30,7 +32,7 @@ requestHandler.startServer = function() {
     var server = connect()
         .use(connect.favicon())
         .use(connect.cookieParser())
-        .use(connect.session(sessionSettings))
+        .use(connect.session(sessionOptions))
         .use(requestHandler)
         .listen(process.env.PORT, function() {
             console.log('ThinAir server is started and listening on port ' + process.env.PORT);
