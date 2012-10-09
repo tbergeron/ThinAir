@@ -5,7 +5,7 @@
   },
   "name": "thinair",
   "description": "PITA-less Web Development Framework built with Node.js",
-  "version": "0.3.14",
+  "version": "0.3.15",
   "homepage": "https://github.com/Brainpad/ThinAir",
   "bin": "./bin/thinair.js",
   "repository": {
@@ -45,7 +45,8 @@
     "ajn-session": "git://github.com/tbergeron/ajn-session.git",
     "optimist": "~0.3.4",
     "async": "~0.1.22",
-    "connect": "~2.5.0"
+    "connect": "~2.5.0",
+    "connect-mongodb": "~1.1.5"
   },
   "devDependencies": {
     "testling": "git://github.com/Raynos/testling#master",
