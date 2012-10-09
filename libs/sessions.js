@@ -1,2 +1,0 @@
-// var connect = require('connect');
-
