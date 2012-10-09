@@ -36,7 +36,9 @@ var Router = {
         if (route) {
             try {
                 // Setting user_is_logged so it can be used app-wide
-                route.params.userIsLogged = (req.session.userIsLogged) ? true : false;
+                if (!process.env.CALLED_FROM_TESTS) {
+                    route.params.userIsLogged = (req.session.userIsLogged) ? true : false;
+                }
 
                 if (req.method == 'POST') {
                     var form = new formidable.IncomingForm(),

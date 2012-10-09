@@ -18,16 +18,16 @@ var startTests = function(request, done) {
 
     test('route get 200 template', function (t) {
         request("/routes/test-template", function (err, res, body) {
+            console.error(body)
             t.equal(err, null, "error should be undefined");
             t.equal(res.statusCode, 200, "status code should be 200");
-            t.equal(body.length, 12, "body should be have a length of 12 characters");
+            t.equal(body.length, 12, "body should have a length of 12 characters");
             t.end();
         });
     });
 
     test('route get 200 static file', function (t) {
         request("/test.txt", function (err, res, body) {
-            console.warn('body', body);
             t.equal(err, null, "error should be undefined");
             t.equal(res.statusCode, 200, "status code should be 200");
             t.equal(body, 'static file delivery test\n', "body should equal 'static file delivery test'");
