@@ -1,11 +1,12 @@
-var fs = require('fs');
+var fs = require('fs'),
+    path = require('path');
 
 var Validator = {
     validationErrors: [],
 
     // validates an object and return, return its errors
     validate: function(modelName, object, callback) {
-        var validationsFilePath = __dirname + '/../app/validations/' + modelName + '.validations.json';
+        var validationsFilePath = path.join(__dirname, '../../../app/validations/' + modelName + '.validations.json');
         var that = this;
 
         fs.stat(validationsFilePath, function(err) {
