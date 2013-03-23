@@ -2,13 +2,13 @@
 ## PITA-less Web Development Framework built with Node.js.
 ### Currently developed by Tommy Bergeron / 2012.
 
-#### Project status: **Ready for development** [![Build Status](https://secure.travis-ci.org/Brainpad/ThinAir.png?branch=master)](http://travis-ci.org/Brainpad/ThinAir)
+#### Project status: **Ready for development** [![Build Status](https://secure.travis-ci.org/tbergeron/ThinAir.png?branch=master)](http://travis-ci.org/tbergeron/ThinAir)
 
 ***
 ## News
 
 #### Update 2012-10-01
-A roadmap has been published. [Check it out](https://github.com/Brainpad/ThinAir/wiki/Roadmap). Routes are now using JSON for definitions. Go check out the Routes wiki page for more informations.
+A roadmap has been published. [Check it out](https://github.com/tbergeron/ThinAir/wiki/Roadmap). Routes are now using JSON for definitions. Go check out the Routes wiki page for more informations.
 
 #### Update 2012-08-19
 Tests are now working again, everything is back to normal. Welcome to ThinAir 0.3.x!
@@ -48,7 +48,7 @@ If this is still unclear for you, go checkout the [FAQ](https://github.com/Brain
 
 To start ThinAir, simply type: `thinair start`
 
-You can read more  about ThinAir usage in the [wiki](https://github.com/Brainpad/ThinAir/wiki).
+You can read more  about ThinAir usage in the [wiki](https://github.com/tbergeron/ThinAir/wiki).
 
 ## Updates
 To update to the latest version you can simply use `npm update thinair`.
