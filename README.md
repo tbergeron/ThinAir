@@ -1,11 +1,14 @@
 # ThinAir
 ## PITA-less Web Development Framework built with Node.js.
-### Currently developed by Tommy Bergeron / 2012.
+### Currently developed by Tommy Bergeron / 2012-2013.
 
 #### Project status: **Ready for development** [![Build Status](https://secure.travis-ci.org/tbergeron/ThinAir.png?branch=master)](http://travis-ci.org/tbergeron/ThinAir)
 
 ***
 ## News
+
+#### Update 2013-04-22
+Project has been dead for several months now, build is currently broken but I'm back working on it to make it stable again. Stay tuned, a stable version will be available on `npm` soon.
 
 #### Update 2012-10-01
 A roadmap has been published. [Check it out](https://github.com/tbergeron/ThinAir/wiki/Roadmap). Routes are now using JSON for definitions. Go check out the Routes wiki page for more informations.
