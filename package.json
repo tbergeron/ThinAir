@@ -22,7 +22,6 @@
     "email": "t.bergeron@gmail.com"
   },
   "dependencies": {
-    "console-trace": "0.2.1",
     "mongodb": "1.0.2",
     "mongojs": "0.3.2",
     "mongo-col": "0.1.17",
@@ -49,12 +48,6 @@
     "connect-mongodb": "~1.1.5"
   },
   "devDependencies": {
-    "testling": "git://github.com/Raynos/testling#master",
-    "testem": "git://github.com/Raynos/testem#master",
-    "sinon": "1.4.2",
-    "tap": "0.2.5",
-    "request": "~2.9.203",
-    "test-server": "0.0.1"
   },
   "licenses": [
     {

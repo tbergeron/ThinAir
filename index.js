@@ -14,9 +14,9 @@ if (fs.existsSync(configFile)) {
 }
 
 // if using DEV use console-trace for console.log by default
-if (process.env.ENVIRONMENT === 'DEV') {
-    require('console-trace')({ always: true });
-}
+// if (process.env.ENVIRONMENT === 'DEV') {
+    // require('console-trace')({ always: true });
+// }
 
 var server = require('./libs/server'),
     sockets = require('./libs/sockets'),
