@@ -1,29 +1,11 @@
-# ThinAir
-## PITA-less Web Development Framework built with Node.js.
-### Currently developed by Tommy Bergeron / 2012-2013.
-
-#### Project status: **Ready for development** [![Build Status](https://secure.travis-ci.org/tbergeron/ThinAir.png?branch=master)](http://travis-ci.org/tbergeron/ThinAir)
+ThinAir
+=========
+###### PITA-less Web Development Framework built with Node.js. Currently developed by Tommy Bergeron.
+###### TL;DR: Simple MVC framework based on Node.js and MongoDB.
 
 ***
-## News
 
-#### Update 2013-04-22
-Project has been updated for latest node version but might become unstable as we need to use a new test system since the old one had trouble working with latest updates.
-
-#### Update 2012-10-01
-A roadmap has been published. [Check it out](https://github.com/tbergeron/ThinAir/wiki/Roadmap). Routes are now using JSON for definitions. Go check out the Routes wiki page for more informations.
-
-#### Update 2012-08-19
-Tests are now working again, everything is back to normal. Welcome to ThinAir 0.3.x!
-
-##### Update 2012-08-16
-ThinAir finally has a npm package! See installation instructions for more details. Tests aren't working since I'll have to tweak them to adapt to the new package structure. It shouldn't take long.
-
-##### Update 2012-07-28
-ThinAir is now _Ready for development_. What it means is that developers who want to try the framework and develop project with it are now welcome to do so! Documentation is almost 100% finished, if anything seems missing, please open an issue. 
-
-##### Update 2012-07-27
-Docs are finally done! Not deeply explanatory but still, every component of ThinAir has been covered. If any questions are left to be answered do not hesitate to open an issue!
+#### Project status: **Ready for development** [![Build Status](https://secure.travis-ci.org/tbergeron/ThinAir.png?branch=master)](http://travis-ci.org/tbergeron/ThinAir)
 
 ***
 
@@ -36,6 +18,30 @@ This ain't no revolution, but a simple, concised way of achieving what you want 
 Another goal I have in mind while doing this project is to show everyone (even *PHP* developers!) that Node.js projects are fun, flexible and can finally replace those old technologies once and for all.
 
 If this is still unclear for you, go checkout the [FAQ](https://github.com/Brainpad/ThinAir/wiki/FAQ).
+
+***
+
+## News
+
+##### Update 2013-04-22
+Project has been updated for latest node version but might become unstable as we need to use a new test system since the old one had trouble working with latest updates.
+
+##### Update 2012-10-01
+A roadmap has been published. [Check it out](https://github.com/tbergeron/ThinAir/wiki/Roadmap). Routes are now using JSON for definitions. Go check out the Routes wiki page for more informations.
+
+##### Update 2012-08-19
+Tests are now working again, everything is back to normal. Welcome to ThinAir 0.3.x!
+
+##### Update 2012-08-16
+ThinAir finally has a npm package! See installation instructions for more details. Tests aren't working since I'll have to tweak them to adapt to the new package structure. It shouldn't take long.
+
+##### Update 2012-07-28
+ThinAir is now _Ready for development_. What it means is that developers who want to try the framework and develop project with it are now welcome to do so! Documentation is almost 100% finished, if anything seems missing, please open an issue. 
+
+##### Update 2012-07-27
+Docs are finally done! Not deeply explanatory but still, every component of ThinAir has been covered. If any questions are left to be answered do not hesitate to open an issue!
+
+***
 
 ## Installation
 
