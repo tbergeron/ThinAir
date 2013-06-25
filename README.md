@@ -8,7 +8,7 @@
 ## News
 
 #### Update 2013-04-22
-Project has been dead for several months now, build is currently broken but I'm back working on it to make it stable again. Stay tuned, a stable version will be available on `npm` soon.
+Project has been updated for latest node version but might become unstable as we need to use a new test system since the old one had trouble working with latest updates.
 
 #### Update 2012-10-01
 A roadmap has been published. [Check it out](https://github.com/tbergeron/ThinAir/wiki/Roadmap). Routes are now using JSON for definitions. Go check out the Routes wiki page for more informations.
@@ -43,7 +43,7 @@ If this is still unclear for you, go checkout the [FAQ](https://github.com/Brain
 
 - First be sure to add `./node_modules/.bin` to your PATH
 - Create a new directory for your project
-- Use `npm install thinair` to install ThinAir to your current directory
+- Use `npm init` & `npm install thinair` to install ThinAir to your current directory
 - Use `thinair init` to create the basic project structure
 - And finally use `thinair start` to start your new application! 
 
