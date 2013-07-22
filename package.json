@@ -5,7 +5,7 @@
   },
   "name": "thinair",
   "description": "PITA-less Web Development Framework built with Node.js",
-  "version": "0.3.20",
+  "version": "0.3.21",
   "homepage": "https://github.com/tbergeron/ThinAir",
   "bin": "./bin/thinair.js",
   "repository": {
@@ -26,7 +26,7 @@
     "mongojs": "0.3.2",
     "mongo-col": "0.1.17",
     "mongo-store": "0.0.2",
-    "handlebars": "1.0.5beta",
+    "handlebars": "1.0.12",
     "pd": "0.6.3",
     "path": "0.4.9",
     "validator": "0.4.5",
